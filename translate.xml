@@ -1,0 +1,21 @@
+<tool id="divergence_translate" name="Extract &amp; translate">
+  <description>Extract genes from genbank files and translate to proteins</description>
+  <requirements>
+    <requirement type="python-module">divergence</requirement>
+  </requirements>
+  <command interpreter="python">translate.py --genomes $genomes --dna-zip $dnazip --protein-zip $proteinzip</command>
+  <inputs>
+    <param format="txt" name="genomes" type="data" label="Genomes file"/>
+  </inputs>
+  <outputs>
+    <data format="zip" name="dnazip" />
+    <data format="zip" name="proteinzip" />
+  </outputs>
+  <help>
+This tool:
+* downloads GenBank files for the refseq project ids in the complete genomes table, 
+* extracts genes from GenBank files,
+* translates genes to protein level according to specifiek coding table,
+* returns sets of extracted DNA and translated Protein files in FASTA format.
+  </help>
+</tool>
