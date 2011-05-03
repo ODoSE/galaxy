@@ -3,7 +3,7 @@
   <requirements>
     <requirement type="python-module">divergence</requirement>
   </requirements>
-  <command interpreter="python">translate.py --genomes $genomes --dna-zip $dnazip --protein-zip $proteinzip</command>
+  <command interpreter="python">wrapper.py divergence.translate --genomes $genomes --dna-zip $dnazip --protein-zip $proteinzip</command>
   <inputs>
     <param format="txt" name="genomes" type="data" label="Genomes file"/>
   </inputs>
