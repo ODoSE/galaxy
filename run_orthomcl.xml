@@ -1,0 +1,16 @@
+<tool id="divergence_run_orthomcl" name="Run OrthoMCL">
+  <description>Find Orthologous groups using reciprocal Blast and HMM clustering</description>
+  <requirements>
+    <requirement type="python-module">divergence</requirement>
+  </requirements>
+  <command interpreter="python">wrapper.py divergence.run_orthomcl --protein-zip $proteinzip --groups $groups</command>
+  <inputs>
+    <param format="zip" name="proteinzip" type="data" label="Translated gene proteins"/>
+  </inputs>
+  <outputs>
+    <data format="tabular" name="groups" label="Orthologous groups"/>
+  </outputs>
+  <help>
+This tool runs OrthoMCL and returns the Orthologous groups file.
+  </help>
+</tool>
