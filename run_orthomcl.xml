@@ -3,7 +3,10 @@
   <requirements>
     <requirement type="python-module">divergence</requirement>
   </requirements>
-  <command interpreter="python">wrapper.py divergence.run_orthomcl --protein-zip $proteinzip --groups $groups</command>
+  <command interpreter="python">wrapper.py divergence.run_orthomcl
+--protein-zip $proteinzip
+--groups $groups
+</command>
   <inputs>
     <param format="zip" name="proteinzip" type="data" label="Translated gene proteins"/>
   </inputs>
