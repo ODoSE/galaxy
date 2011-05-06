@@ -1,13 +1,13 @@
-<tool id="divergence_run_paml" name="Run PAML">
-  <description>Run PAML to calculate Dn/Ds</description>
+<tool id="divergence_run_paml_yn00" name="Run PAML yn00">
+  <description>Run PAML yn00 to calculate Dn/Ds</description>
   <requirements>
     <requirement type="python-module">divergence</requirement>
   </requirements>
-  <command interpreter="python">wrapper.py divergence.run_paml
+  <command interpreter="python">wrapper.py divergence.run_yn00
 --genomes-a $genomesa
 --genomes-b $genomesb
 --sico-zip $sicozip
---paml-zip $pamlzip
+--yn00-zip $yn00zip
 </command>
   <inputs>
     <param format="txt" name="genomesa" type="data" label="Clade A RefSeq project IDs file"/>
@@ -15,9 +15,9 @@
     <param format="zip" name="sicozip" type="data" label="Trimmed SICO genes"/>
   </inputs>
   <outputs>
-    <data format="zip" name="pamlzip" label="PAML output for SICOs"/>
+    <data format="zip" name="yn00zip" label="PAML yn00 output for SICOs"/>
   </outputs>
   <help>
-Run PAML for each SICO gene, for genes taken from representatives of each clade.
+Run PAML yn00 for each SICO gene, for genes taken from representatives of each clade.
   </help>
 </tool>
