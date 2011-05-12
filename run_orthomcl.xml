@@ -3,7 +3,7 @@
   <requirements>
     <requirement type="python-module">divergence</requirement>
   </requirements>
-  <command interpreter="python">wrapper.py divergence.run_orthomcl
+  <command interpreter="python">wrapper.py divergence.run_orthomcl $logfile
 --protein-zip $proteinzip
 --groups $groups
 </command>
@@ -11,6 +11,7 @@
     <param format="zip" name="proteinzip" type="data" label="Translated gene proteins"/>
   </inputs>
   <outputs>
+    <data format="txt" name="logfile" label="Logfile for ${tool.name}"/>
     <data format="tabular" name="groups" label="Orthologous groups"/>
   </outputs>
   <help>

@@ -3,7 +3,7 @@
   <requirements>
     <requirement type="python-module">divergence</requirement>
   </requirements>
-  <command interpreter="python">wrapper.py divergence.translate
+  <command interpreter="python">wrapper.py divergence.translate logfile
 --genomes $genomes
 --dna-zip $dnazip
 --protein-zip $proteinzip
