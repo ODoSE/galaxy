@@ -1,23 +1,23 @@
 <tool id="divergence_run_paml_codeml" name="Run PAML codeml">
-  <description>Run PAML codeml to calculate Dn/Ds</description>
-  <requirements>
-    <requirement type="python-module">divergence</requirement>
-  </requirements>
-  <command interpreter="python">wrapper.py divergence.run_codeml logfile
+	<description>Run PAML codeml to calculate Dn/Ds</description>
+	<requirements>
+		<requirement type="python-module">divergence</requirement>
+	</requirements>
+	<command interpreter="python">wrapper.py divergence.run_codeml logfile
 --genomes-a $genomesa
 --genomes-b $genomesb
 --sico-zip $sicozip
 --codeml-zip $codemlzip
 </command>
-  <inputs>
-    <param format="txt" name="genomesa" type="data" label="Clade A RefSeq project IDs file"/>
-    <param format="txt" name="genomesb" type="data" label="Clade B RefSeq project IDs file"/>
-    <param format="zip" name="sicozip" type="data" label="Trimmed SICO genes"/>
-  </inputs>
-  <outputs>
-    <data format="zip" name="codemlzip" label="PAML codeml output for SICOs"/>
-  </outputs>
-  <help>
+	<inputs>
+		<param format="txt" name="genomesa" type="data" label="Clade A RefSeq project IDs file" />
+		<param format="txt" name="genomesb" type="data" label="Clade B RefSeq project IDs file" />
+		<param format="zip" name="sicozip" type="data" label="Trimmed SICO genes" />
+	</inputs>
+	<outputs>
+		<data format="zip" name="codemlzip" label="PAML codeml output for SICOs" />
+	</outputs>
+	<help>
 Run PAML codeml for each SICO gene, for genes taken from representatives of each clade.
   </help>
 </tool>
