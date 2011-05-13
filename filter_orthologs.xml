@@ -17,8 +17,7 @@
 </command>
 	<inputs>
 		<param format="txt" name="genomes" type="data" label="RefSeq project IDs file" />
-		<param format="zip" name="dnazip" type="data" label="Extracted DNA sequences" />
-		<param format="txt" name="groups" type="data" label="Orthologous groups" />
+		<param format="zip" name="dnazip" type="data" label="Orthologous genes" />
 	</inputs>
 	<outputs>
 		<data format="zip" name="trimmedzip" label="Trimmed SICO genes" />
