@@ -1,0 +1,38 @@
+<tool id="divergence_extract_orthologs" name="Extract Orthologs">
+  <description>Extract orthologous genes for OrthoMCL groups file</description>
+  <requirements>
+    <requirement type="python-module">divergence</requirement>
+  </requirements>
+  <command interpreter="python">wrapper.py divergence.extract_orthologs logfile
+--genomes $genomes
+--dna-zip $dnazip
+--groups $groups
+
+--sico-zip $sicozip
+--muco-zip $mucozip
+--subset-zip $subsetzip
+--stats $stats
+</command>
+  <inputs>
+    <param format="txt" name="genomes" type="data" label="RefSeq project IDs file"/>
+    <param format="zip" name="dnazip" type="data" label="Extracted DNA sequences"/>
+    <param format="txt" name="groups" type="data" label="Orthologous groups"/>
+  </inputs>
+  <outputs>
+    <data format="tabular" name="stats" label="Ortholog extraction statistics"/>
+    <data format="zip" name="subsetzip" label="Variable-copy orthologous genes shared only among a subset"/>
+    <data format="zip" name="mucozip" label="Shared multiple-copy orthologous genes"/>
+    <data format="zip" name="sicozip" label="Shared single-copy orthologous genes"/>
+  </outputs>
+  <help>
+For the groups or orthologous genes identified using OrthoMCL, this tool:
+
+- extracts the DNA sequences of the single-copy orthologous genes shared across all genomes
+
+- extracts the DNA sequences of the multiple-copy orthologous genes shared across all genomes
+
+- extracts the DNA sequences of the variable-copy orthologous genes shared across a subset of genomes
+
+- generates statistics on the ortholog extraction process in tabular format
+  </help>
+</tool>
