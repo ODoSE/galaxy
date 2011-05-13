@@ -1,9 +1,9 @@
-<tool id="divergence_clean_orthologs" name="Clean Orthologs">
-	<description>Cleanup orthologs to extract SICO genes</description>
+<tool id="divergence_filter_orthologs" name="Filter Orthologs">
+	<description>Retain only orthologs suitable for further analysis</description>
 	<requirements>
 		<requirement type="python-module">divergence</requirement>
 	</requirements>
-	<command interpreter="python">wrapper.py divergence.clean_orthologs logfile
+	<command interpreter="python">wrapper.py divergence.filter_orthologs logfile
 --genomes $genomes
 --orthologs-zip= $dnazip
 
@@ -26,12 +26,19 @@
 		<data format="txt" name="stats" label="SICO cleanup statistics" />
 	</outputs>
 	<help>
-After running OrthoMCL this tool:
-- extracts the single copy orthologous genes
+This tool allows you to filter out orthologs in a number of different ways:
 
-- aligns &amp; trims the SICO files to retain only shared non-gap sequences in reading frame
+- when multiple COGs are assigned within an ortholog
 
-- concatenates the above trimmed SICO files for each genome into single concatemers files
+- when there is evidence of recombination within an ortholog based upon phylogentic tree inspection
+
+- when less than a given percentage of sequence is retained after alignment &amp; trimming alignment
+
+In addition this tool will:
+
+- carry over 'missing' COG annotations within ortholog files, if --filter-multiple-cogs is enabled
+
+- concatenate the above trimmed SICO files for each genome into single concatemers files
 
 - generates statistics on all the above processing steps
   </help>
