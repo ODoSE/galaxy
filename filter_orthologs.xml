@@ -5,11 +5,11 @@
 	</requirements>
 	<command interpreter="python">wrapper.py divergence.filter_orthologs logfile
 --genomes $genomes
---orthologs-zip= $dnazip
+--orthologs-zip $dnazip
 
---filter-multiple-cogs
---filter-recombination
---retained-threshold=PERC
+$filtermultiplecogs
+$filterrecombination
+--retained-threshold $retainedthreshold
 
 --trimmed-zip $trimmedzip
 --concatemer-zip $concatemerzip
@@ -18,27 +18,28 @@
 	<inputs>
 		<param format="txt" name="genomes" type="data" label="RefSeq project IDs file" />
 		<param format="zip" name="dnazip" type="data" label="Orthologous genes" />
+		<param name="filtermultiplecogs" type="boolean" label="Filter multiple COGs" checked="true" truevalue="--filter-multiple-cogs" falsevalue="">
+			<help>Filter orthologs where multiple different COGs are assigned to various strains</help>
+		</param>
+		<param name="filterrecombination" type="boolean" label="Filter recombination" checked="true" truevalue="--filter-recombination" falsevalue="">
+			<help>Filter orthologs where there is evidence of recombination within an ortholog based upon phylogenetic tree inspection</help>
+		</param>
+		<param name="retainedthreshold" type="integer" label="Filter multiple COGs" min="0" max="100" value="90" optional="false">
+			<help>Filter orthologs where less than a given percentage of sequence is retained after alignment &amp; trimming alignment</help>
+		</param>
 	</inputs>
 	<outputs>
-		<data format="zip" name="trimmedzip" label="Trimmed SICO genes" />
-		<data format="zip" name="concatemerzip" label="SICO concatemers of genomes" />
-		<data format="txt" name="stats" label="SICO cleanup statistics" />
+		<data format="txt" name="stats" label="Ortholog filtering statistics" />
+		<data format="zip" name="trimmedzip" label="Trimmed orthologous genes" />
+		<data format="zip" name="concatemerzip" label="Orthologous genes concatemers per genome" />
 	</outputs>
 	<help>
-This tool allows you to filter out orthologs in a number of different ways:
+This tool allows you to filter out orthologs in a number of different ways, as detailed above. In addition this tool will:
 
-- when multiple COGs are assigned within an ortholog
+- carry over 'missing' COG annotations within ortholog files, if "Filter multiple COGs" is enabled
 
-- when there is evidence of recombination within an ortholog based upon phylogentic tree inspection
+- concatenate the trimmed orthologous files for each genome into single concatemers files
 
-- when less than a given percentage of sequence is retained after alignment &amp; trimming alignment
-
-In addition this tool will:
-
-- carry over 'missing' COG annotations within ortholog files, if --filter-multiple-cogs is enabled
-
-- concatenate the above trimmed SICO files for each genome into single concatemers files
-
-- generates statistics on all the above processing steps
+- generate statistics on the above filtering steps
   </help>
 </tool>
