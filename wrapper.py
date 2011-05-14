@@ -13,6 +13,7 @@ except ImportError as ie:
 #Second argument contains name of logging output file to use
 import logging as log
 FILE_HANDLER = log.FileHandler(sys.argv[2], mode = 'w')
+FILE_HANDLER.setFormatter(log.Formatter())
 log.root.addHandler(FILE_HANDLER)
 
 #Run main method within module with remaining arguments
