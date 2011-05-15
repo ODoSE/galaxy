@@ -22,7 +22,7 @@ $filterrecombination
 		<param name="filterrecombination" type="boolean" label="Filter recombination" checked="true" truevalue="--filter-recombination" falsevalue="">
 			<help>Filter orthologs where there is evidence of recombination within an ortholog based upon phylogenetic tree inspection</help>
 		</param>
-		<param name="retainedthreshold" type="integer" label="Filter multiple COGs" min="0" max="100" value="90" optional="false">
+		<param name="retainedthreshold" type="integer" label="Minimum % retained after trimmining alignment" min="0" max="100" value="90" optional="false">
 			<help>Filter orthologs where less than a given percentage of sequence is retained after alignment &amp; trimming alignment</help>
 		</param>
 	</inputs>
