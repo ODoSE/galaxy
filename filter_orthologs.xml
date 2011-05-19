@@ -12,6 +12,7 @@ $filterrecombination
 
 --trimmed-zip $trimmedzip
 --concatemer-zip $concatemerzip
+--concatemer-file $concatemerfile
 --stats $stats
 </command>
 	<inputs>
@@ -31,6 +32,7 @@ $filterrecombination
 		<data format="tabular" name="stats" label="Ortholog trimming statistics" />
 		<data format="zip" name="trimmedzip" label="Trimmed orthologous genes" />
 		<data format="zip" name="concatemerzip" label="Orthologous genes concatemers per genome" />
+		<data format="fasta" name="concatemerfile" label="Orthologous genes concatemers of all genomes" />
 	</outputs>
 	<help>
 This tool allows you to filter out orthologs in a number of different ways, as detailed above. In addition this tool will:
