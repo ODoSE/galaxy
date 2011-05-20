@@ -23,7 +23,7 @@ This tool:
 
 - extracts genes from GenBank files,
 
-- translates genes to protein level according to specifiek coding table,
+- translates genes to protein level according to the specified coding table,
 
 - returns sets of extracted DNA and translated Protein files in FASTA format.
   </help>

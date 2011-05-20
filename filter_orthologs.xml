@@ -42,5 +42,7 @@ This tool allows you to filter out orthologs in a number of different ways, as d
 - concatenate the trimmed orthologous files for each genome into single concatemers files
 
 - generate statistics on the above filtering steps
+
+Orthologs are aligned at the protein level using TranslatorX & muscle, using the NCBI Bacterial, Archaeal and Plant Plastid Code translation table (11).
   </help>
 </tool>
