@@ -8,6 +8,7 @@
 --genomes-b $genomesb
 --sico-zip $sicozip
 --codeml-zip $codemlzip
+--dnds-stats $dndsstats
 </command>
 	<inputs>
 		<param format="txt" name="genomesa" type="data" label="Clade A RefSeq project IDs file" />
@@ -16,6 +17,7 @@
 	</inputs>
 	<outputs>
 		<data format="zip" name="codemlzip" label="PAML codeml output for SICOs" />
+		<data format="tabular" name="dndsstats" label="dN/dS values per SICO" />
 	</outputs>
 	<help>
 Run PAML codeml for each SICO gene, for genes taken from representatives of each clade.
