@@ -6,12 +6,14 @@
 	<command interpreter="python">wrapper.py divergence.calculate_pnps $logfile 
 --alignment $alignment</command>
 	<inputs>
-		<param type="text" name="userinput" label="FASTA alignment" area="True" size="40x70"/>
+		<param type="text" name="userinput" label="FASTA alignment" area="True" size="40x100">
+			<sanitizer  sanitize="False"/>
+		</param>
 	</inputs>
 	<outputs>
 		<data format="txt" name="logfile" label="Logfile for ${tool.name}" />
 	</outputs>
-	<help></help>
+	<help>Enter a FASTA alignment in the field above &amp; press Execute.</help>
 	<configfiles>
 		<configfile name="alignment">
 ${userinput}
