@@ -1,0 +1,20 @@
+<tool id="divergence_calculate_pnps" name="Calculate pN/pS">
+	<description>for a FASTA alignment file</description>
+	<requirements>
+		<requirement type="python-module">divergence</requirement>
+	</requirements>
+	<command interpreter="python">wrapper.py divergence.calculate_pnps $logfile 
+--alignment $alignment</command>
+	<inputs>
+		<param type="text" name="userinput" label="FASTA alignment" area="True" size="40x70"/>
+	</inputs>
+	<outputs>
+		<data format="txt" name="logfile" label="Logfile for ${tool.name}" />
+	</outputs>
+	<help></help>
+	<configfiles>
+		<configfile name="alignment">
+${userinput}
+		</configfile>
+	</configfiles>
+</tool>
