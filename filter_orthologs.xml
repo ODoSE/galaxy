@@ -4,6 +4,8 @@
 		<requirement type="python-module">divergence</requirement>
 	</requirements>
 	<command interpreter="python">wrapper.py divergence.filter_orthologs $logfile
+--genomes-a $genomesa
+--genomes-b $genomesb
 --orthologs-zip $dnazip
 
 $filtermultiplecogs
@@ -16,6 +18,8 @@ $filterrecombination
 --stats $stats
 </command>
 	<inputs>
+        <param format="txt" name="genomesa" type="data" label="Clade A RefSeq project IDs file" />
+        <param format="txt" name="genomesb" type="data" label="Clade B RefSeq project IDs file" />
 		<param format="zip" name="dnazip" type="data" label="Orthologous genes" />
 		<param name="filtermultiplecogs" type="boolean" label="Filter multiple COGs" checked="true" truevalue="--filter-multiple-cogs" falsevalue="">
 			<help>Filter orthologs where multiple different COGs are assigned to various strains</help>
