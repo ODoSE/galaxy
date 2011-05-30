@@ -1,0 +1,22 @@
+<tool id="divergence_concatenate_orthologs" name="Concatenate Orthologs">
+    <description>per genome</description>
+    <requirements>
+        <requirement type="python-module">divergence</requirement>
+    </requirements>
+    <command interpreter="python">wrapper.py divergence.concatenate_orthologs logfile
+--orthologs-zip $orthologs
+--concatemer-zip $concatemerzip
+--concatemer-fasta $concatemerfasta
+</command>
+    <inputs>
+        <param format="fasta" name="concatemer" label="Concatemer of all genomes" />
+    </inputs>
+    <outputs>
+        <data format="zip" name="orthologs" label="Orthologous genes" />
+        <data format="zip" name="concatemerzip" label="Concatemers per genome" />
+        <data format="fasta" name="concatemerfasta" label="Concatemer of all genomes" />
+    </outputs>
+    <help>
+This tool concatenates (most likely aligned and/or trimmed) orthologs per genome individually, and all genomes together into a single FASTA file.
+  </help>
+</tool>
