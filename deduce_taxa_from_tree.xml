@@ -1,0 +1,23 @@
+<tool id="divergence_deduce_taxa" name="Deduce taxa from phylogenetic tree">
+    <description>using PHYLIP dnadist &amp; neighbor</description>
+    <requirements>
+        <requirement type="python-module">divergence</requirement>
+    </requirements>
+    <command interpreter="python">wrapper.py divergence.deduce_taxa_from_tree logfile
+--concatemer $concatemer
+--taxon-a $taxona
+--taxon-b $taxonb
+--tree $tree
+</command>
+    <inputs>
+        <param format="fasta" name="concatemer" label="Concatemer of all genomes" />
+    </inputs>
+    <outputs>
+        <data format="tabular" name="taxona" label="Taxon A genomes" />
+        <data format="tabular" name="taxonb" label="Taxon B genomes" />
+        <data format="txt" name="tree" label="Phylogenetic tree" />
+    </outputs>
+    <help>
+This tool deduces the taxa present in the selected among the selected genomes, and visualizes the generated tree.
+  </help>
+</tool>

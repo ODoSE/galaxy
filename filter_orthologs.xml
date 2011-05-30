@@ -5,17 +5,11 @@
     </requirements>
     <command interpreter="python">wrapper.py divergence.filter_orthologs $logfile
 --orthologs-zip $dnazip
-
 $filtermultiplecogs
 #if $recombinedzip
 --filter-recombination $recombinedzip
 #end if
---retained-threshold $retainedthreshold
-
---trimmed-zip $trimmedzip
---concatemer-zip $concatemerzip
---concatemer-file $concatemerfile
---stats $stats
+--retained-zip $retainedzip
 </command>
     <inputs>
         <param format="zip" name="dnazip" type="data" label="Orthologous genes" />
@@ -25,29 +19,17 @@ $filtermultiplecogs
         <param name="filterrecombination" type="boolean" label="Filter recombination" checked="true">
             <help>Filter orthologs where there is evidence of recombination within an ortholog based upon phylogenetic tree inspection</help>
         </param>
-        <param name="retainedthreshold" type="integer" label="Minimum % retained after trimmining alignment" min="0" max="100" value="90" optional="false">
-            <help>Filter orthologs where less than a given percentage of sequence is retained after alignment &amp; trimming alignment</help>
-        </param>
     </inputs>
     <outputs>
         <data format="txt" name="logfile" label="Logfile for ${tool.name}" />
         <data format="zip" name="recombinedzip" label="Recombination orthologs">
             <filter>filterrecombination</filter>
         </data>
-        <data format="tabular" name="stats" label="Ortholog trimming statistics" />
-        <data format="zip" name="trimmedzip" label="Trimmed orthologos" />
-        <data format="zip" name="concatemerzip" label="Ortholog concatemers per genome" />
-        <data format="fasta" name="concatemerfile" label="Ortholog concatemers of all genomes" />
+        <data format="zip" name="retainedzip" label="Retained orthologos" />
     </outputs>
     <help>
-This tool allows you to filter out orthologs in a number of different ways, as detailed above. In addition this tool will:
+This tool allows you to filter out orthologs in a number of different ways, as detailed above.
 
-- carry over 'missing' COG annotations within ortholog files, if "Filter multiple COGs" is enabled
-
-- concatenate the trimmed orthologous files for each genome into single concatemers files
-
-- generate statistics on the above filtering steps
-
-Orthologs are aligned at the protein level using TranslatorX &amp; muscle, using the NCBI Bacterial, Archaeal and Plant Plastid Code translation table (11).
+This tool will carry over 'missing' COG annotations within ortholog files if "Filter multiple COGs" is enabled.
   </help>
 </tool>

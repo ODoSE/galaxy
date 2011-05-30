@@ -12,21 +12,22 @@
 	<inputs>
 	<page>
     	<param name="cladeagenomes" type="select" display="checkboxes" multiple="true" optional="false" force_select="true" 
-    	label="Choose Genomes in Clade A" help="Select between two and fifteen (related) genomes for Clade A only. (You can select genomes for Clade B on the next screen.)"
+    	label="Choose Genomes in Taxon A" help="Select between two and fifteen (related) genomes for Taxon A only.
+(You can select genomes for Taxon B on the next screen.)"
     	dynamic_options="get_complete_genomes()"/>
 	</page>
 	<page>
 	    <param name="cladebgenomes" type="select" display="checkboxes" multiple="true" optional="false" force_select="true" 
-	    label="Choose Genomes in Clade B" help="Select between two and fifteen different genomes for Clade B."
+	    label="Choose Genomes in Taxon B" help="Select between two and fifteen different genomes for Taxon B."
 	    dynamic_options="get_complete_genomes()"/>
 	</page>
 	</inputs>
 	<outputs>
-		<data format="txt" name="cladeafile" label="Clade A RefSeq project IDs" />
-		<data format="txt" name="cladebfile" label="Clade B RefSeq project IDs" />
+		<data format="tabular" name="cladeafile" label="Taxon A RefSeq project IDs" />
+		<data format="tabular" name="cladebfile" label="Taxon B RefSeq project IDs" />
 	</outputs>
 	<help>
-This tool allows you to select genomes for both Clade A and Clade B in successive screens.
+This tool allows you to select genomes for both Taxon A and Taxon B in successive screens.
 
 No fewer than two and no more than fifteen genomes may be selected for either clade.
 </help>
