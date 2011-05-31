@@ -3,32 +3,20 @@
 	<requirements>
 		<requirement type="python-module">divergence</requirement>
 	</requirements>
-    <code file="select_taxa.py"/>
+	<code file="select_taxa.py"/>
 	<command interpreter="python">wrapper.py divergence.select_taxa logfile
---cladea-genomes $cladeagenomes
---cladeb-genomes $cladebgenomes
---cladea-file $cladeafile
---cladeb-file $cladebfile</command>
+--genomes $genomes
+--genomes-file $genomesfile</command>
 	<inputs>
-	<page>
-    	<param name="cladeagenomes" type="select" display="checkboxes" multiple="true" optional="false" force_select="true" 
-    	label="Choose Genomes in Taxon A" help="Select between two and fifteen (related) genomes for Taxon A only.
-(You can select genomes for Taxon B on the next screen.)"
-    	dynamic_options="get_complete_genomes()"/>
-	</page>
-	<page>
-	    <param name="cladebgenomes" type="select" display="checkboxes" multiple="true" optional="false" force_select="true" 
-	    label="Choose Genomes in Taxon B" help="Select between two and fifteen different genomes for Taxon B."
-	    dynamic_options="get_complete_genomes()"/>
-	</page>
+   		<param name="genomes" type="select" display="checkboxes" multiple="true" optional="false" force_select="true" 
+   		label="Choose Genomes" help="Select between two and forty genomes for analysis." dynamic_options="get_complete_genomes()"/>
 	</inputs>
 	<outputs>
-		<data format="tabular" name="cladeafile" label="Taxon A RefSeq project IDs" />
-		<data format="tabular" name="cladebfile" label="Taxon B RefSeq project IDs" />
+		<data format="tabular" name="genomesfile" label="Genome RefSeq project IDs" />
 	</outputs>
 	<help>
-This tool allows you to select genomes for both Taxon A and Taxon B in successive screens.
+This tool allows you to select genomes for analysis in the Genome-wide signatures of adaptive divergence pipeline.
 
-No fewer than two and no more than fifteen genomes may be selected for either clade.
+No fewer than two and no more than forty genomes may be selected.
 </help>
 </tool>
