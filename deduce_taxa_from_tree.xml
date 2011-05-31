@@ -10,7 +10,7 @@
 --tree $tree
 </command>
     <inputs>
-        <param format="fasta" name="concatemer" label="Concatemer of all genomes" />
+        <param type="data" format="fasta" name="concatemer" label="Concatemer of all genomes" />
     </inputs>
     <outputs>
         <data format="tabular" name="taxona" label="Taxon A genomes" />

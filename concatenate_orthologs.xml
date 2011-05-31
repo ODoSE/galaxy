@@ -9,10 +9,9 @@
 --concatemer-fasta $concatemerfasta
 </command>
     <inputs>
-        <param format="fasta" name="concatemer" label="Concatemer of all genomes" />
+        <param type="data" format="zip" name="orthologs" label="Orthologous genes" />
     </inputs>
     <outputs>
-        <data format="zip" name="orthologs" label="Orthologous genes" />
         <data format="zip" name="concatemerzip" label="Concatemers per genome" />
         <data format="fasta" name="concatemerfasta" label="Concatemer of all genomes" />
     </outputs>
