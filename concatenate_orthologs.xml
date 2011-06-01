@@ -6,7 +6,7 @@
     <command interpreter="python">wrapper.py divergence.concatenate_orthologs logfile
 --orthologs-zip $orthologs
 --concatemer-zip $concatemerzip
---concatemer-fasta $concatemerfasta
+--concatemer-file $concatemerfasta
 </command>
     <inputs>
         <param type="data" format="zip" name="orthologs" label="Orthologous genes" />
