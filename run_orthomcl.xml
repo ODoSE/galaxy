@@ -1,6 +1,5 @@
 <tool id="divergence_run_orthomcl" name="Run OrthoMCL">
-	<description>Find Orthologous groups using reciprocal Blast and HMM
-		clustering</description>
+	<description>to find orthologs using reciprocal BLAST and HMM clustering</description>
 	<requirements>
 		<requirement type="python-module">divergence</requirement>
 	</requirements>

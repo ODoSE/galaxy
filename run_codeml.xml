@@ -1,5 +1,5 @@
 <tool id="divergence_run_paml_codeml" name="Run PAML codeml">
-	<description>Run PAML codeml to calculate Dn/Ds</description>
+	<description>to calculate dN/dS values</description>
 	<requirements>
 		<requirement type="python-module">divergence</requirement>
 	</requirements>

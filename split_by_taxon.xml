@@ -1,5 +1,5 @@
 <tool id="divergence_split_by_taxon" name="Split orthologs by taxa">
-	<description></description>
+	<description>to separate alignments</description>
 	<requirements>
 		<requirement type="python-module">divergence</requirement>
 	</requirements>

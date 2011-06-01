@@ -1,5 +1,5 @@
-<tool id="divergence_extract_orthologs" name="Extract Orthologs">
-	<description>Extract orthologous genes for OrthoMCL groups file
+<tool id="divergence_extract_orthologs" name="Extract &amp; categorize orthologs">
+	<description>from OrthoMCL groups file
 	</description>
 	<requirements>
 		<requirement type="python-module">divergence</requirement>
@@ -21,8 +21,7 @@
 	</inputs>
 	<outputs>
 		<data format="tabular" name="stats" label="Ortholog extraction statistics" />
-		<data format="zip" name="subsetzip"
-			label="Variable-copy orthologous genes shared only among a subset" />
+		<data format="zip" name="subsetzip" label="Variable-copy orthologous genes shared only among a subset" />
 		<data format="zip" name="mucozip" label="Shared multiple-copy orthologous genes" />
 		<data format="zip" name="sicozip" label="Shared single-copy orthologous genes" />
 	</outputs>

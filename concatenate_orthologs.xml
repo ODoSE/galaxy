@@ -1,4 +1,4 @@
-<tool id="divergence_concatenate_orthologs" name="Concatenate Orthologs">
+<tool id="divergence_concatenate_orthologs" name="Concatenate orthologs">
     <description>per genome</description>
     <requirements>
         <requirement type="python-module">divergence</requirement>

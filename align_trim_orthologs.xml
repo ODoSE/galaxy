@@ -1,5 +1,5 @@
-<tool id="divergence_align_trim_orthologs" name="Align &amp; Trim Orthologs">
-    <description>in reading frame for further processing</description>
+<tool id="divergence_align_trim_orthologs" name="Align &amp; trim orthologs">
+    <description>in reading frame</description>
     <requirements>
         <requirement type="python-module">divergence</requirement>
     </requirements>

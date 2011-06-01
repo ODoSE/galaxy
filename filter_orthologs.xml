@@ -1,5 +1,5 @@
-<tool id="divergence_filter_orthologs" name="Filter Orthologs">
-    <description>Retain only orthologs suitable for further analysis</description>
+<tool id="divergence_filter_orthologs" name="Filter orthologs">
+    <description>to only retain orthologs suitable for further analysis</description>
     <requirements>
         <requirement type="python-module">divergence</requirement>
     </requirements>
