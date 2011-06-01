@@ -25,7 +25,7 @@ $filtermultiplecogs
         <data format="zip" name="recombinedzip" label="Recombination orthologs">
             <filter>filterrecombination</filter>
         </data>
-        <data format="zip" name="retainedzip" label="Retained orthologos" />
+        <data format="zip" name="retainedzip" label="Retained orthologs" />
     </outputs>
     <help>
 This tool allows you to filter out orthologs in a number of different ways, as detailed above.

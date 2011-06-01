@@ -14,8 +14,8 @@
 		<param format="zip" name="taxonbzip" type="data" label="Taxon B orthologs" />
 	</inputs>
 	<outputs>
-		<data format="zip" name="codemlzip" label="PAML codeml output for SICOs" />
-		<data format="tabular" name="dndsstats" label="dN/dS values per SICO" />
+		<data format="zip" name="codemlzip" label="PAML codeml files per ortholog" />
+		<data format="tabular" name="dndsstats" label="dN/dS per ortholog" />
 	</outputs>
 	<help>
 Run PAML codeml for each SICO gene, for genes taken from representatives of each clade.
