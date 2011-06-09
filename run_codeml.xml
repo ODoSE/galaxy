@@ -4,14 +4,16 @@
 		<requirement type="python-module">divergence</requirement>
 	</requirements>
 	<command interpreter="python">wrapper.py divergence.run_codeml logfile
---taxon-a-zip $taxonazip
---taxon-b-zip $taxonbzip
+--genomes-a $genomesa
+--genomes-b $genomesb
+--sico-zip $sicozip
 --codeml-zip $codemlzip
 --dnds-stats $dndsstats
 </command>
 	<inputs>
-		<param format="zip" name="taxonazip" type="data" label="Taxon A orthologs" />
-		<param format="zip" name="taxonbzip" type="data" label="Taxon B orthologs" />
+		<param format="tabular" name="genomesa" type="data" label="Taxon A RefSeq project IDs file" />
+		<param format="tabular" name="genomesb" type="data" label="Taxon B RefSeq project IDs file" />
+		<param format="zip" name="sicozip" type="data" label="Aligned / Trimmed orthologs" />
 	</inputs>
 	<outputs>
 		<data format="zip" name="codemlzip" label="PAML codeml files per ortholog" />
