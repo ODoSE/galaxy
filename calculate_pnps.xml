@@ -1,22 +1,25 @@
-<tool id="divergence_calculate_pnps" name="Calculate pN/pS">
-	<description>for a FASTA alignment file</description>
+<tool id="divergence_calculate_pnps" name="Calculate direction of selection">
+	<description>per taxon</description>
 	<requirements>
 		<requirement type="python-module">divergence</requirement>
 	</requirements>
-	<command interpreter="python">wrapper.py divergence.calculate_pnps $logfile 
---alignment $alignment</command>
+	<command interpreter="python">wrapper.py divergence.calculate_pnps $logfile
+--genomes-a $genomesa
+--genomes-b $genomesb
+--sico-zip $sicozip 
+--table-a $tablea 
+--table-b $tableb</command>
 	<inputs>
-		<param type="text" name="userinput" label="FASTA alignment" area="True" size="40x100">
-			<sanitizer  sanitize="False"/>
-		</param>
+		<param format="tabular" name="genomesa" type="data" label="Taxon A RefSeq project IDs file" />
+		<param format="tabular" name="genomesb" type="data" label="Taxon B RefSeq project IDs file" />
+		<param format="zip" name="sicozip" type="data" label="Aligned / Trimmed orthologs" />
 	</inputs>
 	<outputs>
 		<data format="txt" name="logfile" label="Logfile for ${tool.name}" />
+		<data format="tabular" name="tablea" label="Statistics table for Taxon A" />
+		<data format="tabular" name="tableb" label="Statistics table for Taxon B" />
 	</outputs>
-	<help>Enter a FASTA alignment in the field above &amp; press Execute.</help>
-	<configfiles>
-		<configfile name="alignment">
-${userinput}
-		</configfile>
-	</configfiles>
+	<help>
+This tool calculates the direction of selection between two taxa. 
+</help>
 </tool>
