@@ -3,7 +3,7 @@
 	<requirements>
 		<requirement type="python-module">divergence</requirement>
 	</requirements>
-	<command interpreter="python">wrapper.py divergence.calculate_pnps $logfile
+	<command interpreter="python">wrapper.py divergence.calculate_pnps logfile
 --genomes-a $genomesa
 --genomes-b $genomesb
 --sico-zip $sicozip 
@@ -15,7 +15,6 @@
 		<param format="zip" name="sicozip" type="data" label="Aligned / Trimmed orthologs" />
 	</inputs>
 	<outputs>
-		<data format="txt" name="logfile" label="Logfile for ${tool.name}" />
 		<data format="tabular" name="tablea" label="Statistics table for Taxon A" />
 		<data format="tabular" name="tableb" label="Statistics table for Taxon B" />
 	</outputs>
