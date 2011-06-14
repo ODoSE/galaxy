@@ -1,0 +1,27 @@
+<tool id="divergence_concatemer_tree" name="Concatenate and deduce taxa">
+    <description>from phylogenetic tree</description>
+    <requirements>
+        <requirement type="python-module">divergence</requirement>
+    </requirements>
+    <command interpreter="python">wrapper.py divergence.concatemer_tree logfile
+--orthologs-zip $orthologs
+--concatemer-file $concatemerfasta
+--tree $tree
+--taxon-a $taxona
+--taxon-b $taxonb
+</command>
+    <inputs>
+        <param type="data" format="zip" name="orthologs" label="Orthologous genes" />
+    </inputs>
+    <outputs>
+        <data format="fasta" name="concatemerfasta" label="Concatemer of all genomes" />
+        <data format="txt" name="tree" label="Phylogenetic tree" />
+        <data format="tabular" name="taxona" label="Taxon A genomes" />
+        <data format="tabular" name="taxonb" label="Taxon B genomes" />
+    </outputs>
+    <help>
+This tool concatenates orthologs per genome into a FASTA records, and combines the records into a single FASTA file.
+From this FASTA file a phylogenetic tree is created and visualized, from which the taxa are deduced by looking at the
+largest two clades. 
+  </help>
+</tool>
