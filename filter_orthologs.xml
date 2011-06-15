@@ -9,7 +9,7 @@ $filtermultiplecogs
 #if $recombinedzip
 --filter-recombination $recombinedzip
 --taxon-a $genomesa
---taxon-a $genomesb
+--taxon-b $genomesb
 #end if
 --retained-zip $retainedzip
 </command>
