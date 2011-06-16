@@ -12,7 +12,7 @@
    		label="Choose Genomes" help="Select between two and forty genomes for analysis." dynamic_options="get_complete_genomes()"/>
 	</inputs>
 	<outputs>
-		<data format="tabular" name="genomesfile" label="Genome RefSeq project IDs" />
+		<data format="tabular" name="genomesfile" label="Genome GenBank Project IDs" />
 	</outputs>
 	<help>
 This tool allows you to select genomes for analysis in the Genome-wide signatures of adaptive divergence pipeline.

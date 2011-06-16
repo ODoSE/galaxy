@@ -11,8 +11,8 @@
 --dnds-stats $dndsstats
 </command>
 	<inputs>
-		<param format="tabular" name="genomesa" type="data" label="Taxon A RefSeq project IDs file" />
-		<param format="tabular" name="genomesb" type="data" label="Taxon B RefSeq project IDs file" />
+		<param format="tabular" name="genomesa" type="data" label="Taxon A IDs" />
+		<param format="tabular" name="genomesb" type="data" label="Taxon B IDs" />
 		<param format="zip" name="sicozip" type="data" label="Aligned / Trimmed orthologs" />
 	</inputs>
 	<outputs>

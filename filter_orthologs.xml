@@ -25,8 +25,8 @@ $filtermultiplecogs
 	            <option value="no">No</option>
 	        </param>
 			<when value="yes">
-				<param format="tabular" name="genomesa" type="data" label="Taxon A RefSeq project IDs file" optional="true"/>
-				<param format="tabular" name="genomesb" type="data" label="Taxon B RefSeq project IDs file" optional="true"/>
+				<param format="tabular" name="genomesa" type="data" label="Taxon A IDs" optional="true"/>
+				<param format="tabular" name="genomesb" type="data" label="Taxon B IDs" optional="true"/>
 			</when>
 			<when value="no" />
         </conditional>

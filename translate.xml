@@ -9,7 +9,7 @@
 --protein-zip $proteinzip
 </command>
 	<inputs>
-		<param format="txt" name="genomes" type="data" label="RefSeq project IDs file" />
+		<param format="txt" name="genomes" type="data" label="GenBank Project IDs" />
 	</inputs>
 	<outputs>
 		<data format="zip" name="dnazip" label="Extracted DNA sequences" />
@@ -18,7 +18,7 @@
 	<help>
 This tool:
 
-- downloads GenBank files for the RefSeq project IDs in the complete genomes table,
+- downloads GenBank files for the GenBank Project IDs in the complete genomes table,
 
 - extracts genes from GenBank files,
 
