@@ -5,7 +5,9 @@
     </requirements>
     <command interpreter="python">wrapper.py divergence.filter_orthologs $logfile
 --orthologs-zip $dnazip
-$filtermultiplecogs
+# if $transferedcogs
+--filter-multiple-cogs $transferedcogs
+#end if
 #if $recombinedzip
 --filter-recombination $recombinedzip
 --taxon-a $genomesa
@@ -15,26 +17,22 @@ $filtermultiplecogs
 </command>
     <inputs>
         <param format="zip" name="dnazip" type="data" label="Orthologous genes" />
-        <param name="filtermultiplecogs" type="boolean" label="Filter multiple COGs" checked="true" truevalue="--filter-multiple-cogs" falsevalue="">
+        <param name="filtermultiplecogs" type="boolean" label="Filter multiple COGs" checked="false">
             <help>Filter orthologs where multiple different COGs are assigned to various strains</help>
         </param>
-        <conditional name="filterconditional">
-	        <param name="filterrecombination" type="select" label="Filter recombination" display="radio">
-	            <help>Filter orthologs where there is evidence of recombination within an ortholog based upon phylogenetic tree inspection</help>
-	            <option value="yes" selected="true">Yes</option>
-	            <option value="no">No</option>
-	        </param>
-			<when value="yes">
-				<param format="tabular" name="genomesa" type="data" label="Taxon A IDs" optional="true"/>
-				<param format="tabular" name="genomesb" type="data" label="Taxon B IDs" optional="true"/>
-			</when>
-			<when value="no" />
-        </conditional>
+        <param name="filterrecombination" type="boolean" label="Filter recombination" checked="true">
+            <help>Filter orthologs where there is evidence of recombination within an ortholog based upon phylogenetic tree inspection</help>
+        </param>
+		<param format="tabular" name="genomesa" type="data" label="Taxon A IDs" optional="true"/>
+		<param format="tabular" name="genomesb" type="data" label="Taxon B IDs" optional="true"/>
     </inputs>
     <outputs>
         <data format="txt" name="logfile" label="Logfile for ${tool.name}" />
+        <data format="tabular" name="transferedcogs" label="Transfered COG annotations">
+        	<filter>filtermultiplecogs</filter>
+        </data>
         <data format="zip" name="recombinedzip" label="Recombination orthologs">
-            <filter>(filterconditional['filterrecombination'] == 'yes')</filter>
+            <filter>filterrecombination</filter>
         </data>
         <data format="zip" name="retainedzip" label="Retained orthologs" />
     </outputs>
