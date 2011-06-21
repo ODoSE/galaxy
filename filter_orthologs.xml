@@ -5,7 +5,7 @@
     </requirements>
     <command interpreter="python">wrapper.py divergence.filter_orthologs $logfile
 --orthologs-zip $dnazip
-# if $transferedcogs
+#if $transferedcogs
 --filter-multiple-cogs $transferedcogs
 #end if
 #if $recombinedzip
