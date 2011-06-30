@@ -10,6 +10,7 @@
 	<inputs>
    		<param name="genomes" type="select" display="checkboxes" multiple="true" optional="false" force_select="true" 
    		label="Choose Genomes" help="Select between two and forty genomes for analysis." dynamic_options="get_complete_genomes()"/>
+		<param format="tabular" name="genomes" type="data" label="Previous GenBank Project IDs" optional="true" />
 	</inputs>
 	<outputs>
 		<data format="tabular" name="genomesfile" label="Genome GenBank Project IDs" />

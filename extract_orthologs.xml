@@ -15,9 +15,9 @@
 --stats $stats
 </command>
 	<inputs>
-		<param format="txt" name="genomes" type="data" label="GenBank Project IDs" />
+		<param format="tabular" name="genomes" type="data" label="GenBank Project IDs" />
 		<param format="zip" name="dnazip" type="data" label="Extracted DNA sequences" />
-		<param format="txt" name="groups" type="data" label="Orthologous groups" />
+		<param format="tabular" name="groups" type="data" label="Orthologous groups" />
 	</inputs>
 	<outputs>
 		<data format="tabular" name="stats" label="Ortholog extraction statistics" />
