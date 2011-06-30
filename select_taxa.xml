@@ -5,12 +5,19 @@
 	</requirements>
 	<code file="select_taxa.py"/>
 	<command interpreter="python">wrapper.py divergence.select_taxa logfile
+#if $genomes.value
 --genomes $genomes
+#end if
+
+#if $previousfile.dataset
+--previous-file $previousfile
+#end if
+
 --genomes-file $genomesfile</command>
 	<inputs>
-   		<param name="genomes" type="select" display="checkboxes" multiple="true" optional="false" force_select="true" 
+   		<param name="genomes" type="select" display="checkboxes" multiple="true" optional="true" force_select="false" 
    		label="Choose Genomes" help="Select between two and forty genomes for analysis." dynamic_options="get_complete_genomes()"/>
-		<param format="tabular" name="genomes" type="data" label="Previous GenBank Project IDs" optional="true" />
+		<param format="tabular" name="previousfile" type="data" label="Previous GenBank Project IDs" optional="true" />
 	</inputs>
 	<outputs>
 		<data format="tabular" name="genomesfile" label="Genome GenBank Project IDs" />
