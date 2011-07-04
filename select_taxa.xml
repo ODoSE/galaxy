@@ -4,7 +4,7 @@
 		<requirement type="python-module">divergence</requirement>
 	</requirements>
 	<code file="select_taxa.py"/>
-	<command interpreter="python">wrapper.py divergence.select_taxa logfile
+	<command interpreter="python">wrapper.py divergence.select_taxa $logfile
 #if $genomes.value
 --genomes $genomes
 #end if
@@ -28,7 +28,7 @@ $requireptt
         </param>
 	</inputs>
 	<outputs>
-        <data format="txt" name="logfile" label="Logfile for ${tool.name}" />
+		<data format="txt" name="logfile" label="Logfile for ${tool.name}" />
 		<data format="tabular" name="genomesfile" label="Genome GenBank Project IDs" />
 	</outputs>
 	<help>
