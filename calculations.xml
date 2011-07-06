@@ -1,9 +1,9 @@
-<tool id="divergence_calculate_pnps" name="Calculate direction of selection">
+<tool id="divergence_calculations" name="Calculate direction of selection">
 	<description>per taxon</description>
 	<requirements>
 		<requirement type="python-module">divergence</requirement>
 	</requirements>
-	<command interpreter="python">wrapper.py divergence.calculate_pnps logfile
+	<command interpreter="python">wrapper.py divergence.calculations logfile
 --genomes-a $genomesa
 --genomes-b $genomesb
 --sico-zip $sicozip 
