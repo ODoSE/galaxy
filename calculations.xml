@@ -8,11 +8,17 @@
 --genomes-b $genomesb
 --sico-zip $sicozip 
 --table-a $tablea 
---table-b $tableb</command>
+--table-b $tableb
+$oddeven
+</command>
 	<inputs>
 		<param format="tabular" name="genomesa" type="data" label="Taxon A IDs" />
 		<param format="tabular" name="genomesb" type="data" label="Taxon B IDs" />
 		<param format="zip" name="sicozip" type="data" label="Aligned / Trimmed orthologs" />
+		<param name="oddeven" type="boolean" checked="false" truevalue="--append-odd-even" falsevalue="">
+			<label>Append tables calculated for odd and even codons</label>
+			<help>This additional tables could for instance be used as independent axis in a graph.</help>
+		</param>
 	</inputs>
 	<outputs>
 		<data format="tabular" name="tablea" label="Statistics table for Taxon A" />
