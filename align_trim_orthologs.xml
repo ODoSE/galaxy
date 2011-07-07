@@ -3,10 +3,11 @@
     <requirements>
         <requirement type="python-module">divergence</requirement>
     </requirements>
-    <command interpreter="python">wrapper.py divergence.align_trim_orthologs $logfile
+    <command interpreter="python">wrapper.py divergence.align_trim_orthologs logfile
 --orthologs-zip $dnazip
 --retained-threshold $retainedthreshold
 --aligned-zip $alignedzip
+--misaligned-zip $misalignedzip
 --trimmed-zip $trimmedzip
 --stats $stats
 </command>
@@ -17,9 +18,9 @@
         </param>
     </inputs>
     <outputs>
-        <data format="txt" name="logfile" label="Logfile for ${tool.name}" />
         <data format="tabular" name="stats" label="Ortholog trimming statistics" />
         <data format="zip" name="alignedzip" label="Aligned orthologs" />
+        <data format="zip" name="misalignedzip" label="Misaligned orthologs" />
         <data format="zip" name="trimmedzip" label="Trimmed orthologs" />
     </outputs>
     <help>
