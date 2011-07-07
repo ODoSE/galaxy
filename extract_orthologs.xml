@@ -20,10 +20,10 @@
 		<param format="tabular" name="groups" type="data" label="Orthologous groups" />
 	</inputs>
 	<outputs>
-		<data format="tabular" name="stats" label="Ortholog extraction statistics" />
 		<data format="zip" name="subsetzip" label="Accessory genes" />
 		<data format="zip" name="mucozip" label="Shared multiple-copy orthologous genes" />
 		<data format="zip" name="sicozip" label="Shared single-copy orthologous genes" />
+		<data format="tabular" name="stats" label="Ortholog extraction statistics" />
 	</outputs>
 	<help>
 For the groups or orthologous genes identified using OrthoMCL, this tool:
