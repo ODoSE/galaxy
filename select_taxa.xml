@@ -15,10 +15,11 @@
 
 $requireptt
 
---genomes-file $genomesfile</command>
+--genomes-file $genomesfile
+</command>
 	<inputs>
-   		<param name="genomes" type="select" display="checkboxes" multiple="true" optional="true" force_select="false" 
-   		label="Choose Genomes" help="Select between two and forty genomes for analysis." dynamic_options="get_complete_genomes()"/>
+		<param name="genomes" type="select" display="checkboxes" multiple="true" optional="true" force_select="false" 
+		label="Choose Genomes" help="Select between two and forty genomes for analysis." dynamic_options="get_complete_genomes()"/>
 		<param format="tabular" name="previousfile" type="data" label="Previous GenBank Project IDs" optional="true">
 			<help>From a previous run or externally created/modified file.</help>
 		</param>
