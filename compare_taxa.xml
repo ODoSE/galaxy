@@ -10,10 +10,10 @@
 --filtered-taxon-b $filteredb
 </command>
     <inputs>
-		<param format="tabular" name="unfiltereda" type="data" label="Unfiltered Taxon A IDs" />
-		<param format="tabular" name="unfilteredb" type="data" label="Unfiltered Taxon B IDs" />
-		<param format="tabular" name="filtereda" type="data" label="Filtered Taxon A IDs" />
-		<param format="tabular" name="filteredb" type="data" label="Filtered Taxon B IDs" />
+		<param format="projectids" name="unfiltereda" type="data" label="Unfiltered Taxon A IDs" />
+		<param format="projectids" name="unfilteredb" type="data" label="Unfiltered Taxon B IDs" />
+		<param format="projectids" name="filtereda" type="data" label="Filtered Taxon A IDs" />
+		<param format="projectids" name="filteredb" type="data" label="Filtered Taxon B IDs" />
     </inputs>
     <outputs>
         <data format="txt" name="logfile" label="Logfile for ${tool.name}" />

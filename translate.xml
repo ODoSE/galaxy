@@ -9,7 +9,7 @@
 --protein-zip $proteinzip
 </command>
 	<inputs>
-		<param format="tabular" name="genomes" type="data" label="GenBank Project IDs" />
+		<param format="projectids" name="genomes" type="data" label="GenBank Project IDs" />
 	</inputs>
 	<outputs>
         <data format="txt" name="logfile" label="Logfile for ${tool.name}" />

@@ -20,7 +20,7 @@ $requireptt
 	<inputs>
 		<param name="genomes" type="select" display="checkboxes" multiple="true" optional="true" force_select="false" 
 		label="Choose Genomes" help="Select between two and forty genomes for analysis." dynamic_options="get_complete_genomes()"/>
-		<param format="tabular" name="previousfile" type="data" label="Previous GenBank Project IDs" optional="true">
+		<param format="projectids" name="previousfile" type="data" label="Previous GenBank Project IDs" optional="true">
 			<help>From a previous run or externally created/modified file.</help>
 		</param>
 		<param name="requireptt" type="boolean" checked="true" truevalue="--require-protein-table" falsevalue="">
@@ -30,7 +30,7 @@ $requireptt
 	</inputs>
 	<outputs>
 		<data format="txt" name="logfile" label="Logfile for ${tool.name}" />
-		<data format="tabular" name="genomesfile" label="Genome GenBank Project IDs" />
+		<data format="projectids" name="genomesfile" label="Genome GenBank Project IDs" />
 	</outputs>
 	<help>
 This tool allows you to select genomes for analysis in the Genome-wide signatures of adaptive divergence pipeline.

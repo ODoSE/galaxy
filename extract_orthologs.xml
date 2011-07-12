@@ -16,7 +16,7 @@
 --heatmap $heatmap
 </command>
 	<inputs>
-		<param format="tabular" name="genomes" type="data" label="GenBank Project IDs" />
+		<param format="projectids" name="genomes" type="data" label="GenBank Project IDs" />
 		<param format="zip" name="dnazip" type="data" label="Extracted DNA sequences" />
 		<param format="tabular" name="groups" type="data" label="Orthologous groups" />
 	</inputs>

@@ -16,8 +16,8 @@
     <outputs>
         <data format="fasta" name="concatemerfasta" label="Concatemer of all genomes" />
         <data format="txt" name="tree" label="Phylogenetic tree" />
-        <data format="tabular" name="taxona" label="Taxon A IDs" />
-        <data format="tabular" name="taxonb" label="Taxon B IDs" />
+        <data format="projectids" name="taxona" label="Taxon A IDs" />
+        <data format="projectids" name="taxonb" label="Taxon B IDs" />
     </outputs>
     <help>
 This tool concatenates orthologs per genome into a FASTA records, and combines the records into a single FASTA file.
