@@ -24,8 +24,8 @@
 		<data format="zip" name="subsetzip" label="Accessory genes" />
 		<data format="zip" name="mucozip" label="Shared multiple-copy orthologous genes" />
 		<data format="zip" name="sicozip" label="Shared single-copy orthologous genes" />
-		<data format="tabular" name="stats" label="Ortholog extraction statistics" />
 		<data format="tabular" name="heatmap" label="Ortholog occurrences in genomes" />
+		<data format="tabular" name="stats" label="Ortholog extraction statistics" />
 	</outputs>
 	<help>
 For the groups or orthologous genes identified using OrthoMCL, this tool:
