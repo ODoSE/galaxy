@@ -8,6 +8,7 @@
 --genomes $genomes
 --dna-zip $dnazip
 --groups $groups
+$requirelimiter
 
 --sico-zip $sicozip
 --muco-zip $mucozip
@@ -19,6 +20,12 @@
 		<param format="projectids" name="genomes" type="data" label="GenBank Project IDs" />
 		<param format="zip" name="dnazip" type="data" label="Extracted DNA sequences" />
 		<param format="tabular" name="groups" type="data" label="Orthologous groups" />
+		<param name="requirelimiter" type="boolean" checked="false" truevalue="--require-limiter" falsevalue="">
+			<label>Should extracted core set of genomes contain the limiter added in OrthoMCL step?</label>
+			<help>Enable this option to limit the identified shared orthologs to orthologs that also contain limiter.
+Disabling this option does not impose this restriction, but identified orthologs could still be influenced by limiter.
+</help>
+		</param>
 	</inputs>
 	<outputs>
 		<data format="zip" name="subsetzip" label="Accessory genes" />
