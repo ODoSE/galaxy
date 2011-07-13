@@ -1,0 +1,508 @@
+{
+    "a_galaxy_workflow": "true", 
+    "annotation": "", 
+    "format-version": "0.1", 
+    "name": "Genome-wide signatures of adaptive divergence in bacteria", 
+    "steps": {
+        "0": {
+            "annotation": "", 
+            "id": 0, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Select taxa", 
+                    "name": "requireptt"
+                }, 
+                {
+                    "description": "runtime parameter for tool Select taxa", 
+                    "name": "genomes"
+                }
+            ], 
+            "name": "Select taxa", 
+            "outputs": [
+                {
+                    "name": "logfile", 
+                    "type": "txt"
+                }, 
+                {
+                    "name": "genomesfile", 
+                    "type": "projectids"
+                }
+            ], 
+            "position": {
+                "left": 200, 
+                "top": 452
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "divergence_select_taxa", 
+            "tool_state": "{\"__page__\": 0, \"genomes\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"previousfile\": \"null\", \"requireptt\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "1": {
+            "annotation": "", 
+            "id": 1, 
+            "input_connections": {
+                "genomes": {
+                    "id": 0, 
+                    "output_name": "genomesfile"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Extract & translate genes", 
+            "outputs": [
+                {
+                    "name": "logfile", 
+                    "type": "txt"
+                }, 
+                {
+                    "name": "dnazip", 
+                    "type": "zip"
+                }, 
+                {
+                    "name": "proteinzip", 
+                    "type": "zip"
+                }
+            ], 
+            "position": {
+                "left": 458, 
+                "top": 569
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "divergence_translate", 
+            "tool_state": "{\"__page__\": 0, \"genomes\": \"null\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "2": {
+            "annotation": "", 
+            "id": 2, 
+            "input_connections": {
+                "proteinzip": {
+                    "id": 1, 
+                    "output_name": "proteinzip"
+                }
+            }, 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Run OrthoMCL", 
+                    "name": "proteinlength"
+                }
+            ], 
+            "name": "Run OrthoMCL", 
+            "outputs": [
+                {
+                    "name": "logfile", 
+                    "type": "txt"
+                }, 
+                {
+                    "name": "poorproteins", 
+                    "type": "fasta"
+                }, 
+                {
+                    "name": "groups", 
+                    "type": "tabular"
+                }
+            ], 
+            "position": {
+                "left": 741, 
+                "top": 648
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "divergence_run_orthomcl", 
+            "tool_state": "{\"proteinlength\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"proteinzip\": \"null\", \"__page__\": 0}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "3": {
+            "annotation": "", 
+            "id": 3, 
+            "input_connections": {
+                "dnazip": {
+                    "id": 1, 
+                    "output_name": "dnazip"
+                }, 
+                "genomes": {
+                    "id": 0, 
+                    "output_name": "genomesfile"
+                }, 
+                "groups": {
+                    "id": 2, 
+                    "output_name": "groups"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Extract & categorize orthologs", 
+            "outputs": [
+                {
+                    "name": "subsetzip", 
+                    "type": "zip"
+                }, 
+                {
+                    "name": "mucozip", 
+                    "type": "zip"
+                }, 
+                {
+                    "name": "sicozip", 
+                    "type": "zip"
+                }, 
+                {
+                    "name": "stats", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "heatmap", 
+                    "type": "tabular"
+                }
+            ], 
+            "position": {
+                "left": 972, 
+                "top": 452
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "divergence_extract_orthologs", 
+            "tool_state": "{\"__page__\": 0, \"dnazip\": \"null\", \"genomes\": \"null\", \"groups\": \"null\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "4": {
+            "annotation": "", 
+            "id": 4, 
+            "input_connections": {
+                "input": {
+                    "id": 3, 
+                    "output_name": "stats"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Bar chart", 
+            "outputs": [
+                {
+                    "name": "out_file1", 
+                    "type": "png"
+                }
+            ], 
+            "position": {
+                "left": 1275, 
+                "top": 343
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "barchart_gnuplot", 
+            "tool_state": "{\"__page__\": 0, \"colList\": \"{\\\"__class__\\\": \\\"UnvalidatedValue\\\", \\\"value\\\": [\\\"1\\\"]}\", \"title\": \"\\\"Orthologous groups\\\"\", \"pdf_size\": \"\\\"800,600\\\"\", \"xtic\": \"{\\\"userSpecified\\\": \\\"Yes\\\", \\\"xticColumn\\\": {\\\"__class__\\\": \\\"UnvalidatedValue\\\", \\\"value\\\": \\\"3\\\"}, \\\"__current_case__\\\": 0}\", \"ylabel\": \"\\\"# of orthologs\\\"\", \"input\": \"null\", \"ymin\": \"\\\"0\\\"\", \"ymax\": \"\\\"0\\\"\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "5": {
+            "annotation": "", 
+            "id": 5, 
+            "input_connections": {
+                "dnazip": {
+                    "id": 3, 
+                    "output_name": "sicozip"
+                }
+            }, 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Align & trim orthologs", 
+                    "name": "retainedthreshold"
+                }
+            ], 
+            "name": "Align & trim orthologs", 
+            "outputs": [
+                {
+                    "name": "alignedzip", 
+                    "type": "zip"
+                }, 
+                {
+                    "name": "misalignedzip", 
+                    "type": "zip"
+                }, 
+                {
+                    "name": "trimmedzip", 
+                    "type": "zip"
+                }, 
+                {
+                    "name": "stats", 
+                    "type": "tabular"
+                }
+            ], 
+            "position": {
+                "left": 1280, 
+                "top": 489
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "divergence_align_trim_orthologs", 
+            "tool_state": "{\"__page__\": 0, \"dnazip\": \"null\", \"retainedthreshold\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "6": {
+            "annotation": "", 
+            "id": 6, 
+            "input_connections": {
+                "input": {
+                    "id": 5, 
+                    "output_name": "stats"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Scatterplot", 
+            "outputs": [
+                {
+                    "name": "out_file1", 
+                    "type": "pdf"
+                }
+            ], 
+            "position": {
+                "left": 1540, 
+                "top": 336
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "scatterplot_rpy", 
+            "tool_state": "{\"xlab\": \"\\\"percentage retained\\\"\", \"title\": \"\\\"Align&Trim\\\"\", \"__page__\": 0, \"col2\": \"{\\\"__class__\\\": \\\"UnvalidatedValue\\\", \\\"value\\\": \\\"2\\\"}\", \"col1\": \"{\\\"__class__\\\": \\\"UnvalidatedValue\\\", \\\"value\\\": \\\"4\\\"}\", \"input\": \"null\", \"ylab\": \"\\\"original length\\\"\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "7": {
+            "annotation": "", 
+            "id": 7, 
+            "input_connections": {
+                "orthologs": {
+                    "id": 5, 
+                    "output_name": "trimmedzip"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Concatenate and deduce taxa", 
+            "outputs": [
+                {
+                    "name": "concatemerfasta", 
+                    "type": "fasta"
+                }, 
+                {
+                    "name": "tree", 
+                    "type": "txt"
+                }, 
+                {
+                    "name": "taxona", 
+                    "type": "projectids"
+                }, 
+                {
+                    "name": "taxonb", 
+                    "type": "projectids"
+                }
+            ], 
+            "position": {
+                "left": 1553, 
+                "top": 457
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "divergence_concatemer_tree", 
+            "tool_state": "{\"__page__\": 0, \"orthologs\": \"null\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "8": {
+            "annotation": "", 
+            "id": 8, 
+            "input_connections": {
+                "dnazip": {
+                    "id": 5, 
+                    "output_name": "trimmedzip"
+                }, 
+                "genomesa": {
+                    "id": 7, 
+                    "output_name": "taxona"
+                }, 
+                "genomesb": {
+                    "id": 7, 
+                    "output_name": "taxonb"
+                }
+            }, 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Filter orthologs", 
+                    "name": "filterrecombination"
+                }, 
+                {
+                    "description": "runtime parameter for tool Filter orthologs", 
+                    "name": "filtermultiplecogs"
+                }
+            ], 
+            "name": "Filter orthologs", 
+            "outputs": [
+                {
+                    "name": "logfile", 
+                    "type": "txt"
+                }, 
+                {
+                    "name": "transferedcogs", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "recombinedzip", 
+                    "type": "zip"
+                }, 
+                {
+                    "name": "retainedzip", 
+                    "type": "zip"
+                }
+            ], 
+            "position": {
+                "left": 1801, 
+                "top": 657
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "divergence_filter_orthologs", 
+            "tool_state": "{\"__page__\": 0, \"filterrecombination\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"genomesb\": \"null\", \"genomesa\": \"null\", \"dnazip\": \"null\", \"filtermultiplecogs\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "9": {
+            "annotation": "", 
+            "id": 9, 
+            "input_connections": {
+                "orthologs": {
+                    "id": 8, 
+                    "output_name": "retainedzip"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Concatenate and deduce taxa", 
+            "outputs": [
+                {
+                    "name": "concatemerfasta", 
+                    "type": "fasta"
+                }, 
+                {
+                    "name": "tree", 
+                    "type": "txt"
+                }, 
+                {
+                    "name": "taxona", 
+                    "type": "projectids"
+                }, 
+                {
+                    "name": "taxonb", 
+                    "type": "projectids"
+                }
+            ], 
+            "position": {
+                "left": 2034, 
+                "top": 571
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "divergence_concatemer_tree", 
+            "tool_state": "{\"__page__\": 0, \"orthologs\": \"null\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "10": {
+            "annotation": "", 
+            "id": 10, 
+            "input_connections": {
+                "filtereda": {
+                    "id": 9, 
+                    "output_name": "taxona"
+                }, 
+                "filteredb": {
+                    "id": 9, 
+                    "output_name": "taxonb"
+                }, 
+                "unfiltereda": {
+                    "id": 7, 
+                    "output_name": "taxona"
+                }, 
+                "unfilteredb": {
+                    "id": 7, 
+                    "output_name": "taxonb"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Compare taxa", 
+            "outputs": [
+                {
+                    "name": "logfile", 
+                    "type": "txt"
+                }
+            ], 
+            "position": {
+                "left": 2418, 
+                "top": 457
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "divergence_compare_taxa", 
+            "tool_state": "{\"filteredb\": \"null\", \"__page__\": 0, \"filtereda\": \"null\", \"unfilteredb\": \"null\", \"unfiltereda\": \"null\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "11": {
+            "annotation": "", 
+            "id": 11, 
+            "input_connections": {
+                "genomesa": {
+                    "id": 9, 
+                    "output_name": "taxona"
+                }, 
+                "genomesb": {
+                    "id": 9, 
+                    "output_name": "taxonb"
+                }, 
+                "sicozip": {
+                    "id": 8, 
+                    "output_name": "retainedzip"
+                }
+            }, 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Calculate direction of selection", 
+                    "name": "oddeven"
+                }
+            ], 
+            "name": "Calculate direction of selection", 
+            "outputs": [
+                {
+                    "name": "tablea", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "tableb", 
+                    "type": "tabular"
+                }
+            ], 
+            "position": {
+                "left": 2387, 
+                "top": 733
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "divergence_calculations", 
+            "tool_state": "{\"__page__\": 0, \"oddeven\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"sicozip\": \"null\", \"genomesb\": \"null\", \"genomesa\": \"null\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }
+    }
+}
