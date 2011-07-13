@@ -5,6 +5,7 @@
     </requirements>
     <command interpreter="python">wrapper.py divergence.concatemer_tree logfile
 --orthologs-zip $orthologs
+--coding-regions $codingregions
 --concatemer $concatemerfasta
 --tree $tree
 --taxon-a $taxona
@@ -14,6 +15,7 @@
         <param type="data" format="zip" name="orthologs" label="Orthologous genes" />
     </inputs>
     <outputs>
+        <data format="zip" name="codingregions" label="Coding regions per genome" />
         <data format="fasta" name="concatemerfasta" label="Concatemer of all genomes" />
         <data format="txt" name="tree" label="Phylogenetic tree" />
         <data format="projectids" name="taxona" label="Taxon A IDs" />
