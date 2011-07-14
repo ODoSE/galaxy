@@ -4,7 +4,11 @@
 		<requirement type="python-module">divergence</requirement>
 	</requirements>
 	<code file="select_taxa.py"/>
-	<command interpreter="python">wrapper.py divergence.select_taxa $logfile
+	<command interpreter="python">printer.py divergence.select_taxa $logfile
+#if $externaldatasets
+--external-genomes #for $ext in $externaldatasets #${ext.label}:${ext.fastafile},#end for
+#end if
+
 #if $genomes.value
 --genomes $genomes
 #end if
@@ -18,11 +22,22 @@ $requireptt
 --genomes-file $genomesfile
 </command>
 	<inputs>
+		<!-- User supplied datasets, which could be unpublished, or not listed in NCBI RefSeq / GenBank -->
+		<repeat name="externaldatasets" title="External genome">
+			<param name="label" type="text" label="Genome label" optional="false">
+				<help>Provide a unique genome label that will be used to identify your genome in further output files.</help>
+			</param>
+			<param format="fasta" name="fastafile" type="data" label="Genome coding regions" optional="false">
+				<help>Nucleotide fasta file containing coding regions in individual records from an outside source.</help>
+			</param>
+		</repeat>
+		<!-- Complete Microbial Genomes selectable genomes -->
 		<param name="genomes" type="select" display="checkboxes" multiple="true" optional="true" force_select="false" 
 		label="Choose Genomes" dynamic_options="get_complete_genomes()">
-			<help>Select between two and forty genomes for analysis.
-This list is synchronized with the Complete Microbial Genomes table at http://www.ncbi.nlm.nih.gov/genomes/lproks.cgi
-See the Complete Microbial Genomes table list for additional selection criteria. 
+			<help>
+Select between two and forty genomes for analysis, or provide external genomes not included in this list above. 
+This list is synchronized with the Complete Microbial Genomes table at http://www.ncbi.nlm.nih.gov/genomes/lproks.cgi 
+See the original table for alternate sorting and selection criteria.
 			</help>
 		</param>
 		<param format="projectids" name="previousfile" type="data" label="Previous GenBank Project IDs" optional="true">
