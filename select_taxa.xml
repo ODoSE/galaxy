@@ -19,7 +19,12 @@ $requireptt
 </command>
 	<inputs>
 		<param name="genomes" type="select" display="checkboxes" multiple="true" optional="true" force_select="false" 
-		label="Choose Genomes" help="Select between two and forty genomes for analysis." dynamic_options="get_complete_genomes()"/>
+		label="Choose Genomes" dynamic_options="get_complete_genomes()">
+			<help>Select between two and forty genomes for analysis.
+This list is synchronized with the Complete Microbial Genomes table at http://www.ncbi.nlm.nih.gov/genomes/lproks.cgi
+See the Complete Microbial Genomes table list for additional selection criteria. 
+			</help>
+		</param>
 		<param format="projectids" name="previousfile" type="data" label="Previous GenBank Project IDs" optional="true">
 			<help>From a previous run or externally created/modified file.</help>
 		</param>
