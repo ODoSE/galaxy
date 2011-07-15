@@ -24,6 +24,7 @@ $requireptt
 	<inputs>
 		<!-- User supplied datasets, which could be unpublished, or not listed in NCBI RefSeq / GenBank -->
 		<repeat name="externaldatasets" title="External genome">
+			<!-- TODO Add validator that this label only contains characters and digits -->
 			<param name="label" type="text" label="Genome label" optional="false">
 				<help>Provide a unique genome label that will be used to identify your genome in further output files.</help>
 			</param>
@@ -51,6 +52,7 @@ See the original table for alternate sorting and selection criteria.
 	<outputs>
 		<data format="txt" name="logfile" label="Logfile for ${tool.name}" />
 		<data format="projectids" name="genomesfile" label="Genome GenBank Project IDs" />
+		<!-- TODO Add additional external zip output file that is dependent on externaldatasets -->
 	</outputs>
 	<help>
 This tool allows you to select genomes for analysis in the Genome-wide signatures of adaptive divergence pipeline.
