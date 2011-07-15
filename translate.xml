@@ -4,15 +4,21 @@
 		<requirement type="python-module">divergence</requirement>
 	</requirements>
 	<command interpreter="python">wrapper.py divergence.translate $logfile
+#if $genomes.dataset
 --genomes $genomes
+#end if
+#if $externalzip.dataset
+--external-zip $externalzip
+#end if
 --dna-zip $dnazip
 --protein-zip $proteinzip
 </command>
 	<inputs>
-		<param format="projectids" name="genomes" type="data" label="GenBank Project IDs" />
+		<param format="projectids" name="genomes" type="data" label="GenBank Project IDs" optional="True"/>
+		<param format="zip" name="externalzip" type="data" label="External Genomes" optional="True"/>
 	</inputs>
 	<outputs>
-        <data format="txt" name="logfile" label="Logfile for ${tool.name}" />
+		<data format="txt" name="logfile" label="Logfile for ${tool.name}" />
 		<data format="zip" name="dnazip" label="Extracted DNA sequences" />
 		<data format="zip" name="proteinzip" label="Translated gene proteins" />
 	</outputs>
@@ -26,5 +32,5 @@ This tool:
 - translates genes to protein level according to the specified coding table,
 
 - returns archives of extracted DNA and translated Protein files all in FASTA format.
-  </help>
+</help>
 </tool>

@@ -4,7 +4,7 @@
 		<requirement type="python-module">divergence</requirement>
 	</requirements>
 	<code file="select_taxa.py"/>
-	<command interpreter="python">printer.py divergence.select_taxa $logfile
+	<command interpreter="python">wrapper.py divergence.select_taxa $logfile
 #if $externaldatasets
 --external-genomes #for $ext in $externaldatasets #${ext.label}:${ext.fastafile},#end for
 --external-zip $externalgenomes
