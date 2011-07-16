@@ -41,7 +41,7 @@ $requireptt
 		<param name="genomes" type="select" display="checkboxes" multiple="true" optional="true" force_select="false" 
 		label="Choose Genomes" dynamic_options="get_complete_genomes()">
 			<help>
-Select between two and forty genomes for analysis, or provide external genomes not included in this list above. 
+Select between two and one hundred genomes for analysis, or provide external genomes not included in this list above. 
 This list is synchronized with the Complete Microbial Genomes table at http://www.ncbi.nlm.nih.gov/genomes/lproks.cgi 
 See the original table for alternate sorting and selection criteria.
 			</help>
