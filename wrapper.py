@@ -15,6 +15,7 @@ except ImportError as ie:
 import logging
 FILE_HANDLER = logging.FileHandler(sys.argv[2], mode = 'w')
 FILE_HANDLER.setFormatter(logging.Formatter())
+FILE_HANDLER.setLevel(logging.INFO)
 logging.root.addHandler(FILE_HANDLER)
 
 #Run main method within module with remaining arguments

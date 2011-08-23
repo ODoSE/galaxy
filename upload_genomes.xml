@@ -25,8 +25,10 @@
 		</repeat>
 	</inputs>
 	<outputs>
-		<!-- <data format="txt" name="logfile" label="Logfile for ${tool.name}" /> -->
-		<data format="zip" name="externalgenomes" label="External Genomes" />
+		<data format="txt" name="logfile" label="Logfile for ${tool.name}" />
+		<data format="zip" name="externalgenomes" label="External Genomes">
+			<filter>externaldatasets</filter>
+		</data>
 	</outputs>
 	<help>
 This tool allows you to upload genomes from external resources for analysis in the Genome-wide signatures of adaptive 
@@ -34,7 +36,7 @@ divergence pipeline. This could include unpublished genomes, or genomes not avai
 
 - A unique label should be provided for each uploaded genome consisting of letters, digits and underscores.
 - Genomes should be uploaded as nucleotide fasta files containing protein coding regions in separate records.
-- Fasta headers will not be preserved.
+- Fasta headers will be altered, but identifiers will be preserved in altered form.
 - In-reading-frame gap codons ('---') will be removed.
 - Sequences should not result in ambiguous translations, and should therefore not contain ambiguous characters.
 - At present the translation table is fixed at the NCBI standard bacterial and plant plastid translation table 11. 
