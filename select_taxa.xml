@@ -34,7 +34,7 @@ See the original table for alternate sorting and selection criteria.
 		<param format="projectids" name="previousfile" type="data" label="Previous GenBank Project IDs" optional="true">
 			<help>From a previous run or externally created/modified file.</help>
 		</param>
-		<param format="zip" name="externalzip" type="data" label="External Genomes" optional="True"/>
+		<param format="genomeszip" name="externalzip" type="data" label="External Genomes" optional="True"/>
 		<param name="requireptt" type="boolean" checked="true" truevalue="--require-protein-table" falsevalue="">
 			<label>Require protein table files be present</label>
 			<help>These tables contain COGs assigned to coding sequences.</help>

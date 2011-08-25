@@ -12,10 +12,10 @@
 --taxon-b $taxonb
 </command>
     <inputs>
-        <param type="data" format="zip" name="orthologs" label="Orthologous genes" />
+        <param type="data" format="orthologszip" name="orthologs" label="Orthologous genes" />
     </inputs>
     <outputs>
-        <data format="zip" name="codingregions" label="Coding regions per genome" />
+        <data format="dnazip" name="codingregions" label="Coding regions per genome" />
         <data format="fasta" name="concatemerfasta" label="Concatemer of all genomes" />
         <data format="txt" name="tree" label="Phylogenetic tree" />
         <data format="projectids" name="taxona" label="Taxon A IDs" />

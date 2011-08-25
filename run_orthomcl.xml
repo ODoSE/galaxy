@@ -13,7 +13,7 @@
 --groups $groups
 </command>
 	<inputs>
-		<param format="zip" name="proteinzip" type="data" label="Translated gene proteins" />
+		<param format="proteinszip" name="proteinzip" type="data" label="Translated gene proteins" />
 		<param format="fasta" name="limiter" type="data" label="Core set of orthologous genes limiter" optional="true">
 			<help>
 Nucleotide fasta file containing coding regions in individual records. This file will be translated to protein and fed 
