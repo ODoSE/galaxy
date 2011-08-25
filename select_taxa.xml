@@ -14,7 +14,7 @@
 #end if
 
 #if $externalzip.dataset
---external-zip $externalgenomes
+--external-zip $externalzip
 #end if
 
 $requireptt
