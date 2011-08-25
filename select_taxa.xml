@@ -23,20 +23,6 @@ $requireptt
 --genomes-file $genomesfile
 </command>
 	<inputs>
-		<!-- User supplied datasets, which could be unpublished, or not listed in NCBI RefSeq / GenBank -->
-		<repeat name="externaldatasets" title="External genome">
-			<param name="label" type="text" label="Genome label" optional="false">
-				<help>Provide a unique genome label that will be used to identify your genome in further output files.</help>
-				<sanitizer invalid_char="_">
-					<valid initial="string.letters">
-						<add preset="string.digits"/>
-					</valid>
-				</sanitizer>
-			</param>
-			<param format="fasta" name="fastafile" type="data" label="Genome coding regions" optional="false">
-				<help>Nucleotide fasta file containing coding regions in individual records from an outside source.</help>
-			</param>
-		</repeat>
 		<!-- Complete Microbial Genomes selectable genomes -->
 		<param name="genomes" type="select" display="checkboxes" multiple="true" optional="true" force_select="false" 
 		label="Choose Genomes" dynamic_options="get_complete_genomes()">
@@ -49,6 +35,7 @@ See the original table for alternate sorting and selection criteria.
 		<param format="projectids" name="previousfile" type="data" label="Previous GenBank Project IDs" optional="true">
 			<help>From a previous run or externally created/modified file.</help>
 		</param>
+		<param format="zip" name="externalzip" type="data" label="External Genomes" optional="True"/>
 		<param name="requireptt" type="boolean" checked="true" truevalue="--require-protein-table" falsevalue="">
 			<label>Require protein table files be present</label>
 			<help>These tables contain COGs assigned to coding sequences.</help>
@@ -57,9 +44,6 @@ See the original table for alternate sorting and selection criteria.
 	<outputs>
 		<data format="txt" name="logfile" label="Logfile for ${tool.name}" />
 		<data format="projectids" name="genomesfile" label="Genome GenBank Project IDs" />
-		<data format="zip" name="externalgenomes" label="External Genomes">
-			<filter>externaldatasets</filter>
-		</data>
 	</outputs>
 	<help>
 This tool allows you to select genomes for analysis in the Genome-wide signatures of adaptive divergence pipeline.
