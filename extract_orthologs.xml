@@ -21,7 +21,7 @@ $requirelimiter
 		<param format="dnazip" name="dnazip" type="data" label="Extracted DNA sequences" />
 		<param format="tabular" name="groups" type="data" label="Orthologous groups" />
 		<param name="requirelimiter" type="boolean" checked="false" truevalue="--require-limiter" falsevalue="">
-			<label>Should extracted core set of genomes contain the limiter added in OrthoMCL step?</label>
+			<label>Should extracted core set of single-copy genes contain the limiter added in OrthoMCL step?</label>
 			<help>Enable this option to limit the identified shared orthologs to orthologs that also contain limiter.
 Disabling this option does not impose this restriction, but identified orthologs could still be influenced by limiter.
 </help>
@@ -31,7 +31,7 @@ Disabling this option does not impose this restriction, but identified orthologs
 		<data format="orthologszip" name="subsetzip" label="Accessory genes" />
 		<data format="orthologszip" name="mucozip" label="Shared multiple-copy orthologous genes" />
 		<data format="orthologszip" name="sicozip" label="Shared single-copy orthologous genes" />
-		<data format="tabular" name="heatmap" label="Ortholog occurrences in genomes" />
+		<data format="tabular" name="heatmap" label="Ortholog distributions" />
 		<data format="tabular" name="stats" label="Ortholog extraction statistics" />
 	</outputs>
 	<help>

@@ -9,15 +9,15 @@
 --genomes $genomes
 #end if
 
-#if $previousfile.dataset
---previous-file $previousfile
-#end if
-
 #if $externalzip.dataset
 --external-zip $externalzip
 #end if
 
-$requireptt
+###if $previousfile.dataset
+##--previous-file $previousfile
+###end if
+
+##$requireptt
 
 --genomes-file $genomesfile
 </command>
@@ -31,14 +31,16 @@ This list is synchronized with the Complete Microbial Genomes table at http://ww
 See the original table for alternate sorting and selection criteria.
 			</help>
 		</param>
+		<param format="genomeszip" name="externalzip" type="data" label="External Genomes" optional="True"/>
+<!--
 		<param format="projectids" name="previousfile" type="data" label="Previous GenBank Project IDs" optional="true">
 			<help>From a previous run or externally created/modified file.</help>
 		</param>
-		<param format="genomeszip" name="externalzip" type="data" label="External Genomes" optional="True"/>
-		<param name="requireptt" type="boolean" checked="true" truevalue="--require-protein-table" falsevalue="">
+		<param name="requireptt" type="boolean" checked="true" truevalue="- -require-protein-table" falsevalue="">
 			<label>Require protein table files be present</label>
 			<help>These tables contain COGs assigned to coding sequences.</help>
 		</param>
+-->
 	</inputs>
 	<outputs>
 		<data format="txt" name="logfile" label="Logfile for ${tool.name}" />

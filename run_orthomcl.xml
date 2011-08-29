@@ -31,6 +31,6 @@ and (optionally) later the extraction of orthologs. Please note that you will ha
 		<data format="tabular" name="groups" label="Orthologous groups" />
 	</outputs>
 	<help>
-This tool runs OrthoMCL and returns the orthologous groups file.
+This tool runs OrthoMCL (http://www.orthomcl.org) and returns the orthologous groups file.
 	</help>
 </tool>

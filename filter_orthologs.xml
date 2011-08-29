@@ -5,20 +5,25 @@
     </requirements>
     <command interpreter="python">wrapper.py divergence.filter_orthologs $logfile
 --orthologs-zip $orthologszip
-#if $transferedcogs
---filter-multiple-cogs $transferedcogs
-#end if
+
+###if $transferedcogs
+##--filter-multiple-cogs $transferedcogs
+###end if
+
 #if $recombinedzip
 --filter-recombination $recombinedzip
 --taxon-a $genomesa
 --taxon-b $genomesb
 #end if
+
 --retained-zip $retainedzip
 </command>
     <inputs>
+<!--
         <param name="filtermultiplecogs" type="boolean" label="Filter multiple COGs" checked="false">
             <help>Filter orthologs where multiple different COGs are assigned to various strains</help>
         </param>
+-->
         <param name="filterrecombination" type="boolean" label="Filter recombination" checked="true">
             <help>Filter orthologs where there is evidence of recombination within an ortholog based upon phylogenetic tree inspection</help>
         </param>
@@ -27,11 +32,13 @@
         <param format="orthologszip" name="orthologszip" type="data" label="Orthologous genes" />
     </inputs>
     <outputs>
-        <data format="txt" name="logfile" label="Logfile for ${tool.name}" />
+        <data format="txt" name="logfile" label="Logfile for intertaxon recombination" />
+<!--
         <data format="tabular" name="transferedcogs" label="Transfered COG annotations">
         	<filter>filtermultiplecogs</filter>
         </data>
-        <data format="orthologszip" name="recombinedzip" label="Recombination orthologs">
+-->
+        <data format="orthologszip" name="recombinedzip" label="Intertaxon-recombination orthologs">
             <filter>filterrecombination</filter>
         </data>
         <data format="orthologszip" name="retainedzip" label="Retained orthologs" />

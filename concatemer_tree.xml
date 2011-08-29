@@ -13,11 +13,14 @@
 </command>
     <inputs>
         <param type="data" format="orthologszip" name="orthologs" label="Orthologous genes" />
+	<param name="outputtree" type="boolean" label="Output tree file" checked="true" />
     </inputs>
     <outputs>
         <data format="dnazip" name="codingregions" label="Coding regions per genome" />
         <data format="fasta" name="concatemerfasta" label="Concatemer of all genomes" />
-        <data format="txt" name="tree" label="Phylogenetic tree" />
+        <data format="txt" name="tree" label="Phylogenetic tree">
+		<filter>outputtree</filter>
+	</data>
         <data format="projectids" name="taxona" label="Taxon A IDs" />
         <data format="projectids" name="taxonb" label="Taxon B IDs" />
     </outputs>
