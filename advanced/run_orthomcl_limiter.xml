@@ -1,16 +1,26 @@
-<tool id="divergence_run_orthomcl" name="Run OrthoMCL">
-	<description>to find orthologs using reciprocal BLAST and HMM clustering</description>
+<tool id="divergence_run_orthomcl_limiter" name="Run OrthoMCL">
+	<description>to find orthologs using reciprocal BLAST and HMM clustering with optional limiter</description>
 	<requirements>
 		<requirement type="python-module">divergence</requirement>
 	</requirements>
 	<command interpreter="python">wrapper.py divergence.run_orthomcl $logfile
 --protein-zip $proteinzip
+#if $limiter.dataset
+--ortholog-limiter $limiter
+#end if
 --poor-protein-length $proteinlength
 --poor-proteins $poorproteins
 --groups $groups
 </command>
 	<inputs>
 		<param format="proteinszip" name="proteinzip" type="data" label="Translated gene proteins" />
+		<param format="fasta" name="limiter" type="data" label="Core set of orthologous genes limiter" optional="true">
+			<help>
+Nucleotide fasta file containing coding regions in individual records. This file will be translated to protein and fed 
+into orthomcl along with files in the translated gene proteins zip archive to influence the clustering of orthologs 
+and (optionally) later the extraction of orthologs. Please note that you will have to enable this last step separately!
+</help>
+		</param>
 		<param name="proteinlength" type="integer" label="Minimum protein length" min="0" value="10" optional="false">
 			<help>Proteins shorter than this length will be considers poor proteins and filtered out by OrthoMCL.</help>
 		</param>

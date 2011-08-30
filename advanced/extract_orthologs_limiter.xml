@@ -1,6 +1,5 @@
-<tool id="divergence_extract_orthologs" name="Extract &amp; categorize orthologs">
-	<description>from OrthoMCL groups file
-	</description>
+<tool id="divergence_extract_orthologs_limiter" name="Extract &amp; categorize orthologs">
+	<description>from OrthoMCL groups file with optional limiter</description>
 	<requirements>
 		<requirement type="python-module">divergence</requirement>
 	</requirements>
@@ -8,6 +7,7 @@
 --genomes $genomes
 --dna-zip $dnazip
 --groups $groups
+$requirelimiter
 
 --sico-zip $sicozip
 --muco-zip $mucozip
@@ -19,6 +19,12 @@
 		<param format="projectids" name="genomes" type="data" label="GenBank Project IDs" />
 		<param format="dnazip" name="dnazip" type="data" label="Extracted DNA sequences" />
 		<param format="tabular" name="groups" type="data" label="Orthologous groups" />
+		<param name="requirelimiter" type="boolean" checked="false" truevalue="--require-limiter" falsevalue="">
+			<label>Should extracted core set of single-copy genes contain the limiter added in OrthoMCL step?</label>
+			<help>Enable this option to limit the identified shared orthologs to orthologs that also contain limiter.
+Disabling this option does not impose this restriction, but identified orthologs could still be influenced by limiter.
+</help>
+		</param>
 	</inputs>
 	<outputs>
 		<data format="orthologszip" name="subsetzip" label="Accessory genes" />
