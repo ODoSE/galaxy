@@ -13,7 +13,7 @@
 --groups $groups
 </command>
 	<inputs>
-		<param format="proteinszip" name="proteinzip" type="data" label="Translated gene proteins" />
+		<param format="proteinzip" name="proteinzip" type="data" label="Translated gene proteins" />
 		<param format="fasta" name="limiter" type="data" label="Core set of orthologous genes limiter" optional="true">
 			<help>
 Nucleotide fasta file containing coding regions in individual records. This file will be translated to protein and fed 
@@ -27,7 +27,7 @@ and (optionally) later the extraction of orthologs. Please note that you will ha
 	</inputs>
 	<outputs>
 		<data format="txt" name="logfile" label="Logfile for ${tool.name}" />
-		<data format="fasta" name="poorproteins" label="Poor quality proteins" />
+		<data format="fasta" name="poorproteins" label="Proteins shorter than defined length (${proteinlength})" />
 		<data format="tabular" name="groups" label="Orthologous groups" />
 	</outputs>
 	<help>
