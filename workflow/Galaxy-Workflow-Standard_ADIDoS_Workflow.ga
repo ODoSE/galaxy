@@ -2,17 +2,13 @@
     "a_galaxy_workflow": "true", 
     "annotation": "", 
     "format-version": "0.1", 
-    "name": "Genome-wide signatures of adaptive divergence in bacteria", 
+    "name": "Standard ADIDoS Workflow", 
     "steps": {
         "0": {
             "annotation": "", 
             "id": 0, 
             "input_connections": {}, 
             "inputs": [
-                {
-                    "description": "runtime parameter for tool Select taxa", 
-                    "name": "requireptt"
-                }, 
                 {
                     "description": "runtime parameter for tool Select taxa", 
                     "name": "genomes"
@@ -31,12 +27,12 @@
             ], 
             "position": {
                 "left": 200, 
-                "top": 452
+                "top": 344
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
             "tool_id": "divergence_select_taxa", 
-            "tool_state": "{\"__page__\": 0, \"genomes\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"previousfile\": \"null\", \"requireptt\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}", 
+            "tool_state": "{\"__page__\": 0, \"externalzip\": \"null\", \"genomes\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"previousfile\": \"null\", \"requireptt\": \"\\\"True\\\"\"}", 
             "tool_version": "1.0.0", 
             "type": "tool", 
             "user_outputs": []
@@ -59,27 +55,27 @@
                 }, 
                 {
                     "name": "dnazip", 
-                    "type": "zip"
+                    "type": "dnazip"
                 }, 
                 {
                     "name": "proteinzip", 
-                    "type": "zip"
+                    "type": "proteinzip"
                 }
             ], 
             "position": {
-                "left": 458, 
-                "top": 569
+                "left": 473, 
+                "top": 452
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
             "tool_id": "divergence_translate", 
-            "tool_state": "{\"__page__\": 0, \"genomes\": \"null\"}", 
+            "tool_state": "{\"externalzip\": \"null\", \"genomes\": \"null\", \"__page__\": 0}", 
             "tool_version": "1.0.0", 
             "type": "tool", 
             "user_outputs": []
         }, 
         "2": {
-            "annotation": "", 
+            "annotation": "http://www.orthomcl.org/", 
             "id": 2, 
             "input_connections": {
                 "proteinzip": {
@@ -87,12 +83,7 @@
                     "output_name": "proteinzip"
                 }
             }, 
-            "inputs": [
-                {
-                    "description": "runtime parameter for tool Run OrthoMCL", 
-                    "name": "proteinlength"
-                }
-            ], 
+            "inputs": [], 
             "name": "Run OrthoMCL", 
             "outputs": [
                 {
@@ -109,13 +100,13 @@
                 }
             ], 
             "position": {
-                "left": 741, 
-                "top": 648
+                "left": 731, 
+                "top": 549
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
             "tool_id": "divergence_run_orthomcl", 
-            "tool_state": "{\"proteinlength\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"proteinzip\": \"null\", \"__page__\": 0}", 
+            "tool_state": "{\"proteinlength\": \"\\\"10\\\"\", \"proteinzip\": \"null\", \"__page__\": 0}", 
             "tool_version": "1.0.0", 
             "type": "tool", 
             "user_outputs": []
@@ -142,28 +133,28 @@
             "outputs": [
                 {
                     "name": "subsetzip", 
-                    "type": "zip"
+                    "type": "orthologszip"
                 }, 
                 {
                     "name": "mucozip", 
-                    "type": "zip"
+                    "type": "orthologszip"
                 }, 
                 {
                     "name": "sicozip", 
-                    "type": "zip"
-                }, 
-                {
-                    "name": "stats", 
-                    "type": "tabular"
+                    "type": "orthologszip"
                 }, 
                 {
                     "name": "heatmap", 
                     "type": "tabular"
+                }, 
+                {
+                    "name": "stats", 
+                    "type": "tabular"
                 }
             ], 
             "position": {
-                "left": 972, 
-                "top": 452
+                "left": 953, 
+                "top": 369
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -191,13 +182,13 @@
                 }
             ], 
             "position": {
-                "left": 1275, 
-                "top": 343
+                "left": 1309, 
+                "top": 306
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
             "tool_id": "barchart_gnuplot", 
-            "tool_state": "{\"__page__\": 0, \"colList\": \"{\\\"__class__\\\": \\\"UnvalidatedValue\\\", \\\"value\\\": [\\\"1\\\"]}\", \"title\": \"\\\"Orthologous groups\\\"\", \"pdf_size\": \"\\\"800,600\\\"\", \"xtic\": \"{\\\"userSpecified\\\": \\\"Yes\\\", \\\"xticColumn\\\": {\\\"__class__\\\": \\\"UnvalidatedValue\\\", \\\"value\\\": \\\"3\\\"}, \\\"__current_case__\\\": 0}\", \"ylabel\": \"\\\"# of orthologs\\\"\", \"input\": \"null\", \"ymin\": \"\\\"0\\\"\", \"ymax\": \"\\\"0\\\"\"}", 
+            "tool_state": "{\"__page__\": 0, \"colList\": \"{\\\"__class__\\\": \\\"UnvalidatedValue\\\", \\\"value\\\": [\\\"1\\\"]}\", \"title\": \"\\\"Orthologous genes\\\"\", \"pdf_size\": \"\\\"800,600\\\"\", \"xtic\": \"{\\\"userSpecified\\\": \\\"Yes\\\", \\\"xticColumn\\\": {\\\"__class__\\\": \\\"UnvalidatedValue\\\", \\\"value\\\": \\\"2\\\"}, \\\"__current_case__\\\": 0}\", \"ylabel\": \"\\\"# of genes\\\"\", \"input\": \"null\", \"ymin\": \"\\\"0\\\"\", \"ymax\": \"\\\"0\\\"\"}", 
             "tool_version": "1.0.0", 
             "type": "tool", 
             "user_outputs": []
@@ -206,7 +197,7 @@
             "annotation": "", 
             "id": 5, 
             "input_connections": {
-                "dnazip": {
+                "orthologszip": {
                     "id": 3, 
                     "output_name": "sicozip"
                 }
@@ -221,15 +212,15 @@
             "outputs": [
                 {
                     "name": "alignedzip", 
-                    "type": "zip"
+                    "type": "orthologszip"
                 }, 
                 {
                     "name": "misalignedzip", 
-                    "type": "zip"
+                    "type": "orthologszip"
                 }, 
                 {
                     "name": "trimmedzip", 
-                    "type": "zip"
+                    "type": "orthologszip"
                 }, 
                 {
                     "name": "stats", 
@@ -237,13 +228,13 @@
                 }
             ], 
             "position": {
-                "left": 1280, 
-                "top": 489
+                "left": 1311, 
+                "top": 422
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
             "tool_id": "divergence_align_trim_orthologs", 
-            "tool_state": "{\"__page__\": 0, \"dnazip\": \"null\", \"retainedthreshold\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}", 
+            "tool_state": "{\"retainedthreshold\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"dnazip\": \"null\", \"orthologszip\": \"null\", \"__page__\": 0}", 
             "tool_version": "1.0.0", 
             "type": "tool", 
             "user_outputs": []
@@ -266,8 +257,8 @@
                 }
             ], 
             "position": {
-                "left": 1540, 
-                "top": 336
+                "left": 1574, 
+                "top": 299
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -278,7 +269,7 @@
             "user_outputs": []
         }, 
         "7": {
-            "annotation": "", 
+            "annotation": "Filter inter-taxon recombination orthologs and deduce taxa", 
             "id": 7, 
             "input_connections": {
                 "orthologs": {
@@ -290,6 +281,10 @@
             "name": "Concatenate and deduce taxa", 
             "outputs": [
                 {
+                    "name": "codingregions", 
+                    "type": "dnazip"
+                }, 
+                {
                     "name": "concatemerfasta", 
                     "type": "fasta"
                 }, 
@@ -307,13 +302,28 @@
                 }
             ], 
             "position": {
-                "left": 1553, 
-                "top": 457
+                "left": 1619, 
+                "top": 395
             }, 
-            "post_job_actions": {}, 
+            "post_job_actions": {
+                "RenameDatasetActioncodingregions": {
+                    "action_arguments": {
+                        "newname": "Orthologs per genome pre-recombination filter"
+                    }, 
+                    "action_type": "RenameDatasetAction", 
+                    "output_name": "codingregions"
+                }, 
+                "RenameDatasetActionconcatemerfasta": {
+                    "action_arguments": {
+                        "newname": "Concatemer pre-recombination filter"
+                    }, 
+                    "action_type": "RenameDatasetAction", 
+                    "output_name": "concatemerfasta"
+                }
+            }, 
             "tool_errors": null, 
             "tool_id": "divergence_concatemer_tree", 
-            "tool_state": "{\"__page__\": 0, \"orthologs\": \"null\"}", 
+            "tool_state": "{\"__page__\": 0, \"orthologs\": \"null\", \"outputtree\": \"\\\"False\\\"\"}", 
             "tool_version": "1.0.0", 
             "type": "tool", 
             "user_outputs": []
@@ -322,10 +332,6 @@
             "annotation": "", 
             "id": 8, 
             "input_connections": {
-                "dnazip": {
-                    "id": 5, 
-                    "output_name": "trimmedzip"
-                }, 
                 "genomesa": {
                     "id": 7, 
                     "output_name": "taxona"
@@ -333,16 +339,16 @@
                 "genomesb": {
                     "id": 7, 
                     "output_name": "taxonb"
+                }, 
+                "orthologszip": {
+                    "id": 5, 
+                    "output_name": "trimmedzip"
                 }
             }, 
             "inputs": [
                 {
                     "description": "runtime parameter for tool Filter orthologs", 
                     "name": "filterrecombination"
-                }, 
-                {
-                    "description": "runtime parameter for tool Filter orthologs", 
-                    "name": "filtermultiplecogs"
                 }
             ], 
             "name": "Filter orthologs", 
@@ -352,32 +358,28 @@
                     "type": "txt"
                 }, 
                 {
-                    "name": "transferedcogs", 
-                    "type": "tabular"
-                }, 
-                {
                     "name": "recombinedzip", 
-                    "type": "zip"
+                    "type": "orthologszip"
                 }, 
                 {
                     "name": "retainedzip", 
-                    "type": "zip"
+                    "type": "orthologszip"
                 }
             ], 
             "position": {
-                "left": 1801, 
-                "top": 657
+                "left": 1946, 
+                "top": 614
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
             "tool_id": "divergence_filter_orthologs", 
-            "tool_state": "{\"__page__\": 0, \"filterrecombination\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"genomesb\": \"null\", \"genomesa\": \"null\", \"dnazip\": \"null\", \"filtermultiplecogs\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}", 
+            "tool_state": "{\"__page__\": 0, \"filterrecombination\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"orthologszip\": \"null\", \"genomesa\": \"null\", \"genomesb\": \"null\", \"dnazip\": \"null\", \"filtermultiplecogs\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}", 
             "tool_version": "1.0.0", 
             "type": "tool", 
             "user_outputs": []
         }, 
         "9": {
-            "annotation": "", 
+            "annotation": "Phylogenetic tree and congruency check", 
             "id": 9, 
             "input_connections": {
                 "orthologs": {
@@ -389,6 +391,10 @@
             "name": "Concatenate and deduce taxa", 
             "outputs": [
                 {
+                    "name": "codingregions", 
+                    "type": "dnazip"
+                }, 
+                {
                     "name": "concatemerfasta", 
                     "type": "fasta"
                 }, 
@@ -406,13 +412,28 @@
                 }
             ], 
             "position": {
-                "left": 2034, 
-                "top": 571
+                "left": 2254, 
+                "top": 549
             }, 
-            "post_job_actions": {}, 
+            "post_job_actions": {
+                "RenameDatasetActioncodingregions": {
+                    "action_arguments": {
+                        "newname": "Orthologs per genome post-recombination filter"
+                    }, 
+                    "action_type": "RenameDatasetAction", 
+                    "output_name": "codingregions"
+                }, 
+                "RenameDatasetActionconcatemerfasta": {
+                    "action_arguments": {
+                        "newname": "Concatemer post-recombination filter"
+                    }, 
+                    "action_type": "RenameDatasetAction", 
+                    "output_name": "concatemerfasta"
+                }
+            }, 
             "tool_errors": null, 
             "tool_id": "divergence_concatemer_tree", 
-            "tool_state": "{\"__page__\": 0, \"orthologs\": \"null\"}", 
+            "tool_state": "{\"__page__\": 0, \"orthologs\": \"null\", \"outputtree\": \"\\\"True\\\"\"}", 
             "tool_version": "1.0.0", 
             "type": "tool", 
             "user_outputs": []
@@ -447,8 +468,8 @@
                 }
             ], 
             "position": {
-                "left": 2418, 
-                "top": 457
+                "left": 2568, 
+                "top": 423
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -493,8 +514,8 @@
                 }
             ], 
             "position": {
-                "left": 2387, 
-                "top": 733
+                "left": 2509, 
+                "top": 741
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 

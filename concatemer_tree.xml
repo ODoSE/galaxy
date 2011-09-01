@@ -16,7 +16,7 @@
 	<param name="outputtree" type="boolean" label="Output tree file" checked="true" />
     </inputs>
     <outputs>
-        <data format="dnazip" name="codingregions" label="Coding regions per genome" />
+        <data format="dnazip" name="orthologspergenome" label="Orthologs per genome" />
         <data format="fasta" name="concatemerfasta" label="Concatemer of all genomes" />
         <data format="txt" name="tree" label="Phylogenetic tree">
 		<filter>outputtree</filter>
