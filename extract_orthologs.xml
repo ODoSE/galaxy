@@ -10,8 +10,8 @@
 --groups $groups
 
 --sico-zip $sicozip
---muco-zip $mucozip
---subset-zip $subsetzip
+--muco-zip ignored_muco.zip
+--subset-zip ignored_subset.zip
 --stats $stats
 --heatmap $heatmap
 </command>
@@ -21,8 +21,6 @@
 		<param format="tabular" name="groups" type="data" label="Orthologous groups" />
 	</inputs>
 	<outputs>
-		<data format="orthologszip" name="subsetzip" label="Accessory genes" />
-		<data format="orthologszip" name="mucozip" label="Shared multiple-copy orthologous genes" />
 		<data format="orthologszip" name="sicozip" label="Shared single-copy orthologous genes" />
 		<data format="tabular" name="heatmap" label="Ortholog distributions" />
 		<data format="tabular" name="stats" label="Ortholog extraction statistics" />
