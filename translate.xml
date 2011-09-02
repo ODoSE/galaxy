@@ -14,7 +14,7 @@
 --protein-zip $proteinzip
 </command>
 	<inputs>
-		<param format="projectids" name="genomes" type="data" label="GenBank Project IDs" optional="True"/>
+		<param format="projectids" name="genomes" type="data" label="GenBank Project IDs" optional="False"/>
 		<param format="genomeszip" name="externalzip" type="data" label="External Genomes" optional="True"/>
 	</inputs>
 	<outputs>
