@@ -1,0 +1,25 @@
+<tool id="divergence_split_by_taxa" name="Split orthologs by taxa">
+	<description>to separate alignments</description>
+	<requirements>
+		<requirement type="python-module">divergence</requirement>
+	</requirements>
+	<command interpreter="python">wrapper.py divergence.split_by_taxa logfile
+--genomes-a $genomesa
+--genomes-b $genomesb
+--orthologs-zip $sicozip
+--taxon-a-zip $taxonazip
+--taxon-b-zip $taxonbzip
+</command>
+	<inputs>
+		<param format="projectids" name="genomesa" type="data" label="Taxon A IDs" />
+		<param format="projectids" name="genomesb" type="data" label="Taxon B IDs" />
+		<param format="orthologszip" name="sicozip" type="data" label="Aligned / Trimmed orthologs" />
+	</inputs>
+	<outputs>
+		<data format="orthologszip" name="taxonazip" label="Taxon A orthologs" />
+		<data format="orthologszip" name="taxonbzip" label="Taxon B orthologs" />
+	</outputs>
+	<help>
+Split an archive with sequence files containing records from two taxa into two archives with sequence files containing 
+only the sequence records of either taxon.</help>
+</tool>
