@@ -3,7 +3,7 @@
 	<requirements>
 		<requirement type="python-module">divergence</requirement>
 	</requirements>
-	<command interpreter="python">wrapper.py divergence.run_orthomcl $logfile
+	<command interpreter="python">../wrapper.py divergence.run_orthomcl $logfile
 --protein-zip $proteinzip
 #if $limiter.dataset
 --ortholog-limiter $limiter

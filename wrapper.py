@@ -37,4 +37,7 @@ FILE_HANDLER.setLevel(logging.INFO)
 logging.root.addHandler(FILE_HANDLER)
 
 #Run main method within module with remaining arguments
-MODULE.main(sys.argv[3:])
+if sys.argv[3:]:
+    MODULE.main(sys.argv[3:])
+else:
+    MODULE.main()

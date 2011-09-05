@@ -3,7 +3,7 @@
 	<requirements>
 		<requirement type="python-module">divergence</requirement>
 	</requirements>
-	<command interpreter="python">wrapper.py divergence.extract_orthologs logfile
+	<command interpreter="python">../wrapper.py divergence.extract_orthologs logfile
 --genomes $genomes
 --dna-zip $dnazip
 --groups $groups
