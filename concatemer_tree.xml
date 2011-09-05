@@ -18,7 +18,7 @@
     <outputs>
         <data format="dnazip" name="orthologspergenome" label="Orthologs per genome" />
         <data format="fasta" name="concatemerfasta" label="Concatemer of all genomes" />
-        <data format="txt" name="tree" label="Phylogenetic tree">
+        <data format="svg" name="tree" label="Phylogenetic tree">
 		<filter>outputtree</filter>
 	</data>
         <data format="projectids" name="taxona" label="Taxon A IDs" />
