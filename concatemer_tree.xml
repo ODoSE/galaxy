@@ -5,7 +5,7 @@
     </requirements>
     <command interpreter="python">wrapper.py divergence.concatemer_tree logfile
 --orthologs-zip $orthologs
---coding-regions $codingregions
+--coding-regions $orthologspergenome
 --concatemer $concatemerfasta
 --tree $tree
 --taxon-a $taxona
