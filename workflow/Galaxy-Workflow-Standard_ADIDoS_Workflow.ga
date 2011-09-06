@@ -10,11 +10,11 @@
             "input_connections": {}, 
             "inputs": [
                 {
-                    "description": "runtime parameter for tool Select taxa", 
+                    "description": "runtime parameter for tool Select genomes", 
                     "name": "genomes"
                 }
             ], 
-            "name": "Select taxa", 
+            "name": "Select genomes", 
             "outputs": [
                 {
                     "name": "logfile", 
@@ -27,7 +27,7 @@
             ], 
             "position": {
                 "left": 200, 
-                "top": 344
+                "top": 245
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -64,7 +64,7 @@
             ], 
             "position": {
                 "left": 473, 
-                "top": 452
+                "top": 353
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -101,7 +101,7 @@
             ], 
             "position": {
                 "left": 731, 
-                "top": 549
+                "top": 450
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -132,14 +132,6 @@
             "name": "Extract & categorize orthologs", 
             "outputs": [
                 {
-                    "name": "subsetzip", 
-                    "type": "orthologszip"
-                }, 
-                {
-                    "name": "mucozip", 
-                    "type": "orthologszip"
-                }, 
-                {
                     "name": "sicozip", 
                     "type": "orthologszip"
                 }, 
@@ -154,7 +146,7 @@
             ], 
             "position": {
                 "left": 953, 
-                "top": 369
+                "top": 270
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -183,7 +175,7 @@
             ], 
             "position": {
                 "left": 1309, 
-                "top": 306
+                "top": 207
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -229,7 +221,7 @@
             ], 
             "position": {
                 "left": 1311, 
-                "top": 422
+                "top": 323
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -258,7 +250,7 @@
             ], 
             "position": {
                 "left": 1574, 
-                "top": 299
+                "top": 200
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -281,7 +273,7 @@
             "name": "Concatenate and deduce taxa", 
             "outputs": [
                 {
-                    "name": "codingregions", 
+                    "name": "orthologspergenome", 
                     "type": "dnazip"
                 }, 
                 {
@@ -290,7 +282,7 @@
                 }, 
                 {
                     "name": "tree", 
-                    "type": "txt"
+                    "type": "svg"
                 }, 
                 {
                     "name": "taxona", 
@@ -303,7 +295,7 @@
             ], 
             "position": {
                 "left": 1619, 
-                "top": 395
+                "top": 296
             }, 
             "post_job_actions": {
                 "RenameDatasetActioncodingregions": {
@@ -368,7 +360,7 @@
             ], 
             "position": {
                 "left": 1946, 
-                "top": 614
+                "top": 515
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -391,7 +383,7 @@
             "name": "Concatenate and deduce taxa", 
             "outputs": [
                 {
-                    "name": "codingregions", 
+                    "name": "orthologspergenome", 
                     "type": "dnazip"
                 }, 
                 {
@@ -400,7 +392,7 @@
                 }, 
                 {
                     "name": "tree", 
-                    "type": "txt"
+                    "type": "svg"
                 }, 
                 {
                     "name": "taxona", 
@@ -413,7 +405,7 @@
             ], 
             "position": {
                 "left": 2254, 
-                "top": 549
+                "top": 450
             }, 
             "post_job_actions": {
                 "RenameDatasetActioncodingregions": {
@@ -468,8 +460,8 @@
                 }
             ], 
             "position": {
-                "left": 2568, 
-                "top": 423
+                "left": 2604, 
+                "top": 365
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -496,12 +488,48 @@
                     "output_name": "retainedzip"
                 }
             }, 
-            "inputs": [
+            "inputs": [], 
+            "name": "Split orthologs by taxa", 
+            "outputs": [
                 {
-                    "description": "runtime parameter for tool Calculate direction of selection", 
-                    "name": "oddeven"
+                    "name": "taxonazip", 
+                    "type": "orthologszip"
+                }, 
+                {
+                    "name": "taxonbzip", 
+                    "type": "orthologszip"
                 }
             ], 
+            "position": {
+                "left": 2606, 
+                "top": 547
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "divergence_split_by_taxa", 
+            "tool_state": "{\"__page__\": 0, \"sicozip\": \"null\", \"genomesb\": \"null\", \"genomesa\": \"null\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "12": {
+            "annotation": "", 
+            "id": 12, 
+            "input_connections": {
+                "genomesa": {
+                    "id": 9, 
+                    "output_name": "taxona"
+                }, 
+                "genomesb": {
+                    "id": 9, 
+                    "output_name": "taxonb"
+                }, 
+                "sicozip": {
+                    "id": 8, 
+                    "output_name": "retainedzip"
+                }
+            }, 
+            "inputs": [], 
             "name": "Calculate direction of selection", 
             "outputs": [
                 {
@@ -514,13 +542,13 @@
                 }
             ], 
             "position": {
-                "left": 2509, 
-                "top": 741
+                "left": 2606, 
+                "top": 730
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
             "tool_id": "divergence_calculations", 
-            "tool_state": "{\"__page__\": 0, \"oddeven\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"sicozip\": \"null\", \"genomesb\": \"null\", \"genomesa\": \"null\"}", 
+            "tool_state": "{\"__page__\": 0, \"oddeven\": \"\\\"False\\\"\", \"sicozip\": \"null\", \"genomesb\": \"null\", \"genomesa\": \"null\"}", 
             "tool_version": "1.0.0", 
             "type": "tool", 
             "user_outputs": []
