@@ -12,15 +12,15 @@
 --stats $stats
 </command>
     <inputs>
-        <param format="orthologszip" name="orthologszip" type="data" label="Orthologous genes" />
+        <param format="orthologs.zip" name="orthologszip" type="data" label="Orthologous genes" />
         <param name="retainedthreshold" type="integer" label="Minimum % retained after trimmining alignment" min="0" max="100" value="90" optional="false">
             <help>Filter orthologs where less than a given percentage of sequence is retained after trimming alignment</help>
         </param>
     </inputs>
     <outputs>
-        <data format="orthologszip" name="alignedzip" label="Aligned orthologs" />
-        <data format="orthologszip" name="misalignedzip" label="Misaligned orthologs" />
-        <data format="orthologszip" name="trimmedzip" label="Trimmed orthologs" />
+        <data format="orthologs.zip" name="alignedzip" label="Aligned orthologs" />
+        <data format="orthologs.zip" name="misalignedzip" label="Misaligned orthologs" />
+        <data format="orthologs.zip" name="trimmedzip" label="Trimmed orthologs" />
         <data format="tabular" name="stats" label="Ortholog trimming statistics" />
     </outputs>
     <help>

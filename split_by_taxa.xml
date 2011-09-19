@@ -13,11 +13,11 @@
 	<inputs>
 		<param format="projectids" name="genomesa" type="data" label="Taxon A IDs" />
 		<param format="projectids" name="genomesb" type="data" label="Taxon B IDs" />
-		<param format="orthologszip" name="sicozip" type="data" label="Aligned / Trimmed orthologs" />
+		<param format="orthologs.zip" name="sicozip" type="data" label="Aligned / Trimmed orthologs" />
 	</inputs>
 	<outputs>
-		<data format="orthologszip" name="taxonazip" label="Taxon A orthologs" />
-		<data format="orthologszip" name="taxonbzip" label="Taxon B orthologs" />
+		<data format="orthologs.zip" name="taxonazip" label="Taxon A orthologs" />
+		<data format="orthologs.zip" name="taxonbzip" label="Taxon B orthologs" />
 	</outputs>
 	<help>
 Split an archive with sequence files containing records from two taxa into two archives with sequence files containing 

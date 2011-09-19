@@ -17,11 +17,11 @@
 </command>
 	<inputs>
 		<param format="projectids" name="genomes" type="data" label="GenBank Project IDs" />
-		<param format="dnazip" name="dnazip" type="data" label="Extracted DNA sequences" />
+		<param format="dna.zip" name="dnazip" type="data" label="Extracted DNA sequences" />
 		<param format="tabular" name="groups" type="data" label="Orthologous groups" />
 	</inputs>
 	<outputs>
-		<data format="orthologszip" name="sicozip" label="Shared single-copy orthologous genes" />
+		<data format="orthologs.zip" name="sicozip" label="Shared single-copy orthologous genes" />
 		<data format="tabular" name="heatmap" label="Ortholog distributions" />
 		<data format="tabular" name="stats" label="Ortholog extraction statistics" />
 	</outputs>

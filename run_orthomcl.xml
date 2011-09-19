@@ -10,7 +10,7 @@
 --groups $groups
 </command>
 	<inputs>
-		<param format="proteinzip" name="proteinzip" type="data" label="Translated gene proteins" />
+		<param format="protein.zip" name="proteinzip" type="data" label="Translated gene proteins" />
 		<param name="proteinlength" type="integer" label="Minimum protein length" min="0" value="10" optional="false">
 			<help>Proteins shorter than this length will be considers poor proteins and filtered out by OrthoMCL.</help>
 		</param>
