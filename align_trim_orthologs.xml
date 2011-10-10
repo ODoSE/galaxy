@@ -21,7 +21,7 @@
         <data format="orthologs.zip" name="alignedzip" label="Aligned orthologs" />
         <data format="orthologs.zip" name="misalignedzip" label="Misaligned orthologs" />
         <data format="orthologs.zip" name="trimmedzip" label="Trimmed orthologs" />
-        <data format="tabular" name="stats" label="Ortholog trimming statistics" />
+        <data format="tabular" name="stats" label="Ortholog trimming statistics logfile" />
     </outputs>
     <help>
 This tool aligns and trims orthologs in reading frame, and will allow you to filter out orthologs that retain less than a given percentage of their original length. 

@@ -18,7 +18,7 @@
 		<param format="genomes.zip" name="externalzip" type="data" label="External Genomes" optional="True"/>
 	</inputs>
 	<outputs>
-		<data format="txt" name="logfile" label="Logfile for ${tool.name}" />
+		<data format="txt" name="logfile" label="Extracted proteins logfile" />
 		<data format="dna.zip" name="dnazip" label="Extracted DNA sequences" />
 		<data format="protein.zip" name="proteinzip" label="Translated gene proteins" />
 	</outputs>
