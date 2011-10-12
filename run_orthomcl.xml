@@ -6,13 +6,18 @@
 	<command interpreter="python">wrapper.py divergence.run_orthomcl $logfile
 --protein-zip $proteinzip
 --poor-protein-length $proteinlength
+--evalue-exponent $evalueexponent
+
 --poor-proteins $poorproteins
 --groups $groups
 </command>
 	<inputs>
 		<param format="protein.zip" name="proteinzip" type="data" label="Translated gene proteins" />
-		<param name="proteinlength" type="integer" label="Minimum protein length" min="0" value="10" optional="false">
+		<param name="proteinlength" type="integer" label="Minimum protein length" min="0" value="30" optional="false">
 			<help>Proteins shorter than this length will be considers poor proteins and filtered out by OrthoMCL.</help>
+		</param>
+		<param name="evalueexponent" type="integer" label="OrthoMCL expect value exponent cut-off" value="-5" optional="false">
+			<help>OrthoMCL BLAST similarities with Expect value exponents greater than this value are ignored. See BLAST and OrthoMCL documentation for more details.</help>
 		</param>
 	</inputs>
 	<outputs>
