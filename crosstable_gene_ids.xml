@@ -1,0 +1,19 @@
+<tool id="divergence_crosstable_gene_ids" name="Crosstable of gene IDs">
+	<description>over genomes and orthologs</description>
+	<requirements>
+		<requirement type="python-module">divergence</requirement>
+	</requirements>
+	<command interpreter="python">wrapper.py divergence.crosstable_gene_ids logfile
+--sico-zip $sicozip 
+--crosstable $crosstable
+</command>
+	<inputs>
+		<param format="orthologs.zip" name="sicozip" type="data" label="Single-Copy orthologs" />
+	</inputs>
+	<outputs>
+		<data format="tabular" name="crosstable" label="Statistics table for Taxon B" />
+	</outputs>
+	<help>
+This tool shows a crosstable of genomes and orthologs, with gene IDs at the intersections for Single Copy orthologs.
+</help>
+</tool>
