@@ -5,7 +5,7 @@
 	</requirements>
 	<code file="select_taxa.py"/>
 	<command interpreter="python">wrapper.py divergence.select_taxa $logfile
-#if $genomes.value
+#if $genomes.value and 'galaxy.tools.parameters.basic.RuntimeValue' not in str($genomes.value):
 --genomes $genomes
 #end if
 
@@ -29,6 +29,7 @@ See the original table for alternate sorting and selection criteria.
 	<help>
 This tool allows you to select genomes for analysis in the Genome-wide signatures of adaptive divergence pipeline.
 
-No fewer than two and no more than forty genomes may be selected.
+No fewer than two and no more than one hundred genomes may be selected.
 </help>
 </tool>
+
