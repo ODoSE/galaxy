@@ -9,13 +9,11 @@
 --dna-zip $dnazip
 --groups $groups
 
-#if str($advanced_condition.advanced) == "True":
-    #if str($advanced_condition.outputmucozip) == "True":
-        --muco-zip $mucozip
-    #end if
-    #if str($advanced_condition.outputaccessoryzip) == "True":
-        --subset-zip $accessoryzip
-    #end if
+#if str($outputmucozip) == "True":
+    --muco-zip $mucozip
+#end if
+#if str($outputaccessoryzip) == "True":
+    --subset-zip $accessoryzip
 #end if
 
 --sico-zip $sicozip
@@ -26,22 +24,17 @@
 		<param format="projectids" name="genomes" type="data" label="GenBank Project IDs" />
 		<param format="dna.zip" name="dnazip" type="data" label="Extracted DNA sequences" />
 		<param format="tabular" name="groups" type="data" label="Orthologous groups" />
-		<conditional name="advanced_condition">
-			<param name="advanced" type="boolean" label="Show advanced options" checked="false"/>
-			<when value="true">
-				<param name="outputmucozip" type="boolean" label="Output shared multiple-copy orthologous genes" />
-				<param name="outputaccessoryzip" type="boolean" label="Output accessory orthologous genes" />
-			</when>
-			<when value="false" />
-		</conditional>
+
+		<param name="outputmucozip" type="boolean" label="Output shared multiple-copy orthologous genes" />
+		<param name="outputaccessoryzip" type="boolean" label="Output accessory orthologous genes" />
 	</inputs>
 	<outputs>
 		<data format="orthologs.zip" name="sicozip" label="All shared single-copy orthologous genes" />
 		<data format="orthologs.zip" name="mucozip" label="Shared multiple-copy orthologous genes">
-			<filter>(advanced_condition['advanced'] and str(advanced_condition['outputmucozip']) == "True")</filter>
+			<filter>outputmucozip</filter>
 		</data>
 		<data format="orthologs.zip" name="accessoryzip" label="Accessory orthologous genes">
-			<filter>(advanced_condition['advanced'] and str(advanced_condition['outputaccessoryzip']) == "True")</filter>
+			<filter>outputaccessoryzip</filter>
 		</data>
 		<data format="tabular" name="heatmap" label="Ortholog distributions" />
 		<data format="tabular" name="stats" label="Ortholog extraction statistics" />
@@ -60,3 +53,4 @@ For the groups or orthologous genes identified using OrthoMCL, this tool:
 - generates a table of ortholog distributions over single-copy, multiple-copy and accessory orthologous genes
 </help>
 </tool>
+
