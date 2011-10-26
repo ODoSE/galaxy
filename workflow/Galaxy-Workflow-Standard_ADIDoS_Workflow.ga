@@ -26,8 +26,8 @@
                 }
             ], 
             "position": {
-                "left": 200, 
-                "top": 245
+                "left": 281, 
+                "top": 336
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -55,16 +55,16 @@
                 }, 
                 {
                     "name": "dnazip", 
-                    "type": "dnazip"
+                    "type": "dna.zip"
                 }, 
                 {
                     "name": "proteinzip", 
-                    "type": "proteinzip"
+                    "type": "protein.zip"
                 }
             ], 
             "position": {
-                "left": 473, 
-                "top": 353
+                "left": 554, 
+                "top": 444
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -83,7 +83,16 @@
                     "output_name": "proteinzip"
                 }
             }, 
-            "inputs": [], 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Run OrthoMCL", 
+                    "name": "proteinlength"
+                }, 
+                {
+                    "description": "runtime parameter for tool Run OrthoMCL", 
+                    "name": "evalueexponent"
+                }
+            ], 
             "name": "Run OrthoMCL", 
             "outputs": [
                 {
@@ -100,13 +109,13 @@
                 }
             ], 
             "position": {
-                "left": 731, 
-                "top": 450
+                "left": 812, 
+                "top": 541
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
             "tool_id": "divergence_run_orthomcl", 
-            "tool_state": "{\"proteinlength\": \"\\\"10\\\"\", \"proteinzip\": \"null\", \"__page__\": 0}", 
+            "tool_state": "{\"proteinlength\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"proteinzip\": \"null\", \"__page__\": 0, \"evalueexponent\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}", 
             "tool_version": "1.0.0", 
             "type": "tool", 
             "user_outputs": []
@@ -128,12 +137,29 @@
                     "output_name": "groups"
                 }
             }, 
-            "inputs": [], 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Extract & categorize orthologs", 
+                    "name": "outputaccessoryzip"
+                }, 
+                {
+                    "description": "runtime parameter for tool Extract & categorize orthologs", 
+                    "name": "outputmucozip"
+                }
+            ], 
             "name": "Extract & categorize orthologs", 
             "outputs": [
                 {
                     "name": "sicozip", 
-                    "type": "orthologszip"
+                    "type": "orthologs.zip"
+                }, 
+                {
+                    "name": "mucozip", 
+                    "type": "orthologs.zip"
+                }, 
+                {
+                    "name": "accessoryzip", 
+                    "type": "orthologs.zip"
                 }, 
                 {
                     "name": "heatmap", 
@@ -145,13 +171,13 @@
                 }
             ], 
             "position": {
-                "left": 953, 
-                "top": 270
+                "left": 1034, 
+                "top": 361
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
             "tool_id": "divergence_extract_orthologs", 
-            "tool_state": "{\"__page__\": 0, \"dnazip\": \"null\", \"genomes\": \"null\", \"groups\": \"null\"}", 
+            "tool_state": "{\"__page__\": 0, \"advanced_condition\": \"{\\\"advanced\\\": \\\"False\\\", \\\"__current_case__\\\": 1}\", \"outputaccessoryzip\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"genomes\": \"null\", \"outputmucozip\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"groups\": \"null\", \"dnazip\": \"null\"}", 
             "tool_version": "1.0.0", 
             "type": "tool", 
             "user_outputs": []
@@ -159,35 +185,6 @@
         "4": {
             "annotation": "", 
             "id": 4, 
-            "input_connections": {
-                "input": {
-                    "id": 3, 
-                    "output_name": "stats"
-                }
-            }, 
-            "inputs": [], 
-            "name": "Bar chart", 
-            "outputs": [
-                {
-                    "name": "out_file1", 
-                    "type": "png"
-                }
-            ], 
-            "position": {
-                "left": 1309, 
-                "top": 207
-            }, 
-            "post_job_actions": {}, 
-            "tool_errors": null, 
-            "tool_id": "barchart_gnuplot", 
-            "tool_state": "{\"__page__\": 0, \"colList\": \"{\\\"__class__\\\": \\\"UnvalidatedValue\\\", \\\"value\\\": [\\\"1\\\"]}\", \"title\": \"\\\"Orthologous genes\\\"\", \"pdf_size\": \"\\\"800,600\\\"\", \"xtic\": \"{\\\"userSpecified\\\": \\\"Yes\\\", \\\"xticColumn\\\": {\\\"__class__\\\": \\\"UnvalidatedValue\\\", \\\"value\\\": \\\"2\\\"}, \\\"__current_case__\\\": 0}\", \"ylabel\": \"\\\"# of genes\\\"\", \"input\": \"null\", \"ymin\": \"\\\"0\\\"\", \"ymax\": \"\\\"0\\\"\"}", 
-            "tool_version": "1.0.0", 
-            "type": "tool", 
-            "user_outputs": []
-        }, 
-        "5": {
-            "annotation": "", 
-            "id": 5, 
             "input_connections": {
                 "orthologszip": {
                     "id": 3, 
@@ -204,15 +201,15 @@
             "outputs": [
                 {
                     "name": "alignedzip", 
-                    "type": "orthologszip"
+                    "type": "orthologs.zip"
                 }, 
                 {
                     "name": "misalignedzip", 
-                    "type": "orthologszip"
+                    "type": "orthologs.zip"
                 }, 
                 {
                     "name": "trimmedzip", 
-                    "type": "orthologszip"
+                    "type": "orthologs.zip"
                 }, 
                 {
                     "name": "stats", 
@@ -220,8 +217,8 @@
                 }
             ], 
             "position": {
-                "left": 1311, 
-                "top": 323
+                "left": 1392, 
+                "top": 414
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -231,12 +228,12 @@
             "type": "tool", 
             "user_outputs": []
         }, 
-        "6": {
+        "5": {
             "annotation": "", 
-            "id": 6, 
+            "id": 5, 
             "input_connections": {
                 "input": {
-                    "id": 5, 
+                    "id": 4, 
                     "output_name": "stats"
                 }
             }, 
@@ -249,8 +246,8 @@
                 }
             ], 
             "position": {
-                "left": 1574, 
-                "top": 200
+                "left": 1655, 
+                "top": 291
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -260,12 +257,12 @@
             "type": "tool", 
             "user_outputs": []
         }, 
-        "7": {
+        "6": {
             "annotation": "Filter inter-taxon recombination orthologs and deduce taxa", 
-            "id": 7, 
+            "id": 6, 
             "input_connections": {
                 "orthologs": {
-                    "id": 5, 
+                    "id": 4, 
                     "output_name": "trimmedzip"
                 }
             }, 
@@ -274,7 +271,7 @@
             "outputs": [
                 {
                     "name": "orthologspergenome", 
-                    "type": "dnazip"
+                    "type": "dna.zip"
                 }, 
                 {
                     "name": "concatemerfasta", 
@@ -282,7 +279,7 @@
                 }, 
                 {
                     "name": "tree", 
-                    "type": "svg"
+                    "type": "pdf"
                 }, 
                 {
                     "name": "taxona", 
@@ -294,8 +291,8 @@
                 }
             ], 
             "position": {
-                "left": 1619, 
-                "top": 296
+                "left": 1700, 
+                "top": 387
             }, 
             "post_job_actions": {
                 "RenameDatasetActioncodingregions": {
@@ -320,29 +317,24 @@
             "type": "tool", 
             "user_outputs": []
         }, 
-        "8": {
+        "7": {
             "annotation": "", 
-            "id": 8, 
+            "id": 7, 
             "input_connections": {
                 "genomesa": {
-                    "id": 7, 
+                    "id": 6, 
                     "output_name": "taxona"
                 }, 
                 "genomesb": {
-                    "id": 7, 
+                    "id": 6, 
                     "output_name": "taxonb"
                 }, 
                 "orthologszip": {
-                    "id": 5, 
+                    "id": 4, 
                     "output_name": "trimmedzip"
                 }
             }, 
-            "inputs": [
-                {
-                    "description": "runtime parameter for tool Filter orthologs", 
-                    "name": "filterrecombination"
-                }
-            ], 
+            "inputs": [], 
             "name": "Filter orthologs", 
             "outputs": [
                 {
@@ -351,31 +343,31 @@
                 }, 
                 {
                     "name": "recombinedzip", 
-                    "type": "orthologszip"
+                    "type": "orthologs.zip"
                 }, 
                 {
                     "name": "retainedzip", 
-                    "type": "orthologszip"
+                    "type": "orthologs.zip"
                 }
             ], 
             "position": {
-                "left": 1946, 
-                "top": 515
+                "left": 2027, 
+                "top": 606
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
             "tool_id": "divergence_filter_orthologs", 
-            "tool_state": "{\"__page__\": 0, \"filterrecombination\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"orthologszip\": \"null\", \"genomesa\": \"null\", \"genomesb\": \"null\", \"dnazip\": \"null\", \"filtermultiplecogs\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}", 
+            "tool_state": "{\"__page__\": 0, \"filterrecombination\": \"\\\"True\\\"\", \"orthologszip\": \"null\", \"genomesa\": \"null\", \"genomesb\": \"null\", \"dnazip\": \"null\", \"filtermultiplecogs\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}", 
             "tool_version": "1.0.0", 
             "type": "tool", 
             "user_outputs": []
         }, 
-        "9": {
+        "8": {
             "annotation": "Phylogenetic tree and congruency check", 
-            "id": 9, 
+            "id": 8, 
             "input_connections": {
                 "orthologs": {
-                    "id": 8, 
+                    "id": 7, 
                     "output_name": "retainedzip"
                 }
             }, 
@@ -384,7 +376,7 @@
             "outputs": [
                 {
                     "name": "orthologspergenome", 
-                    "type": "dnazip"
+                    "type": "dna.zip"
                 }, 
                 {
                     "name": "concatemerfasta", 
@@ -392,7 +384,7 @@
                 }, 
                 {
                     "name": "tree", 
-                    "type": "svg"
+                    "type": "pdf"
                 }, 
                 {
                     "name": "taxona", 
@@ -404,8 +396,8 @@
                 }
             ], 
             "position": {
-                "left": 2254, 
-                "top": 450
+                "left": 2335, 
+                "top": 541
             }, 
             "post_job_actions": {
                 "RenameDatasetActioncodingregions": {
@@ -430,24 +422,24 @@
             "type": "tool", 
             "user_outputs": []
         }, 
-        "10": {
+        "9": {
             "annotation": "", 
-            "id": 10, 
+            "id": 9, 
             "input_connections": {
                 "filtereda": {
-                    "id": 9, 
+                    "id": 8, 
                     "output_name": "taxona"
                 }, 
                 "filteredb": {
-                    "id": 9, 
+                    "id": 8, 
                     "output_name": "taxonb"
                 }, 
                 "unfiltereda": {
-                    "id": 7, 
+                    "id": 6, 
                     "output_name": "taxona"
                 }, 
                 "unfilteredb": {
-                    "id": 7, 
+                    "id": 6, 
                     "output_name": "taxonb"
                 }
             }, 
@@ -460,8 +452,8 @@
                 }
             ], 
             "position": {
-                "left": 2604, 
-                "top": 365
+                "left": 2696, 
+                "top": 458
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -471,20 +463,20 @@
             "type": "tool", 
             "user_outputs": []
         }, 
-        "11": {
+        "10": {
             "annotation": "", 
-            "id": 11, 
+            "id": 10, 
             "input_connections": {
                 "genomesa": {
-                    "id": 9, 
+                    "id": 8, 
                     "output_name": "taxona"
                 }, 
                 "genomesb": {
-                    "id": 9, 
+                    "id": 8, 
                     "output_name": "taxonb"
                 }, 
                 "sicozip": {
-                    "id": 8, 
+                    "id": 7, 
                     "output_name": "retainedzip"
                 }
             }, 
@@ -493,16 +485,16 @@
             "outputs": [
                 {
                     "name": "taxonazip", 
-                    "type": "orthologszip"
+                    "type": "orthologs.zip"
                 }, 
                 {
                     "name": "taxonbzip", 
-                    "type": "orthologszip"
+                    "type": "orthologs.zip"
                 }
             ], 
             "position": {
-                "left": 2606, 
-                "top": 547
+                "left": 2692, 
+                "top": 628
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -512,20 +504,61 @@
             "type": "tool", 
             "user_outputs": []
         }, 
+        "11": {
+            "annotation": "", 
+            "id": 11, 
+            "input_connections": {
+                "input1": {
+                    "id": 8, 
+                    "output_name": "taxona"
+                }, 
+                "queries_0|input2": {
+                    "id": 8, 
+                    "output_name": "taxonb"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Concatenate datasets", 
+            "outputs": [
+                {
+                    "name": "out_file1", 
+                    "type": "input"
+                }
+            ], 
+            "position": {
+                "left": 2694, 
+                "top": 796
+            }, 
+            "post_job_actions": {
+                "RenameDatasetActionout_file1": {
+                    "action_arguments": {
+                        "newname": "Taxon A+B IDs"
+                    }, 
+                    "action_type": "RenameDatasetAction", 
+                    "output_name": "out_file1"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "cat1", 
+            "tool_state": "{\"__page__\": 0, \"input1\": \"null\", \"queries\": \"[{\\\"input2\\\": null, \\\"__index__\\\": 0}]\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
         "12": {
             "annotation": "", 
             "id": 12, 
             "input_connections": {
                 "genomesa": {
-                    "id": 9, 
+                    "id": 8, 
                     "output_name": "taxona"
                 }, 
                 "genomesb": {
-                    "id": 9, 
+                    "id": 8, 
                     "output_name": "taxonb"
                 }, 
                 "sicozip": {
-                    "id": 8, 
+                    "id": 7, 
                     "output_name": "retainedzip"
                 }
             }, 
@@ -542,8 +575,8 @@
                 }
             ], 
             "position": {
-                "left": 2606, 
-                "top": 730
+                "left": 2696, 
+                "top": 923
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
