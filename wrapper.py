@@ -41,3 +41,8 @@ if sys.argv[3:]:
     MODULE.main(sys.argv[3:])
 else:
     MODULE.main()
+
+#Snippet to log available environment variables from inside a Galaxy tool: 
+#for key in sorted($searchList[2].keys())
+#silent   sys.stderr.write("\t{0} = {1}\n".format(str(key), str($searchList[2][key])))
+#end for
