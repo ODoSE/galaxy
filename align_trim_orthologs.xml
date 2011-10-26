@@ -17,7 +17,7 @@
         <param name="retainedthreshold" type="integer" label="Minimum % retained after trimmining alignment" min="0" max="100" value="90" optional="false">
             <help>Filter orthologs where less than a given percentage of sequence is retained after trimming alignment</help>
         </param>
-        <param name="maxindellength" type="integer" label="Maximum length on insertion and deletions" min="0" value="30" optional="false">
+        <param name="maxindellength" type="integer" label="Maximum length of insertions and deletions in alignment" min="0" value="30" optional="false">
             <help>Filter orthologs containing insertions or deletions longer than length (at the nucleic acids level).</help>
         </param>
     </inputs>
