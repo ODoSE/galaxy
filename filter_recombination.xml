@@ -1,4 +1,4 @@
-<tool id="divergence_filter_recombination" name="Filter recombined orthologs">
+<tool id="divergence_filter_recombination" name="Find recombined orthologs">
     <description>by looking at values returned by PhiPack</description>
     <requirements>
         <requirement type="python-module">divergence</requirement>
@@ -6,8 +6,6 @@
     <command interpreter="python">wrapper.py divergence.filter_recombination $logfile
 --orthologs-zip $orthologszip
 --stats-file $statsfile
---recombined-zip $recombinedzip
---retained-zip $retainedzip
 </command>
     <inputs>
         <param format="orthologs.zip" name="orthologszip" type="data" label="Orthologous genes" />
@@ -15,8 +13,6 @@
     <outputs>
         <data format="txt" name="logfile" label="Logfile for ${tool.name}" />
         <data format="tabular" name="statsfile" label="PhiPack values per ortholog"/>
-        <data format="orthologs.zip" name="recombinedzip" label="Intertaxon-recombination orthologs"/>
-        <data format="orthologs.zip" name="retainedzip" label="Retained orthologs" />
     </outputs>
     <help>This tool allows you to filter out orthologs in that show evidence of recombination through PhiPack.</help>
 </tool>
