@@ -24,7 +24,7 @@
             <help>Filter orthologs where multiple different COGs are assigned to various strains</help>
         </param>
 -->
-        <param name="filterrecombination" type="boolean" label="Filter recombination" checked="true">
+        <param name="filterrecombination" type="boolean" label="Filter recombination" checked="false">
             <help>Filter orthologs where there is evidence of recombination within an ortholog based upon phylogenetic tree inspection</help>
         </param>
 		<param format="projectids" name="genomesa" type="data" label="Taxon A IDs" optional="true"/>
