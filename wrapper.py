@@ -36,11 +36,21 @@ FILE_HANDLER.setFormatter(logging.Formatter())
 FILE_HANDLER.setLevel(logging.INFO)
 logging.root.addHandler(FILE_HANDLER)
 
-#Run main method within module with remaining arguments
-if sys.argv[3:]:
-    MODULE.main(sys.argv[3:])
-else:
-    MODULE.main()
+try:
+    #Run main method within module with remaining arguments
+    if sys.argv[3:]:
+        MODULE.main(sys.argv[3:])
+    else:
+        MODULE.main()
+except:
+    #Should an error occur, report it to FogBugz automatically
+    from bugzscout import report_error_to_fogbugz
+    MESSAGE = report_error_to_fogbugz()
+    logging.info('Automatic bug submission reported: %s', MESSAGE)
+    raise
+
+#Remove logging handler from root
+logging.root.removeHandler(FILE_HANDLER)
 
 #Snippet to log available environment variables from inside a Galaxy tool: 
 #for key in sorted($searchList[2].keys())
