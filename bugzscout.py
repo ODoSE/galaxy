@@ -46,10 +46,10 @@ def get_error_trace_lines():
     description = '{0} @ {1}:{2}'.format(err.__name__, frame.f_code.co_filename, frame.f_lineno)
     return description, '\n'.join(lines)
 
-def post_to_fogbugz(description = 'ScoutTest',
+def post_to_fogbugz(description = 'Bug report from Galaxy',
                     extra_info = '',
-                    user = 'Up For Grabs',
-                    project = 'Internal',
+                    user = 'Tim te Beek',
+                    project = 'BRS2010P33 Genome-wide signatures of adaptive divergence in bacteria',
                     area = 'Misc',
                     correspondent = 'brs@nbic.nl',
                     force_new = '0',
