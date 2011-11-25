@@ -10,6 +10,11 @@ import urllib2
 import sys
 import traceback
 
+__author__ = "Tim te Beek"
+__contact__ = "brs@nbic.nl"
+__copyright__ = "Copyright 2011, Netherlands Bioinformatics Centre"
+__license__ = "MIT"
+
 def report_error_to_fogbugz():
     '''From an except-clause retrieve details about the error and post the results to FogBugz'''
     desc, lines = get_error_trace_lines()
@@ -19,6 +24,9 @@ def get_error_trace_lines():
     '''For the current error return an ID line & string containing a complete stacktrace and local variables.'''
     err, value, trace_back = sys.exc_info()
     lines = []
+
+    #TODO Add server hostname 
+
     while trace_back:
         #Walk through trace_back to get all frames
         frame = trace_back.tb_frame
@@ -43,6 +51,7 @@ def get_error_trace_lines():
     lines.extend(traceback.format_exc().splitlines())
 
     #Get error desciption as Type(values) @ file:line
+    #TODO method name instead of line number, as line numbers tend to shift over time
     description = '{0} @ {1}:{2}'.format(err.__name__, frame.f_code.co_filename, frame.f_lineno)
     return description, '\n'.join(lines)
 
