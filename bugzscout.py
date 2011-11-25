@@ -5,10 +5,12 @@ Module to submit errors to FogBugz automatically.
 @author: tbeek
 '''
 
-import urllib
-import urllib2
+import os
+import socket
 import sys
 import traceback
+import urllib
+import urllib2
 
 __author__ = "Tim te Beek"
 __contact__ = "brs@nbic.nl"
@@ -25,7 +27,10 @@ def get_error_trace_lines():
     err, value, trace_back = sys.exc_info()
     lines = []
 
-    #TODO Add server hostname 
+    #Add information identifying the system
+    lines.extend(os.uname())
+    lines.extend(item for item in socket.gethostbyaddr(socket.gethostname()) if item)
+    lines.append('\n')
 
     while trace_back:
         #Walk through trace_back to get all frames
@@ -51,8 +56,7 @@ def get_error_trace_lines():
     lines.extend(traceback.format_exc().splitlines())
 
     #Get error desciption as Type(values) @ file:line
-    #TODO method name instead of line number, as line numbers tend to shift over time
-    description = '{0} @ {1}:{2}'.format(err.__name__, frame.f_code.co_filename, frame.f_lineno)
+    description = '{0} @ {1}:{2}'.format(err.__name__, frame.f_code.co_filename, frame.f_code.co_name)
     return description, '\n'.join(lines)
 
 def post_to_fogbugz(description = 'Bug report from Galaxy',
