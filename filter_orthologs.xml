@@ -12,6 +12,7 @@
 
 #if $filterrecombination.value == "true"
 --filter-recombination $recombinedzip
+--recombined-crosstable $recombinedcrosstable
 --taxon-a $genomesa
 --taxon-b $genomesb
 #end if
@@ -41,6 +42,9 @@
         </data>
 -->
         <data format="orthologs.zip" name="recombinedzip" label="Intertaxon-recombination orthologs">
+            <filter>filterrecombination == "true"</filter>
+        </data>
+        <data format="tabular" name="recombinedcrosstable" label="Recombined ortholog gene IDs, COGs and Products">
             <filter>filterrecombination == "true"</filter>
         </data>
         <data format="orthologs.zip" name="retainedzip" label="Retained orthologs" />
