@@ -29,7 +29,7 @@ def get_error_trace_lines():
 
     #Add information identifying the system
     lines.extend(os.uname())
-    lines.extend(item for item in socket.gethostbyaddr(socket.gethostname()) if item)
+    lines.extend(str(item) for item in socket.gethostbyaddr(socket.gethostname()) if item)
     lines.append('\n')
 
     while trace_back:
@@ -94,7 +94,12 @@ def post_to_fogbugz(description = 'Bug report from Galaxy',
 
 if __name__ == '__main__':
     try:
+        avar = 12
+        alist = ['a', 1, avar]
+        aobject = object()
         raise Exception('bla')
     except:
-        print report_error_to_fogbugz()
+        for line in get_error_trace_lines():
+            print line
+        #print report_error_to_fogbugz()
         raise
