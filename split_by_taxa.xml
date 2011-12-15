@@ -1,4 +1,4 @@
-<tool id="divergence_split_by_taxa" name="Split orthologs by taxa">
+<tool id="divergence_split_by_taxa" name="Split orthologs by taxon">
 	<description>to separate alignments</description>
 	<requirements>
 		<requirement type="python-module">divergence</requirement>
