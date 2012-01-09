@@ -1,9 +1,9 @@
-<tool id="divergence_filter_recombination" name="Find recombined orthologs">
-    <description>by looking at values returned by PhiPack</description>
+<tool id="divergence_run_phipack" name="Run PhiPack">
+    <description>to calculate Phi, Max Chi^2 & NSS</description>
     <requirements>
         <requirement type="python-module">divergence</requirement>
     </requirements>
-    <command interpreter="python">wrapper.py divergence.filter_recombination $logfile
+    <command interpreter="python">wrapper.py divergence.run_phipack $logfile
 --orthologs-zip $orthologszip
 --stats-file $statsfile
 </command>
@@ -14,5 +14,5 @@
         <data format="txt" name="logfile" label="Logfile for ${tool.name}" />
         <data format="tabular" name="statsfile" label="PhiPack values per ortholog"/>
     </outputs>
-    <help>This tool allows you to filter out orthologs in that show evidence of recombination through PhiPack.</help>
+    <help>This tool allows you to calculate PhiPack values for orthologous genes.</help>
 </tool>
