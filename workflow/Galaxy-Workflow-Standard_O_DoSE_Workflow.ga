@@ -2,7 +2,7 @@
     "a_galaxy_workflow": "true", 
     "annotation": "", 
     "format-version": "0.1", 
-    "name": "Standard ADIDoS Workflow", 
+    "name": "O'DoSE standard", 
     "steps": {
         "0": {
             "annotation": "", 
@@ -26,8 +26,8 @@
                 }
             ], 
             "position": {
-                "left": 281, 
-                "top": 336
+                "left": 283, 
+                "top": 298
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -64,7 +64,7 @@
             ], 
             "position": {
                 "left": 554, 
-                "top": 444
+                "top": 405
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -110,7 +110,7 @@
             ], 
             "position": {
                 "left": 812, 
-                "top": 541
+                "top": 502
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -172,7 +172,7 @@
             ], 
             "position": {
                 "left": 1034, 
-                "top": 361
+                "top": 322
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -192,6 +192,10 @@
                 }
             }, 
             "inputs": [
+                {
+                    "description": "runtime parameter for tool Align & trim orthologs", 
+                    "name": "maxindellength"
+                }, 
                 {
                     "description": "runtime parameter for tool Align & trim orthologs", 
                     "name": "retainedthreshold"
@@ -218,12 +222,12 @@
             ], 
             "position": {
                 "left": 1392, 
-                "top": 414
+                "top": 375
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
             "tool_id": "divergence_align_trim_orthologs", 
-            "tool_state": "{\"retainedthreshold\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"dnazip\": \"null\", \"orthologszip\": \"null\", \"__page__\": 0}", 
+            "tool_state": "{\"maxindellength\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"retainedthreshold\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"dnazip\": \"null\", \"orthologszip\": \"null\", \"__page__\": 0}", 
             "tool_version": "1.0.0", 
             "type": "tool", 
             "user_outputs": []
@@ -246,8 +250,8 @@
                 }
             ], 
             "position": {
-                "left": 1655, 
-                "top": 291
+                "left": 1703, 
+                "top": 238
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -292,7 +296,7 @@
             ], 
             "position": {
                 "left": 1700, 
-                "top": 387
+                "top": 348
             }, 
             "post_job_actions": {
                 "RenameDatasetActioncodingregions": {
@@ -334,7 +338,12 @@
                     "output_name": "trimmedzip"
                 }
             }, 
-            "inputs": [], 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Filter orthologs", 
+                    "name": "filterrecombination"
+                }
+            ], 
             "name": "Filter orthologs", 
             "outputs": [
                 {
@@ -346,18 +355,22 @@
                     "type": "orthologs.zip"
                 }, 
                 {
+                    "name": "recombinedcrosstable", 
+                    "type": "tabular"
+                }, 
+                {
                     "name": "retainedzip", 
                     "type": "orthologs.zip"
                 }
             ], 
             "position": {
                 "left": 2027, 
-                "top": 606
+                "top": 567
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
             "tool_id": "divergence_filter_orthologs", 
-            "tool_state": "{\"__page__\": 0, \"filterrecombination\": \"\\\"True\\\"\", \"orthologszip\": \"null\", \"genomesa\": \"null\", \"genomesb\": \"null\", \"dnazip\": \"null\", \"filtermultiplecogs\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}", 
+            "tool_state": "{\"__page__\": 0, \"filterrecombination\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"orthologszip\": \"null\", \"genomesa\": \"null\", \"genomesb\": \"null\", \"dnazip\": \"null\", \"filtermultiplecogs\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}", 
             "tool_version": "1.0.0", 
             "type": "tool", 
             "user_outputs": []
@@ -397,7 +410,7 @@
             ], 
             "position": {
                 "left": 2335, 
-                "top": 541
+                "top": 502
             }, 
             "post_job_actions": {
                 "RenameDatasetActioncodingregions": {
@@ -453,7 +466,7 @@
             ], 
             "position": {
                 "left": 2696, 
-                "top": 458
+                "top": 419
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -481,7 +494,7 @@
                 }
             }, 
             "inputs": [], 
-            "name": "Split orthologs by taxa", 
+            "name": "Split orthologs by taxon", 
             "outputs": [
                 {
                     "name": "taxonazip", 
@@ -494,7 +507,7 @@
             ], 
             "position": {
                 "left": 2692, 
-                "top": 628
+                "top": 589
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -527,7 +540,7 @@
             ], 
             "position": {
                 "left": 2694, 
-                "top": 796
+                "top": 757
             }, 
             "post_job_actions": {
                 "RenameDatasetActionout_file1": {
@@ -576,7 +589,7 @@
             ], 
             "position": {
                 "left": 2696, 
-                "top": 923
+                "top": 884
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
