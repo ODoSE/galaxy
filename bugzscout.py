@@ -40,7 +40,7 @@ def get_error_trace_lines():
         trace_back = trace_back.tb_next
 
         #Identify frame
-        lines.append("Frame %s at %s:%s" % (frame.f_code.co_name,
+        lines.append("%s @ %s:%s" % (frame.f_code.co_name,
                                             frame.f_code.co_filename,
                                             frame.f_lineno))
         #Get locals in frame
@@ -65,7 +65,7 @@ def get_error_trace_lines():
 def post_to_fogbugz(description='Bug report from Galaxy',
                     extra_info='',
                     user='Tim te Beek',
-                    project='BRS2010P33 Genome-wide signatures of adaptive divergence in bacteria',
+                    project='BRS2010P33 Genome-wide signatures of adaptive divergence in bacteria (Michiel Vos; NIOO)',
                     area='Misc',
                     correspondent='brs@nbic.nl',
                     force_new='0',
