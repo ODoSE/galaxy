@@ -29,7 +29,7 @@
 		<param name="outputaccessoryzip" type="boolean" label="Output accessory orthologous genes" />
 	</inputs>
 	<outputs>
-		<data format="orthologs.zip" name="sicozip" label="All shared single-copy orthologous genes" />
+		<data format="orthologs.zip" name="sicozip" label="SICO's" />
 		<data format="orthologs.zip" name="mucozip" label="Shared multiple-copy orthologous genes">
 			<filter>outputmucozip</filter>
 		</data>
