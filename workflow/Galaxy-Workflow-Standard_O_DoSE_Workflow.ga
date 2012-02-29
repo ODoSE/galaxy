@@ -2,7 +2,7 @@
     "a_galaxy_workflow": "true", 
     "annotation": "", 
     "format-version": "0.1", 
-    "name": "O'DoSE standard", 
+    "name": "Standard O'DoSE Workflow", 
     "steps": {
         "0": {
             "annotation": "", 
@@ -27,7 +27,7 @@
             ], 
             "position": {
                 "left": 283, 
-                "top": 298
+                "top": 341
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -64,7 +64,7 @@
             ], 
             "position": {
                 "left": 554, 
-                "top": 405
+                "top": 448
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -110,7 +110,7 @@
             ], 
             "position": {
                 "left": 812, 
-                "top": 502
+                "top": 545
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -172,7 +172,7 @@
             ], 
             "position": {
                 "left": 1034, 
-                "top": 322
+                "top": 365
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -222,7 +222,7 @@
             ], 
             "position": {
                 "left": 1392, 
-                "top": 375
+                "top": 418
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -251,7 +251,7 @@
             ], 
             "position": {
                 "left": 1703, 
-                "top": 238
+                "top": 281
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -296,7 +296,7 @@
             ], 
             "position": {
                 "left": 1700, 
-                "top": 348
+                "top": 391
             }, 
             "post_job_actions": {
                 "RenameDatasetActioncodingregions": {
@@ -365,7 +365,7 @@
             ], 
             "position": {
                 "left": 2027, 
-                "top": 567
+                "top": 610
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -410,7 +410,7 @@
             ], 
             "position": {
                 "left": 2335, 
-                "top": 502
+                "top": 545
             }, 
             "post_job_actions": {
                 "RenameDatasetActioncodingregions": {
@@ -466,7 +466,7 @@
             ], 
             "position": {
                 "left": 2696, 
-                "top": 419
+                "top": 455
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -507,7 +507,7 @@
             ], 
             "position": {
                 "left": 2692, 
-                "top": 589
+                "top": 632
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -518,49 +518,8 @@
             "user_outputs": []
         }, 
         "11": {
-            "annotation": "", 
+            "annotation": "Some calculations obtained through PAML (http://abacus.gene.ucl.ac.uk/software/paml.html) and PhiPack (http://www.maths.otago.ac.nz/~dbryant/software/phimanual.pdf)", 
             "id": 11, 
-            "input_connections": {
-                "input1": {
-                    "id": 8, 
-                    "output_name": "taxona"
-                }, 
-                "queries_0|input2": {
-                    "id": 8, 
-                    "output_name": "taxonb"
-                }
-            }, 
-            "inputs": [], 
-            "name": "Concatenate datasets", 
-            "outputs": [
-                {
-                    "name": "out_file1", 
-                    "type": "input"
-                }
-            ], 
-            "position": {
-                "left": 2694, 
-                "top": 757
-            }, 
-            "post_job_actions": {
-                "RenameDatasetActionout_file1": {
-                    "action_arguments": {
-                        "newname": "Taxon A+B IDs"
-                    }, 
-                    "action_type": "RenameDatasetAction", 
-                    "output_name": "out_file1"
-                }
-            }, 
-            "tool_errors": null, 
-            "tool_id": "cat1", 
-            "tool_state": "{\"__page__\": 0, \"input1\": \"null\", \"queries\": \"[{\\\"input2\\\": null, \\\"__index__\\\": 0}]\"}", 
-            "tool_version": "1.0.0", 
-            "type": "tool", 
-            "user_outputs": []
-        }, 
-        "12": {
-            "annotation": "", 
-            "id": 12, 
             "input_connections": {
                 "genomesa": {
                     "id": 8, 
@@ -588,8 +547,8 @@
                 }
             ], 
             "position": {
-                "left": 2696, 
-                "top": 884
+                "left": 2695, 
+                "top": 809
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
