@@ -27,7 +27,7 @@
             ], 
             "position": {
                 "left": 283, 
-                "top": 354
+                "top": 302
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -64,7 +64,7 @@
             ], 
             "position": {
                 "left": 554, 
-                "top": 461
+                "top": 409
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -110,7 +110,7 @@
             ], 
             "position": {
                 "left": 812, 
-                "top": 558
+                "top": 506
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -172,7 +172,7 @@
             ], 
             "position": {
                 "left": 1034, 
-                "top": 378
+                "top": 326
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -222,7 +222,7 @@
             ], 
             "position": {
                 "left": 1392, 
-                "top": 431
+                "top": 379
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -250,8 +250,8 @@
                 }
             ], 
             "position": {
-                "left": 1703, 
-                "top": 294
+                "left": 1699, 
+                "top": 354
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -295,28 +295,13 @@
                 }
             ], 
             "position": {
-                "left": 1707, 
-                "top": 390
+                "left": 1701, 
+                "top": 454
             }, 
-            "post_job_actions": {
-                "RenameDatasetActioncodingregions": {
-                    "action_arguments": {
-                        "newname": "Orthologs per genome pre-recombination filter"
-                    }, 
-                    "action_type": "RenameDatasetAction", 
-                    "output_name": "codingregions"
-                }, 
-                "RenameDatasetActionconcatemerfasta": {
-                    "action_arguments": {
-                        "newname": "Concatemer pre-recombination filter"
-                    }, 
-                    "action_type": "RenameDatasetAction", 
-                    "output_name": "concatemerfasta"
-                }
-            }, 
+            "post_job_actions": {}, 
             "tool_errors": null, 
             "tool_id": "divergence_concatemer_tree", 
-            "tool_state": "{\"__page__\": 0, \"orthologs\": \"null\", \"outputtree\": \"\\\"False\\\"\"}", 
+            "tool_state": "{\"__page__\": 0, \"orthologs\": \"null\", \"outputtree\": \"\\\"True\\\"\"}", 
             "tool_version": "1.0.0", 
             "type": "tool", 
             "user_outputs": []
@@ -332,64 +317,6 @@
                 "genomesb": {
                     "id": 6, 
                     "output_name": "taxonb"
-                }, 
-                "orthologszip": {
-                    "id": 4, 
-                    "output_name": "trimmedzip"
-                }
-            }, 
-            "inputs": [
-                {
-                    "description": "runtime parameter for tool Filter orthologs", 
-                    "name": "filterrecombination"
-                }
-            ], 
-            "name": "Filter orthologs", 
-            "outputs": [
-                {
-                    "name": "logfile", 
-                    "type": "txt"
-                }, 
-                {
-                    "name": "recombinedzip", 
-                    "type": "orthologs.zip"
-                }, 
-                {
-                    "name": "recombinedcrosstable", 
-                    "type": "tabular"
-                }, 
-                {
-                    "name": "retainedzip", 
-                    "type": "orthologs.zip"
-                }
-            ], 
-            "position": {
-                "left": 2069, 
-                "top": 638
-            }, 
-            "post_job_actions": {}, 
-            "tool_errors": null, 
-            "tool_id": "divergence_filter_orthologs", 
-            "tool_state": "{\"__page__\": 0, \"filterrecombination\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"orthologszip\": \"null\", \"genomesa\": \"null\", \"genomesb\": \"null\", \"dnazip\": \"null\", \"filtermultiplecogs\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}", 
-            "tool_version": "1.0.0", 
-            "type": "tool", 
-            "user_outputs": []
-        }, 
-        "8": {
-            "annotation": "", 
-            "id": 8, 
-            "input_connections": {
-                "genomesa": {
-                    "id": 6, 
-                    "output_name": "taxona"
-                }, 
-                "genomesb": {
-                    "id": 6, 
-                    "output_name": "taxonb"
-                }, 
-                "sicozip": {
-                    "id": 7, 
-                    "output_name": "retainedzip"
                 }
             }, 
             "inputs": [], 
@@ -405,8 +332,8 @@
                 }
             ], 
             "position": {
-                "left": 2454, 
-                "top": 224
+                "left": 2076, 
+                "top": 359
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -416,54 +343,9 @@
             "type": "tool", 
             "user_outputs": []
         }, 
-        "9": {
-            "annotation": "", 
-            "id": 9, 
-            "input_connections": {
-                "retainedorthologs": {
-                    "id": 7, 
-                    "output_name": "retainedzip"
-                }, 
-                "unfiltereda": {
-                    "id": 6, 
-                    "output_name": "taxona"
-                }, 
-                "unfilteredb": {
-                    "id": 6, 
-                    "output_name": "taxonb"
-                }
-            }, 
-            "inputs": [], 
-            "name": "Post recombination step", 
-            "outputs": [
-                {
-                    "name": "orthologspergenome", 
-                    "type": "dna.zip"
-                }, 
-                {
-                    "name": "concatemerfasta", 
-                    "type": "fasta"
-                }, 
-                {
-                    "name": "tree", 
-                    "type": "pdf"
-                }
-            ], 
-            "position": {
-                "left": 2460, 
-                "top": 402
-            }, 
-            "post_job_actions": {}, 
-            "tool_errors": null, 
-            "tool_id": "divergence_post_recombination_filter", 
-            "tool_state": "{\"__page__\": 0, \"unfiltereda\": \"null\", \"retainedorthologs\": \"null\", \"unfilteredb\": \"null\"}", 
-            "tool_version": "1.0.0", 
-            "type": "tool", 
-            "user_outputs": []
-        }, 
-        "10": {
+        "8": {
             "annotation": "Some calculations obtained through PAML (http://abacus.gene.ucl.ac.uk/software/paml.html) and PhiPack (http://www.maths.otago.ac.nz/~dbryant/software/phimanual.pdf)", 
-            "id": 10, 
+            "id": 8, 
             "input_connections": {
                 "genomesa": {
                     "id": 6, 
@@ -472,10 +354,6 @@
                 "genomesb": {
                     "id": 6, 
                     "output_name": "taxonb"
-                }, 
-                "sicozip": {
-                    "id": 7, 
-                    "output_name": "retainedzip"
                 }
             }, 
             "inputs": [], 
@@ -491,8 +369,8 @@
                 }
             ], 
             "position": {
-                "left": 2456, 
-                "top": 599
+                "left": 2078, 
+                "top": 551
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
