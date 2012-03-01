@@ -1,5 +1,5 @@
 <tool id="divergence_post_recombination_filter" name="Post recombination step">
-    <description>to split out orthologs per genome, create concatemer & produce tree</description>
+    <description>to split out orthologs per genome, create concatemer &amp; produce tree</description>
     <requirements>
         <requirement type="python-module">divergence</requirement>
     </requirements>
@@ -31,7 +31,7 @@ across all genomes.
 A phylogenetic tree is constructed from the orthologous genes concatemer per genome alignment for initial inspection.
 More rigorous inspection using other software is recommended.
 
-This tool will fail if differences are found between the Taxon A IDs & Taxon B IDs from before inter-taxon recombination
+This tool will fail if differences are found between the Taxon A IDs &amp; Taxon B IDs from before inter-taxon recombination
 when compared with the taxon assignments post inter-taxon recombination filtering.
     </help>
 </tool>
