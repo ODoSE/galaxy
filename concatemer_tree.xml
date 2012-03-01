@@ -13,7 +13,7 @@
 </command>
     <inputs>
         <param type="data" format="orthologs.zip" name="orthologs" label="Orthologous genes" />
-	<param name="outputtree" type="boolean" label="Output tree file" checked="true" />
+        <param name="outputtree" type="boolean" label="Output tree file" checked="true" />
     </inputs>
     <outputs>
         <data format="dna.zip" name="orthologspergenome" label="Orthologs per genome" />
@@ -28,5 +28,5 @@
 This tool concatenates orthologs per genome into a FASTA records, and combines the records into a single FASTA file.
 From this FASTA file a phylogenetic tree is created and visualized, from which the taxa are deduced by looking at the
 largest two clades. 
-  </help>
+    </help>
 </tool>

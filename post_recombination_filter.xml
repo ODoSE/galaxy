@@ -1,0 +1,37 @@
+<tool id="divergence_post_recombination_filter" name="Post recombination step">
+    <description>to split out orthologs per genome, create concatemer & produce tree</description>
+    <requirements>
+        <requirement type="python-module">divergence</requirement>
+    </requirements>
+    <command interpreter="python">wrapper.py divergence.post_recombination_filter logfile
+--retained-orthologs-zip $retainedorthologs
+--unfiltered-taxon-a $unfiltereda
+--unfiltered-taxon-b $unfilteredb
+
+--orthologs-per-genome $orthologspergenome
+--concatemer $concatemerfasta
+--tree $tree
+</command>
+    <inputs>
+        <param type="data" format="orthologs.zip" name="retainedorthologs" label="Retained orthologs" />
+		<param type="data" format="projectids" name="unfiltereda" label="Taxon A IDs" />
+		<param type="data" format="projectids" name="unfilteredb" label="Taxon B IDs" />
+    </inputs>
+    <outputs>
+        <data format="dna.zip" name="orthologspergenome" label="Orthologs per genome post-recombination filter" />
+        <data format="fasta" name="concatemerfasta" label="Concatemer post-recombination filter" />
+        <data format="pdf" name="tree" label="Phylogenetic tree" />
+    </outputs>
+    <help>
+This tools splits out the retained orthologs into separate files containing all orthologs per genome.
+
+The produced orthologs per genome are also concatenated per genome to create an alignment of the orthologous genes 
+across all genomes.
+
+A phylogenetic tree is constructed from the orthologous genes concatemer per genome alignment for initial inspection.
+More rigorous inspection using other software is recommended.
+
+This tool will fail if differences are found between the Taxon A IDs & Taxon B IDs from before inter-taxon recombination
+when compared with the taxon assignments post inter-taxon recombination filtering.
+    </help>
+</tool>
