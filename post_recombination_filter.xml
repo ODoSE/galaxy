@@ -13,9 +13,9 @@
 --tree $tree
 </command>
     <inputs>
+        <param type="data" format="projectids" name="unfiltereda" label="Taxon A IDs" />
+        <param type="data" format="projectids" name="unfilteredb" label="Taxon B IDs" />
         <param type="data" format="orthologs.zip" name="retainedorthologs" label="Retained orthologs" />
-		<param type="data" format="projectids" name="unfiltereda" label="Taxon A IDs" />
-		<param type="data" format="projectids" name="unfilteredb" label="Taxon B IDs" />
     </inputs>
     <outputs>
         <data format="dna.zip" name="orthologspergenome" label="Orthologs per genome post-recombination filter" />
