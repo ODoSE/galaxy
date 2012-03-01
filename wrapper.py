@@ -30,15 +30,18 @@ try:
         MODULE.main(sys.argv[3:])
     else:
         MODULE.main()
+except SystemExit:
+    #Do not report SystemExit errors to FogBugz: Just exit
+    raise
 except:
-    #Should an error occur, report it to FogBugz automatically
+    #Should any other error occur, report it to FogBugz automatically
     from bugzscout import report_error_to_fogbugz
     MESSAGE = report_error_to_fogbugz()
     logging.info('Automatic bug submission reported: %s', MESSAGE)
     raise
-
-#Remove logging handler from root
-logging.root.removeHandler(FILE_HANDLER)
+finally:
+    #Always remove logging handler from root
+    logging.root.removeHandler(FILE_HANDLER)
 
 #Snippet to log available environment variables from inside a Galaxy tool: 
 #for key in sorted($searchList[2].keys())
