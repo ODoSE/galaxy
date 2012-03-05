@@ -2,7 +2,7 @@
     "a_galaxy_workflow": "true", 
     "annotation": "", 
     "format-version": "0.1", 
-    "name": "O'DoSE Workflow without inter-taxon recombination filtering", 
+    "name": "O'DoSE without inter-taxon recombination filtering", 
     "steps": {
         "0": {
             "annotation": "", 
@@ -27,7 +27,7 @@
             ], 
             "position": {
                 "left": 283, 
-                "top": 302
+                "top": 296
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -64,7 +64,7 @@
             ], 
             "position": {
                 "left": 554, 
-                "top": 409
+                "top": 403
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -110,7 +110,7 @@
             ], 
             "position": {
                 "left": 812, 
-                "top": 506
+                "top": 500
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -172,7 +172,7 @@
             ], 
             "position": {
                 "left": 1034, 
-                "top": 326
+                "top": 320
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -218,11 +218,15 @@
                 {
                     "name": "stats", 
                     "type": "tabular"
+                }, 
+                {
+                    "name": "scatterplot", 
+                    "type": "pdf"
                 }
             ], 
             "position": {
-                "left": 1392, 
-                "top": 379
+                "left": 1389, 
+                "top": 321
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -233,37 +237,8 @@
             "user_outputs": []
         }, 
         "5": {
-            "annotation": "", 
-            "id": 5, 
-            "input_connections": {
-                "input": {
-                    "id": 4, 
-                    "output_name": "stats"
-                }
-            }, 
-            "inputs": [], 
-            "name": "Scatterplot", 
-            "outputs": [
-                {
-                    "name": "out_file1", 
-                    "type": "pdf"
-                }
-            ], 
-            "position": {
-                "left": 1699, 
-                "top": 354
-            }, 
-            "post_job_actions": {}, 
-            "tool_errors": null, 
-            "tool_id": "scatterplot_rpy", 
-            "tool_state": "{\"xlab\": \"\\\"percentage retained\\\"\", \"title\": \"\\\"Align&Trim\\\"\", \"__page__\": 0, \"col2\": \"{\\\"__class__\\\": \\\"UnvalidatedValue\\\", \\\"value\\\": \\\"2\\\"}\", \"col1\": \"{\\\"__class__\\\": \\\"UnvalidatedValue\\\", \\\"value\\\": \\\"4\\\"}\", \"input\": \"null\", \"ylab\": \"\\\"original length\\\"\"}", 
-            "tool_version": "1.0.0", 
-            "type": "tool", 
-            "user_outputs": []
-        }, 
-        "6": {
             "annotation": "Filter inter-taxon recombination orthologs and deduce taxa", 
-            "id": 6, 
+            "id": 5, 
             "input_connections": {
                 "orthologs": {
                     "id": 4, 
@@ -295,8 +270,8 @@
                 }
             ], 
             "position": {
-                "left": 1701, 
-                "top": 454
+                "left": 1697, 
+                "top": 325
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -306,16 +281,16 @@
             "type": "tool", 
             "user_outputs": []
         }, 
-        "7": {
+        "6": {
             "annotation": "", 
-            "id": 7, 
+            "id": 6, 
             "input_connections": {
                 "genomesa": {
-                    "id": 6, 
+                    "id": 5, 
                     "output_name": "taxona"
                 }, 
                 "genomesb": {
-                    "id": 6, 
+                    "id": 5, 
                     "output_name": "taxonb"
                 }
             }, 
@@ -332,8 +307,8 @@
                 }
             ], 
             "position": {
-                "left": 2076, 
-                "top": 359
+                "left": 2054, 
+                "top": 325
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -343,16 +318,16 @@
             "type": "tool", 
             "user_outputs": []
         }, 
-        "8": {
+        "7": {
             "annotation": "Some calculations obtained through PAML (http://abacus.gene.ucl.ac.uk/software/paml.html) and PhiPack (http://www.maths.otago.ac.nz/~dbryant/software/phimanual.pdf)", 
-            "id": 8, 
+            "id": 7, 
             "input_connections": {
                 "genomesa": {
-                    "id": 6, 
+                    "id": 5, 
                     "output_name": "taxona"
                 }, 
                 "genomesb": {
-                    "id": 6, 
+                    "id": 5, 
                     "output_name": "taxonb"
                 }
             }, 
@@ -369,8 +344,8 @@
                 }
             ], 
             "position": {
-                "left": 2078, 
-                "top": 551
+                "left": 2058, 
+                "top": 502
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
