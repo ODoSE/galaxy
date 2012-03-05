@@ -26,7 +26,7 @@
                 }
             ], 
             "position": {
-                "left": 283, 
+                "left": 200, 
                 "top": 296
             }, 
             "post_job_actions": {}, 
@@ -63,7 +63,7 @@
                 }
             ], 
             "position": {
-                "left": 554, 
+                "left": 471, 
                 "top": 403
             }, 
             "post_job_actions": {}, 
@@ -109,7 +109,7 @@
                 }
             ], 
             "position": {
-                "left": 812, 
+                "left": 729, 
                 "top": 500
             }, 
             "post_job_actions": {}, 
@@ -171,7 +171,7 @@
                 }
             ], 
             "position": {
-                "left": 1034, 
+                "left": 951, 
                 "top": 320
             }, 
             "post_job_actions": {}, 
@@ -225,8 +225,8 @@
                 }
             ], 
             "position": {
-                "left": 1389, 
-                "top": 321
+                "left": 1284, 
+                "top": 326
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -270,8 +270,8 @@
                 }
             ], 
             "position": {
-                "left": 1697, 
-                "top": 325
+                "left": 1748, 
+                "top": 379
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -292,6 +292,10 @@
                 "genomesb": {
                     "id": 5, 
                     "output_name": "taxonb"
+                }, 
+                "sicozip": {
+                    "id": 4, 
+                    "output_name": "trimmedzip"
                 }
             }, 
             "inputs": [], 
@@ -307,8 +311,8 @@
                 }
             ], 
             "position": {
-                "left": 2054, 
-                "top": 325
+                "left": 2033, 
+                "top": 201
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -329,6 +333,10 @@
                 "genomesb": {
                     "id": 5, 
                     "output_name": "taxonb"
+                }, 
+                "sicozip": {
+                    "id": 4, 
+                    "output_name": "trimmedzip"
                 }
             }, 
             "inputs": [], 
@@ -344,8 +352,8 @@
                 }
             ], 
             "position": {
-                "left": 2058, 
-                "top": 502
+                "left": 2041, 
+                "top": 608
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
