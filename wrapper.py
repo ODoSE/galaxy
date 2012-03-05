@@ -13,13 +13,13 @@ import sys
 NAME = sys.argv[1]
 PACKAGE = 'divergence'
 try:
-    MODULE = __import__(NAME, fromlist = [PACKAGE])
+    MODULE = __import__(NAME, fromlist=[PACKAGE])
 except ImportError as ie:
     print('Could not import {0} from {1}'.format(NAME, PACKAGE))
 
 #Second argument contains name of logging output file to use
 import logging
-FILE_HANDLER = logging.FileHandler(sys.argv[2], mode = 'w')
+FILE_HANDLER = logging.FileHandler(sys.argv[2], mode='w')
 FILE_HANDLER.setFormatter(logging.Formatter())
 FILE_HANDLER.setLevel(logging.INFO)
 logging.root.addHandler(FILE_HANDLER)
@@ -32,6 +32,9 @@ try:
         MODULE.main()
 except SystemExit:
     #Do not report SystemExit errors to FogBugz: Just exit
+    raise
+except AssertionError:
+    #Do not report AssertionErrors to FogBugz: Not a bug we care about
     raise
 except:
     #Should any other error occur, report it to FogBugz automatically
