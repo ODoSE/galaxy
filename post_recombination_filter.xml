@@ -10,7 +10,7 @@
 
 --orthologs-per-genome $orthologspergenome
 --concatemer $concatemerfasta
---tree $tree
+--tree tree.pdf
 </command>
     <inputs>
         <param type="data" format="projectids" name="unfiltereda" label="Taxon A IDs" />
@@ -20,16 +20,13 @@
     <outputs>
         <data format="dna.zip" name="orthologspergenome" label="Orthologs per genome post-recombination filter" />
         <data format="fasta" name="concatemerfasta" label="Concatemer post-recombination filter" />
-        <data format="pdf" name="tree" label="Phylogenetic tree" />
+        <!--<data format="pdf" name="tree" label="Phylogenetic tree" />-->
     </outputs>
     <help>
 This tools splits out the retained orthologs into separate files containing all orthologs per genome.
 
 The produced orthologs per genome are also concatenated per genome to create an alignment of the orthologous genes 
-across all genomes.
-
-A phylogenetic tree is constructed from the orthologous genes concatemer per genome alignment for initial inspection.
-More rigorous inspection using other software is recommended.
+across all genomes. 
 
 This tool will fail if differences are found between the Taxon A IDs &amp; Taxon B IDs from before inter-taxon recombination
 when compared with the taxon assignments post inter-taxon recombination filtering.
