@@ -1,4 +1,4 @@
-<tool id="divergence_filter_orthologs" name="Filter orthologs">
+<tool id="divergence_filter_orthologs" name="Inter-taxon recombination filter">
     <description>to only retain orthologs suitable for further analysis</description>
     <requirements>
         <requirement type="python-module">divergence</requirement>
@@ -50,8 +50,6 @@
         <data format="orthologs.zip" name="retainedzip" label="Retained orthologs" />
     </outputs>
     <help>
-This tool allows you to filter out orthologs in a number of different ways, as detailed above.
-
-This tool will carry over 'missing' COG annotations within ortholog files if "Filter multiple COGs" is enabled.
+This tool allows you to filter out orthologs that show evidence of inter-taxon recombination.
   </help>
 </tool>
