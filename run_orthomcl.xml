@@ -1,5 +1,5 @@
-<tool id="divergence_run_orthomcl" name="Run OrthoMCL">
-	<description>to find orthologs using reciprocal BLAST and HMM clustering</description>
+<tool id="divergence_run_orthomcl" name="Identify core set of single copy ortholog genes">
+	<description>using OrthoMCL to find orthologs using reciprocal BLAST and HMM clustering</description>
 	<requirements>
 		<requirement type="python-module">divergence</requirement>
 	</requirements>
