@@ -10,14 +10,15 @@
 ##--filter-multiple-cogs $transferedcogs
 ###end if
 
-#if $filterrecombination.value == "true"
 --filter-recombination $recombinedzip
 --recombined-crosstable $recombinedcrosstable
 --taxon-a $genomesa
 --taxon-b $genomesb
-#end if
 
 --retained-zip $retainedzip
+
+--orthologs-per-genome $orthologspergenome
+--concatemer $concatemerfasta
 </command>
     <inputs>
 <!--
@@ -25,11 +26,6 @@
             <help>Filter orthologs where multiple different COGs are assigned to various strains</help>
         </param>
 -->
-		<param name="filterrecombination" type="select" label="Filter recombination">
-			<help>Filter orthologs where there is evidence of recombination within an ortholog based upon phylogenetic tree inspection</help>
-			<option value="false">No</option>
-			<option value="true">Yes</option>
-		</param>
 		<param format="projectids" name="genomesa" type="data" label="Taxon A IDs" optional="true"/>
 		<param format="projectids" name="genomesb" type="data" label="Taxon B IDs" optional="true"/>
         <param format="orthologs.zip" name="orthologszip" type="data" label="Orthologous genes" />
@@ -48,8 +44,19 @@
             <filter>filterrecombination == "true"</filter>
         </data>
         <data format="orthologs.zip" name="retainedzip" label="Retained orthologs" />
+        <data format="dna.zip" name="orthologspergenome" label="Orthologs per genome post-recombination filter" />
+        <data format="fasta" name="concatemerfasta" label="Concatemer post-recombination filter" />
     </outputs>
     <help>
-This tool allows you to filter out orthologs that show evidence of inter-taxon recombination.
+This tool allows you to filter out orthologs that show evidence of inter-taxon recombination within an ortholog based 
+upon phylogenetic tree inspection.
+
+This tools then splits out the retained orthologs into separate files containing all orthologs per genome.
+
+The produced orthologs per genome are also concatenated per genome to create an alignment of the orthologous genes 
+across all genomes. 
+
+This tool will fail if differences are found between the Taxon A IDs &amp; Taxon B IDs from before inter-taxon recombination
+when compared with the taxon assignments post inter-taxon recombination filtering.
   </help>
 </tool>
