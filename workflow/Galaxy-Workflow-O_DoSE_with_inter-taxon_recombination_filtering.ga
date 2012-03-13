@@ -26,8 +26,8 @@
                 }
             ], 
             "position": {
-                "left": 283, 
-                "top": 380
+                "left": 187, 
+                "top": 341
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -63,8 +63,8 @@
                 }
             ], 
             "position": {
-                "left": 554, 
-                "top": 487
+                "left": 410, 
+                "top": 426
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -85,15 +85,15 @@
             }, 
             "inputs": [
                 {
-                    "description": "runtime parameter for tool Run OrthoMCL", 
+                    "description": "runtime parameter for tool Identify core set of single copy ortholog genes", 
                     "name": "proteinlength"
                 }, 
                 {
-                    "description": "runtime parameter for tool Run OrthoMCL", 
+                    "description": "runtime parameter for tool Identify core set of single copy ortholog genes", 
                     "name": "evalueexponent"
                 }
             ], 
-            "name": "Run OrthoMCL", 
+            "name": "Identify core set of single copy ortholog genes", 
             "outputs": [
                 {
                     "name": "logfile", 
@@ -109,8 +109,8 @@
                 }
             ], 
             "position": {
-                "left": 812, 
-                "top": 584
+                "left": 733, 
+                "top": 526
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -171,8 +171,8 @@
                 }
             ], 
             "position": {
-                "left": 1034, 
-                "top": 404
+                "left": 1069, 
+                "top": 368
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -225,8 +225,8 @@
                 }
             ], 
             "position": {
-                "left": 1374, 
-                "top": 453
+                "left": 1369, 
+                "top": 372
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -270,8 +270,8 @@
                 }
             ], 
             "position": {
-                "left": 1696, 
-                "top": 404
+                "left": 1716, 
+                "top": 343
             }, 
             "post_job_actions": {
                 "RenameDatasetActioncodingregions": {
@@ -291,7 +291,7 @@
             }, 
             "tool_errors": null, 
             "tool_id": "divergence_concatemer_tree", 
-            "tool_state": "{\"__page__\": 0, \"orthologs\": \"null\", \"outputtree\": \"\\\"False\\\"\"}", 
+            "tool_state": "{\"__page__\": 0, \"orthologs\": \"null\", \"outputtree\": \"\\\"True\\\"\"}", 
             "tool_version": "1.0.0", 
             "type": "tool", 
             "user_outputs": []
@@ -314,7 +314,7 @@
                 }
             }, 
             "inputs": [], 
-            "name": "Filter orthologs", 
+            "name": "Inter-taxon recombination filter", 
             "outputs": [
                 {
                     "name": "logfile", 
@@ -331,11 +331,19 @@
                 {
                     "name": "retainedzip", 
                     "type": "orthologs.zip"
+                }, 
+                {
+                    "name": "orthologspergenome", 
+                    "type": "dna.zip"
+                }, 
+                {
+                    "name": "concatemerfasta", 
+                    "type": "fasta"
                 }
             ], 
             "position": {
-                "left": 2069, 
-                "top": 664
+                "left": 1973, 
+                "top": 560
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -375,8 +383,8 @@
                 }
             ], 
             "position": {
-                "left": 2454, 
-                "top": 250
+                "left": 2295, 
+                "top": 259
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -387,53 +395,8 @@
             "user_outputs": []
         }, 
         "8": {
-            "annotation": "", 
-            "id": 8, 
-            "input_connections": {
-                "retainedorthologs": {
-                    "id": 6, 
-                    "output_name": "retainedzip"
-                }, 
-                "unfiltereda": {
-                    "id": 5, 
-                    "output_name": "taxona"
-                }, 
-                "unfilteredb": {
-                    "id": 5, 
-                    "output_name": "taxonb"
-                }
-            }, 
-            "inputs": [], 
-            "name": "Post recombination step", 
-            "outputs": [
-                {
-                    "name": "orthologspergenome", 
-                    "type": "dna.zip"
-                }, 
-                {
-                    "name": "concatemerfasta", 
-                    "type": "fasta"
-                }, 
-                {
-                    "name": "tree", 
-                    "type": "pdf"
-                }
-            ], 
-            "position": {
-                "left": 2460, 
-                "top": 428
-            }, 
-            "post_job_actions": {}, 
-            "tool_errors": null, 
-            "tool_id": "divergence_post_recombination_filter", 
-            "tool_state": "{\"__page__\": 0, \"unfiltereda\": \"null\", \"retainedorthologs\": \"null\", \"unfilteredb\": \"null\"}", 
-            "tool_version": "1.0.0", 
-            "type": "tool", 
-            "user_outputs": []
-        }, 
-        "9": {
             "annotation": "Some calculations obtained through PAML (http://abacus.gene.ucl.ac.uk/software/paml.html) and PhiPack (http://www.maths.otago.ac.nz/~dbryant/software/phimanual.pdf)", 
-            "id": 9, 
+            "id": 8, 
             "input_connections": {
                 "genomesa": {
                     "id": 5, 
@@ -461,8 +424,8 @@
                 }
             ], 
             "position": {
-                "left": 2456, 
-                "top": 625
+                "left": 2292, 
+                "top": 439
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 

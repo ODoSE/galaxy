@@ -27,7 +27,7 @@
             ], 
             "position": {
                 "left": 200, 
-                "top": 296
+                "top": 446
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -63,8 +63,8 @@
                 }
             ], 
             "position": {
-                "left": 471, 
-                "top": 403
+                "left": 450, 
+                "top": 535
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -85,15 +85,15 @@
             }, 
             "inputs": [
                 {
-                    "description": "runtime parameter for tool Run OrthoMCL", 
+                    "description": "runtime parameter for tool Identify core set of single copy ortholog genes", 
                     "name": "proteinlength"
                 }, 
                 {
-                    "description": "runtime parameter for tool Run OrthoMCL", 
+                    "description": "runtime parameter for tool Identify core set of single copy ortholog genes", 
                     "name": "evalueexponent"
                 }
             ], 
-            "name": "Run OrthoMCL", 
+            "name": "Identify core set of single copy ortholog genes", 
             "outputs": [
                 {
                     "name": "logfile", 
@@ -109,8 +109,8 @@
                 }
             ], 
             "position": {
-                "left": 729, 
-                "top": 500
+                "left": 734, 
+                "top": 651
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -171,8 +171,8 @@
                 }
             ], 
             "position": {
-                "left": 951, 
-                "top": 320
+                "left": 1050, 
+                "top": 470
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -225,8 +225,8 @@
                 }
             ], 
             "position": {
-                "left": 1284, 
-                "top": 326
+                "left": 1383, 
+                "top": 476
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -270,8 +270,8 @@
                 }
             ], 
             "position": {
-                "left": 1748, 
-                "top": 379
+                "left": 1852, 
+                "top": 529
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -311,8 +311,8 @@
                 }
             ], 
             "position": {
-                "left": 2033, 
-                "top": 201
+                "left": 2132, 
+                "top": 351
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -352,8 +352,8 @@
                 }
             ], 
             "position": {
-                "left": 2041, 
-                "top": 608
+                "left": 2140, 
+                "top": 758
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
