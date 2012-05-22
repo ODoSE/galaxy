@@ -15,6 +15,10 @@
 		<!-- Complete Microbial Genomes selectable genomes -->
 		<param name="genomes" type="select" display="checkboxes" multiple="true" optional="true" force_select="false" 
 		label="Choose Genomes" dynamic_options="get_complete_genomes()">
+		<!-- 
+		dynamic_options is deprecated: consider creating a tool that adds a tabular file to the history, and then use 
+		options, column and filter tags to offer the choices to the client
+		-->
 			<help>
 Select between two and one hundred genomes for analysis, or provide external genomes not included in this list above. 
 This list is synchronized daily with the Complete Microbial Genomes table at http://www.ncbi.nlm.nih.gov/genomes/lproks.cgi 
