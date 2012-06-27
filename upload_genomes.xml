@@ -35,6 +35,7 @@ This tool allows you to upload genomes from external resources for analysis in t
 divergence pipeline. This could include unpublished genomes, or genomes not available from the NCBI RefSeq / GenBank.
 
 - A unique label should be provided for each uploaded genome consisting of letters, digits and underscores.
+- The unique label should be no longer than 10 characters for compatibility with PHYLIP neighbor & dnadist.
 - Genomes should be uploaded as nucleotide fasta files containing protein coding regions in separate records.
 - Fasta headers will be altered, but identifiers will be preserved in altered form.
 - In-reading-frame gap codons ('---') will be removed.
