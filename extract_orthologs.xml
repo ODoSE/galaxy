@@ -38,6 +38,7 @@
 		</data>
 		<data format="tabular" name="heatmap" label="Ortholog distributions" />
 		<data format="tabular" name="stats" label="Ortholog extraction statistics" />
+		<data format="fasta" name="ORFans" label="Orphan genes" />
 	</outputs>
 	<help>
 For the groups or orthologous genes identified using OrthoMCL, this tool:
@@ -47,6 +48,8 @@ For the groups or orthologous genes identified using OrthoMCL, this tool:
 - extracts the DNA sequences of the multiple-copy orthologous genes shared across all genomes
 
 - extracts the DNA sequences of the accessory orthologous genes shared across a subset of genomes
+
+- extracts the DNA sequences of the Orphan genes
 
 - generates statistics on the ortholog extraction process in tabular format
 
