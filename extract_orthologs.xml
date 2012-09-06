@@ -19,6 +19,7 @@
 --sico-zip $sicozip
 --stats $stats
 --heatmap $heatmap
+--orfans $orfans
 </command>
 	<inputs>
 		<param format="projectids" name="genomes" type="data" label="GenBank Project IDs" />
@@ -38,7 +39,7 @@
 		</data>
 		<data format="tabular" name="heatmap" label="Ortholog distributions" />
 		<data format="tabular" name="stats" label="Ortholog extraction statistics" />
-		<data format="fasta" name="ORFans" label="Orphan genes" />
+		<data format="fasta" name="orfans" label="Orphan genes" />
 	</outputs>
 	<help>
 For the groups or orthologous genes identified using OrthoMCL, this tool:
