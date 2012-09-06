@@ -27,7 +27,7 @@
             ], 
             "position": {
                 "left": 200, 
-                "top": 446
+                "top": 346
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -64,7 +64,7 @@
             ], 
             "position": {
                 "left": 450, 
-                "top": 535
+                "top": 435
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -110,7 +110,7 @@
             ], 
             "position": {
                 "left": 734, 
-                "top": 651
+                "top": 551
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -168,11 +168,15 @@
                 {
                     "name": "stats", 
                     "type": "tabular"
+                }, 
+                {
+                    "name": "ORFans", 
+                    "type": "fasta"
                 }
             ], 
             "position": {
                 "left": 1050, 
-                "top": 470
+                "top": 370
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -226,7 +230,7 @@
             ], 
             "position": {
                 "left": 1383, 
-                "top": 476
+                "top": 376
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -271,7 +275,7 @@
             ], 
             "position": {
                 "left": 1852, 
-                "top": 529
+                "top": 429
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -312,7 +316,7 @@
             ], 
             "position": {
                 "left": 2132, 
-                "top": 351
+                "top": 251
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -339,7 +343,12 @@
                     "output_name": "trimmedzip"
                 }
             }, 
-            "inputs": [], 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Calculate direction of selection", 
+                    "name": "oddeven"
+                }
+            ], 
             "name": "Calculate direction of selection", 
             "outputs": [
                 {
@@ -353,12 +362,12 @@
             ], 
             "position": {
                 "left": 2140, 
-                "top": 758
+                "top": 658
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
             "tool_id": "divergence_calculations", 
-            "tool_state": "{\"__page__\": 0, \"oddeven\": \"\\\"False\\\"\", \"sicozip\": \"null\", \"genomesb\": \"null\", \"genomesa\": \"null\"}", 
+            "tool_state": "{\"__page__\": 0, \"oddeven\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"sicozip\": \"null\", \"genomesb\": \"null\", \"genomesa\": \"null\"}", 
             "tool_version": "1.0.0", 
             "type": "tool", 
             "user_outputs": []

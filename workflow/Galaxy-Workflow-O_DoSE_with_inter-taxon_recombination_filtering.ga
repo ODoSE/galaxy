@@ -27,7 +27,7 @@
             ], 
             "position": {
                 "left": 187, 
-                "top": 341
+                "top": 381
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -64,7 +64,7 @@
             ], 
             "position": {
                 "left": 410, 
-                "top": 426
+                "top": 466
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -110,7 +110,7 @@
             ], 
             "position": {
                 "left": 733, 
-                "top": 526
+                "top": 566
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -168,11 +168,15 @@
                 {
                     "name": "stats", 
                     "type": "tabular"
+                }, 
+                {
+                    "name": "ORFans", 
+                    "type": "fasta"
                 }
             ], 
             "position": {
                 "left": 1069, 
-                "top": 368
+                "top": 408
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -226,7 +230,7 @@
             ], 
             "position": {
                 "left": 1369, 
-                "top": 372
+                "top": 412
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -271,7 +275,7 @@
             ], 
             "position": {
                 "left": 1716, 
-                "top": 343
+                "top": 383
             }, 
             "post_job_actions": {
                 "RenameDatasetActioncodingregions": {
@@ -343,7 +347,7 @@
             ], 
             "position": {
                 "left": 1973, 
-                "top": 560
+                "top": 600
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -384,7 +388,7 @@
             ], 
             "position": {
                 "left": 2295, 
-                "top": 259
+                "top": 299
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -411,7 +415,12 @@
                     "output_name": "retainedzip"
                 }
             }, 
-            "inputs": [], 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Calculate direction of selection", 
+                    "name": "oddeven"
+                }
+            ], 
             "name": "Calculate direction of selection", 
             "outputs": [
                 {
@@ -425,12 +434,12 @@
             ], 
             "position": {
                 "left": 2292, 
-                "top": 439
+                "top": 479
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
             "tool_id": "divergence_calculations", 
-            "tool_state": "{\"__page__\": 0, \"oddeven\": \"\\\"False\\\"\", \"sicozip\": \"null\", \"genomesb\": \"null\", \"genomesa\": \"null\"}", 
+            "tool_state": "{\"__page__\": 0, \"oddeven\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"sicozip\": \"null\", \"genomesb\": \"null\", \"genomesa\": \"null\"}", 
             "tool_version": "1.0.0", 
             "type": "tool", 
             "user_outputs": []
