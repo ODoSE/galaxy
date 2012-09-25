@@ -24,7 +24,7 @@
 	<inputs>
 		<param format="projectids" name="genomes" type="data" label="GenBank Project IDs" />
 		<param format="dna.zip" name="dnazip" type="data" label="Extracted DNA sequences" />
-		<param format="tabular" name="groups" type="data" label="Orthologous groups" />
+		<param format="orthgroups" name="groups" type="data" label="Orthologous groups" />
 
 		<param name="outputmucozip" type="boolean" label="Output shared multiple-copy orthologous genes" />
 		<param name="outputaccessoryzip" type="boolean" label="Output accessory orthologous genes" />

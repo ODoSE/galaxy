@@ -23,7 +23,7 @@
 	<outputs>
 		<data format="txt" name="logfile" label="OrthoMCL logfile" />
 		<data format="fasta" name="poorproteins" label="List of excluded proteins (&lt;${proteinlength} AA)" />
-		<data format="tabular" name="groups" label="Overview of all orthologs" />
+		<data format="orthgroups" name="groups" label="Overview of all orthologs" />
 	</outputs>
 	<help>
 This tool runs OrthoMCL (http://www.orthomcl.org) and returns the orthologous groups file.
