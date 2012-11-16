@@ -5,6 +5,7 @@ Module to submit errors to FogBugz automatically.
 @author: tbeek
 '''
 
+import logging
 import os
 import socket
 import sys
@@ -27,6 +28,7 @@ def report_error_to_fogbugz():
 def get_error_trace_lines():
     '''For the current error return an ID line & string containing a complete stacktrace and local variables.'''
     err, value, trace_back = sys.exc_info()
+    logging.error(err)
     lines = []
 
     #Add information identifying the system
