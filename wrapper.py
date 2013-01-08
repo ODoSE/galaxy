@@ -35,6 +35,7 @@ except SystemExit:
     raise
 except AssertionError:
     #Do not report AssertionErrors to FogBugz: Not a bug we care about
+    logging.exception('An assumption failed')
     raise
 except:
     #Should any other error occur, report it to FogBugz automatically
