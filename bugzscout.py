@@ -71,15 +71,19 @@ def send_as_email(subject='', content=''):
     :type content: str
     '''
     from email.mime.text import MIMEText
-    from subprocess import Popen, PIPE
+    import smtplib
     try:
+        me = 'admin@odose.nl'
+        you = 'timtebeek+odose@gmail.com'
         msg = MIMEText(content)
-        msg["From"] = 'admin@odose.nl'
-        msg["To"] = 'timtebeek+odose@gmail.com'
+        msg["From"] = me
+        msg["To"] = you
         msg["Subject"] = subject
-        p = Popen(["/usr/sbin/sendmail", "-t"], stdin=PIPE)
-        p.communicate(msg.as_string())
+        s = smtplib.SMTP('192.168.10.1')
+        s.sendmail(me, [you], msg.as_string())
+        s.quit()
     except:
+	raise
         #Do not mask original error by an error in sending email
         return
 
