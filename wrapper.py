@@ -39,8 +39,8 @@ except AssertionError:
     raise
 except:
     #Should any other error occur, report it to FogBugz automatically
-    from bugzscout import report_error_to_fogbugz
-    MESSAGE = report_error_to_fogbugz()
+    from bugzscout import report_error_to_email
+    MESSAGE = report_error_to_email()
     logging.info('Automatic bug submission reported: %s', MESSAGE)
     raise
 finally:

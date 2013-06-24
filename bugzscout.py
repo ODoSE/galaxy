@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 '''
-Module to submit errors to FogBugz automatically.
+Module to submit errors to email automatically.
 
 @author: tbeek
 '''
@@ -10,8 +10,6 @@ import os
 import socket
 import sys
 import traceback
-import urllib
-import urllib2
 
 __author__ = "Tim te Beek"
 __contact__ = "brs@nbic.nl"
@@ -19,11 +17,11 @@ __copyright__ = "Copyright 2011, Netherlands Bioinformatics Centre"
 __license__ = "MIT"
 
 
-def report_error_to_fogbugz():
-    '''From an except-clause retrieve details about the error and post the results to FogBugz'''
+def report_error_to_email():
+    '''From an except-clause retrieve details about the error and post the results to email'''
     desc, lines = get_error_trace_lines()
-    return post_to_fogbugz(description=desc, extra_info=lines)
-
+    send_as_email(subject=desc, content=lines)
+    return desc
 
 def get_error_trace_lines():
     '''For the current error return an ID line & string containing a complete stacktrace and local variables.'''
@@ -64,38 +62,27 @@ def get_error_trace_lines():
     return description, '\n'.join(lines)
 
 
-def post_to_fogbugz(description='Bug report from Galaxy',
-                    extra_info='',
-                    user='Tim te Beek',
-                    project='BRS2010P33 Genome-wide signatures of adaptive divergence in bacteria (Michiel Vos; NIOO)',
-                    area='Misc',
-                    correspondent='admin@odose.nl',
-                    force_new='0',
-                    friendly='1',
-                    MESSAGE='Thank you, your bug report has been received.',
-                    fogbugz_url='https://brs.fogbugz.com/scoutSubmit.asp'):
-    '''Post a MESSAGE to FogBugz using the ScoutBugz HTTP POST interface.'''
-    values = {
-        "ScoutUserName": user,
-        "ScoutProject": project,
-        "ScoutArea": area,
-        "Email": correspondent,
-        "ScoutDefaultMessage": MESSAGE,
-        "FriendlyResponse": friendly,
-        "ForceNewBug": force_new,
-        "Description": description,
-        "Extra": extra_info}
-
-    #Post error to FogBugz
+def send_as_email(subject='', content=''):
+    '''
+    Send an email to admin
+    :param subject: email subject
+    :type subject: str
+    :param content: email content
+    :type content: str
+    '''
+    from email.mime.text import MIMEText
+    from subprocess import Popen, PIPE
     try:
-        data = urllib.urlencode(values)
-        req = urllib2.Request(fogbugz_url, data)
-        response = urllib2.urlopen(req)
-        content = response.read()
-        return content
+        msg = MIMEText(content)
+        msg["From"] = 'admin@odose.nl'
+        msg["To"] = 'timtebeek+odose@gmail.com'
+        msg["Subject"] = subject
+        p = Popen(["/usr/sbin/sendmail", "-t"], stdin=PIPE)
+        p.communicate(msg.as_string())
     except:
-        #Do not mask original error by an error in posting to FogBugz
-        return 'failed to post MESSAGE'  # pylint: disable=W0702
+        #Do not mask original error by an error in sending email
+        return
+
 
 if __name__ == '__main__':
     try:
@@ -103,8 +90,6 @@ if __name__ == '__main__':
         alist = ['a', 1, avar]
         aobject = object()
         raise Exception('bla')
-    except:
-        for line in get_error_trace_lines():
-            print line
-        #print report_error_to_fogbugz()
+    except Exception as e:
+        report_error_to_email()
         raise
