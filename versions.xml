@@ -1,14 +1,11 @@
 <tool id="divergence_versions" name="Software versions">
 	<description>for tracking purposes</description>
-	<requirements>
-		<requirement type="python-module">divergence</requirement>
-	</requirements>
-	<command interpreter="python">wrapper.py divergence.versions $logfile</command>
+	<command interpreter="python">versions.py $logfile</command>
 	<inputs>
 		<param name="checkbox" type="boolean" checked="True" label="Output software versions" help="" />
 	</inputs>
 	<outputs>
-		<data format="txt" name="logfile" label="${tool.name}" />
+		<data format="tabular" name="logfile" label="${tool.name}" />
 	</outputs>
 	<help>This tools prints the versions of external software used for provenance purposes.</help>
 </tool>
