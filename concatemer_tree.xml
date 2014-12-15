@@ -1,9 +1,6 @@
 <tool id="divergence_concatemer_tree" name="Concatenate and deduce taxa">
     <description>from phylogenetic tree</description>
-    <requirements>
-        <requirement type="python-module">divergence</requirement>
-    </requirements>
-    <command interpreter="python">wrapper.py divergence.concatemer_tree logfile
+    <command interpreter="python">wrapper.py concatemer_tree logfile
 --orthologs-zip $orthologs
 --coding-regions $orthologspergenome
 --concatemer $concatemerfasta

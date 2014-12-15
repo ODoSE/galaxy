@@ -1,9 +1,6 @@
 <tool id="divergence_filter_orthologs" name="Inter-taxon recombination filter">
     <description>to only retain orthologs suitable for further analysis</description>
-    <requirements>
-        <requirement type="python-module">divergence</requirement>
-    </requirements>
-    <command interpreter="python">wrapper.py divergence.filter_orthologs $logfile
+    <command interpreter="python">wrapper.py filter_orthologs $logfile
 --orthologs-zip $orthologszip
 
 ###if $transferedcogs

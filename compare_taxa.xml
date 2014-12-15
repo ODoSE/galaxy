@@ -1,9 +1,6 @@
 <tool id="divergence_compare_taxa" name="Compare taxa">
     <description>from unfiltered and filtered orthologs</description>
-    <requirements>
-        <requirement type="python-module">divergence</requirement>
-    </requirements>
-    <command interpreter="python">wrapper.py divergence.compare_taxa $logfile
+    <command interpreter="python">wrapper.py compare_taxa $logfile
 --unfiltered-taxon-a $unfiltereda
 --unfiltered-taxon-b $unfilteredb
 --filtered-taxon-a $filtereda

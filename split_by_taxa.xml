@@ -1,9 +1,6 @@
 <tool id="divergence_split_by_taxa" name="Split orthologs by taxon">
 	<description>to separate alignments</description>
-	<requirements>
-		<requirement type="python-module">divergence</requirement>
-	</requirements>
-	<command interpreter="python">wrapper.py divergence.split_by_taxa logfile
+	<command interpreter="python">wrapper.py split_by_taxa logfile
 --genomes-a $genomesa
 --genomes-b $genomesb
 --orthologs-zip $sicozip

@@ -1,9 +1,6 @@
 <tool id="divergence_run_phipack" name="Run PhiPack">
     <description>to calculate Phi, Max Chi^2 &amp; NSS</description>
-    <requirements>
-        <requirement type="python-module">divergence</requirement>
-    </requirements>
-    <command interpreter="python">wrapper.py divergence.run_phipack $logfile
+    <command interpreter="python">wrapper.py run_phipack $logfile
 --orthologs-zip $orthologszip
 --stats-file $statsfile
 </command>

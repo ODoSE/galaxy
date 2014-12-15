@@ -1,9 +1,6 @@
 <tool id="divergence_run_paml_codeml" name="Run PAML codeml">
 	<description>to calculate dN/dS values</description>
-	<requirements>
-		<requirement type="python-module">divergence</requirement>
-	</requirements>
-	<command interpreter="python">wrapper.py divergence.run_codeml logfile
+	<command interpreter="python">wrapper.py run_codeml logfile
 --genomes-a $genomesa
 --genomes-b $genomesb
 --sico-zip $sicozip

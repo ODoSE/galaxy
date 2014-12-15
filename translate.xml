@@ -1,9 +1,6 @@
 <tool id="divergence_translate" name="Extract &amp; translate genes">
 	<description>from GenBank files and translate to proteins</description>
-	<requirements>
-		<requirement type="python-module">divergence</requirement>
-	</requirements>
-	<command interpreter="python">wrapper.py divergence.translate $logfile
+	<command interpreter="python">wrapper.py translate $logfile
 #if $genomes.dataset
 --genomes $genomes
 #end if

@@ -1,9 +1,6 @@
 <tool id="divergence_crosstable_gene_ids" name="Crosstable of gene IDs">
 	<description>for genomes and orthologs</description>
-	<requirements>
-		<requirement type="python-module">divergence</requirement>
-	</requirements>
-	<command interpreter="python">wrapper.py divergence.crosstable_gene_ids logfile
+	<command interpreter="python">wrapper.py crosstable_gene_ids logfile
 --sico-zip $sicozip 
 --crosstable $crosstable
 </command>

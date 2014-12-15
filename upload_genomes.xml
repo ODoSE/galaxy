@@ -1,9 +1,6 @@
 <tool id="divergence_upload_genomes" name="Upload genomes">
 	<description>from external resources</description>
-	<requirements>
-		<requirement type="python-module">divergence</requirement>
-	</requirements>
-	<command interpreter="python">wrapper.py divergence.upload_genomes $logfile
+	<command interpreter="python">wrapper.py upload_genomes $logfile
 --external-genomes #for $ext in $externaldatasets #${ext.label}:${ext.fastafile},#end for
 --external-zip $externalgenomes
 </command>

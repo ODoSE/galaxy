@@ -1,9 +1,6 @@
 <tool id="divergence_align_trim_orthologs" name="Align &amp; trim orthologs">
     <description>in reading frame</description>
-    <requirements>
-        <requirement type="python-module">divergence</requirement>
-    </requirements>
-    <command interpreter="python">wrapper.py divergence.align_trim_orthologs logfile
+    <command interpreter="python">wrapper.py align_trim_orthologs logfile
 --orthologs-zip $orthologszip
 --retained-threshold $retainedthreshold
 --max-indel-length $maxindellength
