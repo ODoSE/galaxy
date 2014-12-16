@@ -1,4 +1,4 @@
-<tool id="divergence_versions" name="Software versions">
+<tool id="odosenl_versions" name="Software versions">
 	<description>for tracking purposes</description>
 	<command interpreter="python">versions.py $logfile</command>
 	<inputs>

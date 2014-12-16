@@ -1,4 +1,4 @@
-<tool id="divergence_align_trim_orthologs" name="Align &amp; trim orthologs">
+<tool id="odosenl_align_trim_orthologs" name="Align &amp; trim orthologs">
     <description>in reading frame</description>
     <command interpreter="python">wrapper.py align_trim_orthologs logfile
 --orthologs-zip $orthologszip

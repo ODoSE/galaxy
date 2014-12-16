@@ -1,4 +1,4 @@
-<tool id="divergence_split_by_taxa" name="Split orthologs by taxon">
+<tool id="odosenl_split_by_taxa" name="Split orthologs by taxon">
 	<description>to separate alignments</description>
 	<command interpreter="python">wrapper.py split_by_taxa logfile
 --genomes-a $genomesa

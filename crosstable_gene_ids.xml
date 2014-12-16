@@ -1,4 +1,4 @@
-<tool id="divergence_crosstable_gene_ids" name="Crosstable of gene IDs">
+<tool id="odosenl_crosstable_gene_ids" name="Crosstable of gene IDs">
 	<description>for genomes and orthologs</description>
 	<command interpreter="python">wrapper.py crosstable_gene_ids logfile
 --sico-zip $sicozip 

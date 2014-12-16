@@ -1,4 +1,4 @@
-<tool id="divergence_run_paml_codeml" name="Run PAML codeml">
+<tool id="odosenl_run_paml_codeml" name="Run PAML codeml">
 	<description>to calculate dN/dS values</description>
 	<command interpreter="python">wrapper.py run_codeml logfile
 --genomes-a $genomesa

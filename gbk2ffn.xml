@@ -1,4 +1,4 @@
-<tool id="divergence_gbk2ffn" name="Convert GenBank to FASTA">
+<tool id="odosenl_gbk2ffn" name="Convert GenBank to FASTA">
 	<description>nucleotide coding regions</description>
 	<requirements>
 		<requirement type="python-module">Bio</requirement>

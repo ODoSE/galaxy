@@ -1,4 +1,4 @@
-<tool id="divergence_upload_genomes" name="Upload genomes">
+<tool id="odosenl_upload_genomes" name="Upload genomes">
 	<description>from external resources</description>
 	<command interpreter="python">wrapper.py upload_genomes $logfile
 --external-genomes #for $ext in $externaldatasets #${ext.label}:${ext.fastafile},#end for

@@ -1,4 +1,4 @@
-<tool id="divergence_run_orthomcl" name="Identify core set of single copy ortholog genes">
+<tool id="odosenl_run_orthomcl" name="Identify core set of single copy ortholog genes">
 	<description>using OrthoMCL to find orthologs using reciprocal BLAST and HMM clustering</description>
 	<command interpreter="python">wrapper.py run_orthomcl $logfile
 --protein-zip $proteinzip

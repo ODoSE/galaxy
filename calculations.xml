@@ -1,4 +1,4 @@
-<tool id="divergence_calculations" name="Calculate direction of selection">
+<tool id="odosenl_calculations" name="Calculate direction of selection">
 	<description>per taxon</description>
 	<command interpreter="python">wrapper.py calculations_new logfile
 --genomes-a $genomesa

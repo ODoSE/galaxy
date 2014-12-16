@@ -1,4 +1,4 @@
-<tool id="divergence_filter_orthologs" name="Inter-taxon recombination filter">
+<tool id="odosenl_filter_orthologs" name="Inter-taxon recombination filter">
     <description>to only retain orthologs suitable for further analysis</description>
     <command interpreter="python">wrapper.py filter_orthologs $logfile
 --orthologs-zip $orthologszip

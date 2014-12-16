@@ -1,4 +1,4 @@
-<tool id="divergence_run_phipack" name="Run PhiPack">
+<tool id="odosenl_run_phipack" name="Run PhiPack">
     <description>to calculate Phi, Max Chi^2 &amp; NSS</description>
     <command interpreter="python">wrapper.py run_phipack $logfile
 --orthologs-zip $orthologszip

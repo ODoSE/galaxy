@@ -1,4 +1,4 @@
-<tool id="divergence_translate" name="Extract &amp; translate genes">
+<tool id="odosenl_translate" name="Extract &amp; translate genes">
 	<description>from GenBank files and translate to proteins</description>
 	<command interpreter="python">wrapper.py translate $logfile
 #if $genomes.dataset

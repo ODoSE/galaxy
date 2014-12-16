@@ -1,4 +1,4 @@
-<tool id="divergence_load_prokaryotes" name="Load selectable genomes">
+<tool id="odosenl_load_prokaryotes" name="Load selectable genomes">
 	<description>from Complete Microbial Genomes table</description>
 	<command interpreter="python">load_prokaryotes.py $prokaryotes</command>
 	<inputs>

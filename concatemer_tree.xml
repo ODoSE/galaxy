@@ -1,4 +1,4 @@
-<tool id="divergence_concatemer_tree" name="Concatenate and deduce taxa">
+<tool id="odosenl_concatemer_tree" name="Concatenate and deduce taxa">
     <description>from phylogenetic tree</description>
     <command interpreter="python">wrapper.py concatemer_tree logfile
 --orthologs-zip $orthologs

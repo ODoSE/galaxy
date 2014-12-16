@@ -1,4 +1,4 @@
-<tool id="divergence_compare_taxa" name="Compare taxa">
+<tool id="odosenl_compare_taxa" name="Compare taxa">
     <description>from unfiltered and filtered orthologs</description>
     <command interpreter="python">wrapper.py compare_taxa $logfile
 --unfiltered-taxon-a $unfiltereda

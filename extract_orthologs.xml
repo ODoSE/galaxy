@@ -1,4 +1,4 @@
-<tool id="divergence_extract_orthologs" name="Extract &amp; categorize orthologs">
+<tool id="odosenl_extract_orthologs" name="Extract &amp; categorize orthologs">
 	<description>from OrthoMCL groups file
 	</description>
 	<command interpreter="python">wrapper.py extract_orthologs logfile
