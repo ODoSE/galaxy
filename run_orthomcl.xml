@@ -1,12 +1,11 @@
 <tool id="odosenl_run_orthomcl" name="Identify core set of single copy ortholog genes">
 	<description>using OrthoMCL to find orthologs using reciprocal BLAST and HMM clustering</description>
 	<command interpreter="python">wrapper.py run_orthomcl $logfile
---protein-zip $proteinzip
---poor-protein-length $proteinlength
---evalue-exponent $evalueexponent
-
---poor-proteins $poorproteins
---groups $groups
+$proteinzip
+--poorlength $proteinlength
+--evalue $evalueexponent
+$poorproteins
+$groups
 </command>
 	<inputs>
 		<param format="protein.zip" name="proteinzip" type="data" label="Translated gene proteins" />
