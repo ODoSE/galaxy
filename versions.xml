@@ -2,7 +2,6 @@
 	<description>for tracking purposes</description>
 	<command interpreter="python">versions.py $logfile</command>
 	<inputs>
-		<param name="checkbox" type="boolean" checked="True" label="Output software versions" help="" />
 	</inputs>
 	<outputs>
 		<data format="tabular" name="logfile" label="${tool.name}" />
