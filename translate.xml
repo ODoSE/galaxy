@@ -11,13 +11,13 @@
 --protein-zip $proteinzip
 </command>
 	<inputs>
-		<param format="projectids" name="genomes" type="data" label="GenBank Project IDs" optional="False"/>
-		<param format="genomes.zip" name="externalzip" type="data" label="External Genomes" optional="True"/>
+		<param format="pid.tsv" name="genomes" type="data" label="GenBank Project IDs" optional="False"/>
+		<param format="gkb.zip" name="externalzip" type="data" label="External Genomes" optional="True"/>
 	</inputs>
 	<outputs>
 		<data format="txt" name="logfile" label="Extracted proteins logfile" />
-		<data format="dna.zip" name="dnazip" label="Extracted DNA sequences" />
-		<data format="protein.zip" name="proteinzip" label="Translated sequences" />
+		<data format="ffn.zip" name="dnazip" label="Extracted DNA sequences" />
+		<data format="faa.zip" name="proteinzip" label="Translated sequences" />
 	</outputs>
 	<help>
 This tool:

@@ -23,9 +23,9 @@
             <help>Filter orthologs where multiple different COGs are assigned to various strains</help>
         </param>
 -->
-		<param format="projectids" name="genomesa" type="data" label="Taxon A IDs" optional="false"/>
-		<param format="projectids" name="genomesb" type="data" label="Taxon B IDs" optional="false"/>
-        <param format="orthologs.zip" name="orthologszip" type="data" label="Orthologous genes" />
+		<param format="pid.tsv" name="genomesa" type="data" label="Taxon A IDs" optional="false"/>
+		<param format="pid.tsv" name="genomesb" type="data" label="Taxon B IDs" optional="false"/>
+        <param format="sico.zip" name="orthologszip" type="data" label="Orthologous genes" />
     </inputs>
     <outputs>
         <data format="txt" name="logfile" label="Logfile for intertaxon recombination" />
@@ -34,14 +34,14 @@
         	<filter>filtermultiplecogs</filter>
         </data>
 -->
-        <data format="orthologs.zip" name="recombinedzip" label="Intertaxon-recombination orthologs">
+        <data format="sico.zip" name="recombinedzip" label="Intertaxon-recombination orthologs">
             <filter>filterrecombination == "true"</filter>
         </data>
         <data format="tabular" name="recombinedcrosstable" label="Recombined ortholog gene IDs, COGs and Products">
             <filter>filterrecombination == "true"</filter>
         </data>
-        <data format="orthologs.zip" name="retainedzip" label="Retained orthologs" />
-        <data format="dna.zip" name="orthologspergenome" label="Orthologs per genome post-recombination filter" />
+        <data format="sico.zip" name="retainedzip" label="Retained orthologs" />
+        <data format="ffn.zip" name="orthologspergenome" label="Orthologs per genome post-recombination filter" />
         <data format="fasta" name="concatemerfasta" label="Concatemer post-recombination filter" />
     </outputs>
     <help>

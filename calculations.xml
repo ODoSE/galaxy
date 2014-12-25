@@ -9,9 +9,9 @@
 $oddeven
 </command>
 	<inputs>
-		<param format="projectids" name="genomesa" type="data" label="Taxon A IDs" />
-		<param format="projectids" name="genomesb" type="data" label="Taxon B IDs" />
-		<param format="orthologs.zip" name="sicozip" type="data" label="Aligned / Trimmed orthologs" />
+		<param format="pid.tsv" name="genomesa" type="data" label="Taxon A IDs" />
+		<param format="pid.tsv" name="genomesb" type="data" label="Taxon B IDs" />
+		<param format="sico.zip" name="sicozip" type="data" label="Aligned / Trimmed orthologs" />
 		<param name="oddeven" type="boolean" checked="false" truevalue="--append-odd-even" falsevalue="">
 			<label>Append tables calculated for odd and even codons</label>
 			<help>This additional tables could for instance be used as independent axis in a graph.</help>

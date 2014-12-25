@@ -8,13 +8,13 @@
 --taxon-b-zip $taxonbzip
 </command>
 	<inputs>
-		<param format="projectids" name="genomesa" type="data" label="Taxon A IDs" />
-		<param format="projectids" name="genomesb" type="data" label="Taxon B IDs" />
-		<param format="orthologs.zip" name="sicozip" type="data" label="Aligned / Trimmed orthologs" />
+		<param format="pid.tsv" name="genomesa" type="data" label="Taxon A IDs" />
+		<param format="pid.tsv" name="genomesb" type="data" label="Taxon B IDs" />
+		<param format="sico.zip" name="sicozip" type="data" label="Aligned / Trimmed orthologs" />
 	</inputs>
 	<outputs>
-		<data format="orthologs.zip" name="taxonazip" label="Taxon A orthologs" />
-		<data format="orthologs.zip" name="taxonbzip" label="Taxon B orthologs" />
+		<data format="sico.zip" name="taxonazip" label="Taxon A orthologs" />
+		<data format="sico.zip" name="taxonbzip" label="Taxon B orthologs" />
 	</outputs>
 	<help>
 Split an archive with sequence files containing records from two taxa into two archives with sequence files containing 

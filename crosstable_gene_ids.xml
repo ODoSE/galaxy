@@ -5,7 +5,7 @@
 --crosstable $crosstable
 </command>
 	<inputs>
-		<param format="orthologs.zip" name="sicozip" type="data" label="Single-Copy orthologs" />
+		<param format="sico.zip" name="sicozip" type="data" label="Single-Copy orthologs" />
 	</inputs>
 	<outputs>
 		<data format="tabular" name="crosstable" label="Crosstable of gene IDs" />

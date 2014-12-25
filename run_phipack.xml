@@ -5,7 +5,7 @@
 --stats-file $statsfile
 </command>
     <inputs>
-        <param format="orthologs.zip" name="orthologszip" type="data" label="Orthologous genes" />
+        <param format="sico.zip" name="orthologszip" type="data" label="Orthologous genes" />
     </inputs>
     <outputs>
         <data format="txt" name="logfile" label="Logfile for ${tool.name}" />

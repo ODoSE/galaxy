@@ -19,19 +19,19 @@
 --orfans $orfans
 </command>
 	<inputs>
-		<param format="projectids" name="genomes" type="data" label="GenBank Project IDs" />
-		<param format="dna.zip" name="dnazip" type="data" label="Extracted DNA sequences" />
-		<param format="orthgroups" name="groups" type="data" label="Orthologous groups" />
+		<param format="pid.tsv" name="genomes" type="data" label="GenBank Project IDs" />
+		<param format="ffn.zip" name="dnazip" type="data" label="Extracted DNA sequences" />
+		<param format="groups.tsv" name="groups" type="data" label="Orthologous groups" />
 
 		<param name="outputmucozip" type="boolean" label="Output shared multiple-copy orthologous genes" />
 		<param name="outputaccessoryzip" type="boolean" label="Output accessory orthologous genes" />
 	</inputs>
 	<outputs>
-		<data format="orthologs.zip" name="sicozip" label="SICO's" />
-		<data format="orthologs.zip" name="mucozip" label="Shared multiple-copy orthologous genes">
+		<data format="ort.zip" name="sicozip" label="SICO's" />
+		<data format="ort.zip" name="mucozip" label="Shared multiple-copy orthologous genes">
 			<filter>outputmucozip</filter>
 		</data>
-		<data format="orthologs.zip" name="accessoryzip" label="Accessory orthologous genes">
+		<data format="ort.zip" name="accessoryzip" label="Accessory orthologous genes">
 			<filter>outputaccessoryzip</filter>
 		</data>
 		<data format="tabular" name="heatmap" label="Ortholog distributions" />

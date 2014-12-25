@@ -11,7 +11,7 @@
 --scatterplot $scatterplot
 </command>
     <inputs>
-        <param format="orthologs.zip" name="orthologszip" type="data" label="Orthologous genes" />
+        <param format="ort.zip" name="orthologszip" type="data" label="Orthologous genes" />
         <param name="retainedthreshold" type="integer" label="Minimum % retained after trimmining alignment" min="0" max="100" value="90" optional="false">
             <help>Filter orthologs where less than a given percentage of sequence is retained after trimming alignment</help>
         </param>
@@ -20,9 +20,9 @@
         </param>
     </inputs>
     <outputs>
-        <data format="orthologs.zip" name="alignedzip" label="Aligned orthologs" />
-        <data format="orthologs.zip" name="misalignedzip" label="Misaligned orthologs" />
-        <data format="orthologs.zip" name="trimmedzip" label="Trimmed orthologs" />
+        <data format="sico.zip" name="alignedzip" label="Aligned orthologs" />
+        <data format="ort.zip" name="misalignedzip" label="Misaligned orthologs" />
+        <data format="ort.zip" name="trimmedzip" label="Trimmed orthologs" />
         <data format="tabular" name="stats" label="Ortholog trimming statistics logfile" />
         <data format="pdf" name="scatterplot" label="Scatterplot of trimming statistics" />
     </outputs>

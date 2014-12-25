@@ -26,7 +26,7 @@ See the original table for alternate sorting and selection criteria.
 	</inputs>
 	<outputs>
 		<data format="txt" name="logfile" label="Selected genomes logfile" />
-		<data format="projectids" name="genomesfile" label="Project ID list" />
+		<data format="pid.tsv" name="genomesfile" label="Project ID list" />
 	</outputs>
 	<help>
 This tool allows you to select genomes for analysis in the Ortholog Direction of Selection Engine workflow.

@@ -8,7 +8,7 @@ $poorproteins
 $groups
 </command>
 	<inputs>
-		<param format="protein.zip" name="proteinzip" type="data" label="Translated gene proteins" />
+		<param format="faa.zip" name="proteinzip" type="data" label="Translated gene proteins" />
 		<param name="proteinlength" type="integer" label="Minimum protein length" min="0" value="30" optional="false">
 			<help>Proteins shorter than this length will be considers poor proteins and filtered out by OrthoMCL.</help>
 		</param>
@@ -19,7 +19,7 @@ $groups
 	<outputs>
 		<data format="txt" name="logfile" label="OrthoMCL logfile" />
 		<data format="fasta" name="poorproteins" label="List of excluded proteins (&lt;${proteinlength} AA)" />
-		<data format="orthgroups" name="groups" label="Overview of all orthologs" />
+		<data format="groups.tsv" name="groups" label="Overview of all orthologs" />
 	</outputs>
 	<help>
 This tool runs OrthoMCL (http://www.orthomcl.org) and returns the orthologous groups file.
