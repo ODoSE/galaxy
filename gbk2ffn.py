@@ -2,7 +2,6 @@
 """"""
 
 __author__ = "Tim te Beek"
-__contact__ = "brs@nbic.nl"
 __copyright__ = "Copyright 2013, Netherlands Bioinformatics Centre"
 __license__ = "MIT"
 
