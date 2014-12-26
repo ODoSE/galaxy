@@ -3,12 +3,11 @@ galaxy
 
 Configuration files and scripts to integrate [ODoSE](http://www.odose.nl/) with [Galaxy](http://getgalaxy.org).
 
-See also: https://github.com/ODoSE/odose.nl
-
-Install Galaxy as per their instructions.
-
-- Add a new folder `odosenl` in `galaxy-dist/tools/`. 
-- Copy/symlink `*.py` & `*.xml` from both https://github.com/ODoSE/odose.nl and https://github.com/ODoSE/odose.nl to `galaxy-dist/tools/odosenl` 
+- Install Galaxy as per their instructions.
+- Add a new folder `odosenl` in `galaxy-dist/tools/`
+- Copy/symlink `*.py` & `*.xml` to `galaxy-dist/tools/odosenl` from both:
+ - https://github.com/ODoSE/odose.nl
+ - https://github.com/ODoSE/galaxy
 - Add in `galaxy-dist/config/tool_conf.xml`:
 ```xml
         <section name="Ortholog Direction of Selection Engine" id="odosenl">
@@ -29,7 +28,7 @@ Install Galaxy as per their instructions.
             <tool file="odosenl/calculations.xml" />
             <tool file="odosenl/versions.xml" />
         </section>
-    ```
+```
 - Add in `galaxy-dist/config/datatypes_conf.xml`:
 ```xml
         <datatype extension="pid.tsv" type="galaxy.datatypes.tabular:Tabular" display_in_upload="true"/>
@@ -39,4 +38,4 @@ Install Galaxy as per their instructions.
         <datatype extension="faa.zip" type="galaxy.datatypes.binary:Binary" mimetype="application/zip" display_in_upload="true"/>
         <datatype extension="ort.zip" type="galaxy.datatypes.binary:Binary" mimetype="application/zip" display_in_upload="true"/>
         <datatype extension="sico.zip" type="galaxy.datatypes.binary:Binary" mimetype="application/zip" display_in_upload="true"/>
-    ```
+```
