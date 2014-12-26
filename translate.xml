@@ -12,7 +12,7 @@
 </command>
 	<inputs>
 		<param format="pid.tsv" name="genomes" type="data" label="GenBank Project IDs" optional="False"/>
-		<param format="gkb.zip" name="externalzip" type="data" label="External Genomes" optional="True"/>
+		<param format="ffn.zip" name="externalzip" type="data" label="External Genomes" optional="True"/>
 	</inputs>
 	<outputs>
 		<data format="txt" name="logfile" label="Extracted proteins logfile" />
