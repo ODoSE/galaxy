@@ -3,11 +3,11 @@
 	<command interpreter="python">wrapper.py calculations_new logfile
 --genomes-a $genomesa
 --genomes-b $genomesb
---sico-zip $sicozip 
---table-a $tablea 
+--sico-zip $sicozip
+--table-a $tablea
 --table-b $tableb
 $oddeven
-</command>
+	</command>
 	<inputs>
 		<param format="pid.tsv" name="genomesa" type="data" label="Taxon A IDs" />
 		<param format="pid.tsv" name="genomesb" type="data" label="Taxon B IDs" />
@@ -21,7 +21,10 @@ $oddeven
 		<data format="tabular" name="tablea" label="Statistics table for Taxon A" />
 		<data format="tabular" name="tableb" label="Statistics table for Taxon B" />
 	</outputs>
+	<stdio>
+		<exit_code range="1:" level="fatal" description="Exit code > 0" />
+	</stdio>
 	<help>
-This tool calculates the direction of selection between two taxa. 
-</help>
+		This tool calculates the direction of selection between two taxa.
+	</help>
 </tool>
