@@ -19,6 +19,9 @@
 		<data format="ffn.zip" name="dnazip" label="Extracted DNA sequences" />
 		<data format="faa.zip" name="proteinzip" label="Translated sequences" />
 	</outputs>
+	<stdio>
+		<exit_code range="1:" level="fatal" description="Exit code > 0" />
+	</stdio>
 	<help>
 This tool:
 
